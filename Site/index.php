@@ -3,12 +3,14 @@
 
     require_once "Controller/Controller.php";
 
+    require_once "DAO/BaseDAO.php";
+    $DAO = new DAO();
     $controller = new Controller();
     $GLOBALS['controller'] = $controller;
 
 
     require_once "Controller/UserController.php";
-    $UserController = new UserController();
+    $UserController = new UserController($DAO);
     $GLOBALS['userController'] = $UserController;
 
     try
@@ -46,7 +48,8 @@
                 break;
                 
                 case "user_register":
-                    $UserController->Register();
+                    $name = $_POST['name'];
+                    $UserController->Register($name,"didier","ggg@g.com","passwd");
                 break;
                 
                 case "view_user_register":
@@ -63,8 +66,16 @@
                 case "view_user_profile":
                     $UserController->ViewProfile();
                 break;
+                
+                case "view_user_project":
+                    $projectID = $_GET['projectID'];
+                    $UserController->DisplayProject($projectID);
+                break;
 
-                default:
+                case "view_user_version":
+                    $UserController->DisplayVersion(1,1);
+                break;
+                default:   
                     //if no action was passed the default page will be displayed
                     $controller->ViewHome();
                 break;

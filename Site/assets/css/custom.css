@@ -1,4 +1,86 @@
-div .form
-{
-    padding: 20px;
+#my_nav {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba(200, 200, 200, 0.95);
+    background-image: url("images/overlay.png");
+    width: 100%;
+    height: 3.6em;
+    line-height: 3.25em;
+    text-align: left;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: default;
+
+    border-radius: 6px;
 }
+
+#my_nav ul {
+    position: relative;
+    z-index: 1001;
+}
+
+#my_nav li {
+    display: inline-block;
+    top: 0;
+    position: relative;
+    -moz-transition: top .15s ease-in-out;
+    -webkit-transition: top .15s ease-in-out;
+    -o-transition: top .15s ease-in-out;
+    -ms-transition: top .15s ease-in-out;
+    transition: top .15s ease-in-out;
+}
+
+    #my_nav li > ul {
+        display: none;
+    }
+
+    #my_nav li a, #my_nav li span {
+        -moz-transition: background-color .075s ease-in-out, color .075s ease-in-out;
+        -webkit-transition: background-color .075s ease-in-out, color .075s ease-in-out;
+        -ms-transition: background-color .075s ease-in-out, color .075s ease-in-out;
+        transition: background-color .075s ease-in-out, color .075s ease-in-out;
+        position: relative;
+        display: block;
+        text-decoration: none;
+        color: #74a387;
+        top: 0px;
+        padding: 1px 1.5em 0.25em 1.5em;
+        border-radius: 6px;
+        outline: 0;
+    }
+
+    #my_nav li:hover, #my_nav li.active {
+        top: 0px;
+    }
+
+    #my_nav li:hover a, #my_nav li:hover span {
+        background: #C1CAC5;
+        color: #fff;
+    }
+
+    #my_nav li.active a, #my_nav li.active span {
+        background: #C1CAC5;
+        color: #fff;
+    }
+
+    #my_nav li.current a {
+        background: #b1ddab;
+        color: #fff;
+    }
+
+    .myTabs
+    {
+        color:red;
+        border-style : solid;
+        border-width: 5px;
+        border-color: black;
+
+        padding: 10px;
+    }
+
+
+    body {font-family: Arial;}
+

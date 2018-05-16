@@ -1,11 +1,18 @@
 <?php
     ob_start();
 ?>
+
+<?php
+    if(isset($error))
+    {
+        echo $error;
+    }
+?>
 <div class="form">
     <h1> Register </h1>
 
     <form action="index.php?action=user_register" method="post">
-        <p><input type="text" placeholder="Name"></p>
+        <p><input type="text" placeholder="Name" name="name"></p>
         <p><input type="text" placeholder="LastName"></p>
         <p> <input type="text" placeholder="username"></p>
         <p><input type="text" placeholder="email"></p>

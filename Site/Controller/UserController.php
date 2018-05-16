@@ -12,7 +12,7 @@
      */
     class UserController extends Controller
     {
-
+        private $DataObject;
         /**
          * Undocumented variable
          * 
@@ -21,8 +21,10 @@
         private $connected;
 
 
-        function __construct()
+        function __construct($dao)
         {
+
+            $this->DataObject = $dao;
             if(isset($_SESSION['user']))
             {
                 $this->connected = true;
@@ -70,11 +72,30 @@
             require_once "View/User/UserRegisterView.php";
         }
 
-        function Register()
+        function Register($name,$lastname,$email,$password)
         {
-            $_SESSION['user'] = 'emmanuel';
-            $this->connected = true;
-            require_once "View/HomeView.php";           
+
+            try{             
+                $conn = $this->DataObject->connect();
+
+                $query = $conn->prepare("INSERT INTO user(name,lastName,email,password,Type_pkType) VALUES(?,?,?,?,?)");
+                $num = 2;
+                $query->bind_param("ssssi",$name,$lastname,$email,$password,$num);
+                
+                $query->execute();
+
+                $_SESSION['user'] = 'emmanuel';
+                $this->connected = true;
+                require_once "View/HomeView.php";   
+
+            }
+            catch(Exception $e)
+            {
+                $this->connected = false;
+                $error = $conn->error;
+                require_once "View/User/UserRegisterView.php";
+            }
+
         }
         /**
          * ViewProfile
@@ -94,6 +115,17 @@
         function isConnected()
         {
             return $this->connected;
+        }
+
+
+        function DisplayProject($projectID)
+        {
+            require_once "View/User/UserProjectView.php";
+        }
+
+        function DisplayVersion($projectid,$Version)
+        {
+            require_once "View/User/UserVersionView.php";
         }
     }
 ?>

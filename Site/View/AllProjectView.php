@@ -81,7 +81,7 @@
                     dolor sit non aliquet sed, tempor et dolor.  Praesent a dapibus velit. Curabitur
                     accumsan.
                 </p>
-                <a href="#" class="button">View Project</a>
+                <a href="index.php?action=view_user_project&projectID=1" class="button">View Project</a>
             </article>
             <article class="box post">
                 <header>
