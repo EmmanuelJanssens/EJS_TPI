@@ -42,7 +42,11 @@
 						if($User->isConnected())
 						{
 							?>
-								<a href="#">User</a>
+								<a href="#">
+								<?php
+								 echo $_SESSION['user'];
+								?>
+								</a>
 								<ul>
 									<li><a href="index.php?action=view_user_profile">ViewProfile</a></li>
 									<li><a href="index.php?action=view_user_logout">LogOut</a></li>

@@ -2,15 +2,15 @@
     session_start();
 
     require_once "Controller/Controller.php";
+    require_once "Controller/UserController.php";
 
-    require_once "DAO/BaseDAO.php";
-    $DAO = new DAO();
-    $controller = new Controller();
+    require_once "DAO/UserDAO.php";
+
+    $controller = new Controller($BaseDAO = new DAO());
     $GLOBALS['controller'] = $controller;
 
-
-    require_once "Controller/UserController.php";
-    $UserController = new UserController($DAO);
+    $UserDAO = new UserDAO;
+    $UserController = new UserController($UserDAO);
     $GLOBALS['userController'] = $UserController;
 
     try
@@ -40,7 +40,8 @@
                 break;
                 
                 case "user_login":
-                    $UserController->Login();
+                    extract($_POST);
+                    $UserController->Login($username,$password);
                 break;
 
                 case "user_logout":
@@ -48,8 +49,8 @@
                 break;
                 
                 case "user_register":
-                    $name = $_POST['name'];
-                    $UserController->Register($name,"didier","ggg@g.com","passwd");
+                    extract($_POST);
+                    $UserController->Register($name,$lastname,$username,$email,$password,$passwordconfirm);
                 break;
                 
                 case "view_user_register":
@@ -69,11 +70,11 @@
                 
                 case "view_user_project":
                     $projectID = $_GET['projectID'];
-                    $UserController->DisplayProject($projectID);
+                    $UserController->ViewUserProject($projectID);
                 break;
 
                 case "view_user_version":
-                    $UserController->DisplayVersion(1,1);
+                    $UserController->ViewUserVersion(1,1);
                 break;
                 default:   
                     //if no action was passed the default page will be displayed

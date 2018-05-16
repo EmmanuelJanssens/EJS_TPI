@@ -2,6 +2,7 @@
 
     require_once "Controller.php";
 
+
     /**
      * UserController
      *
@@ -12,7 +13,8 @@
      */
     class UserController extends Controller
     {
-        private $DataObject;
+        private $userDAO;
+
         /**
          * Undocumented variable
          * 
@@ -20,11 +22,10 @@
          */
         private $connected;
 
-
         function __construct($dao)
         {
 
-            $this->DataObject = $dao;
+            $this->userDAO = $dao;
             if(isset($_SESSION['user']))
             {
                 $this->connected = true;
@@ -39,11 +40,23 @@
          *
          * @brief Connects the user, if login successfull, set @connected to true
          */
-        function Login()
+        function Login($username,$password)
         {
-            $_SESSION['user'] = 'emmanuel';
-            $this->connected = true;
-            require_once "View/HomeView.php";
+            $data = $this->userDAO->GetConnectionData($username,$password);
+
+            if($data)
+            {
+                $_SESSION['user'] = $username;
+                $this->connected = true;
+
+                require_once "View/HomeView.php";
+            }
+            else
+            {
+                $error = $this->userDAO->error;
+                require_once "View/User/UserLoginView.php";
+            }
+            
         }
 
         /**
@@ -67,33 +80,75 @@
         {
             require_once "View/User/UserLoginView.php";
         }
+
+        /**
+         * ViewRegister
+         *
+         * @brief displays the register page 
+         */
         function ViewRegister()
         {
             require_once "View/User/UserRegisterView.php";
         }
 
-        function Register($name,$lastname,$email,$password)
+        /**
+         * Register
+         *
+         * @param [string] $name
+         * @param [string] $lastname
+         * @param [string] $email
+         * @param [string] $password
+         *
+         * @brief Inserts the data of the register form into the database
+
+         */
+        function Register($name,$lastname,$username,$email,$password,$confirmation)
         {
 
-            try{             
-                $conn = $this->DataObject->connect();
+            try
+            {
+                if(!strlen($username) > 6 )
+                {
+                    throw new Exception("There are some errors in the form");
+                }
 
-                $query = $conn->prepare("INSERT INTO user(name,lastName,email,password,Type_pkType) VALUES(?,?,?,?,?)");
-                $num = 2;
-                $query->bind_param("ssssi",$name,$lastname,$email,$password,$num);
-                
-                $query->execute();
+                if(!preg_match("/^[a-zA-Z0-9_.-]*$/",$username))
+                {
+                    throw new Exception("");
+                }
 
-                $_SESSION['user'] = 'emmanuel';
-                $this->connected = true;
-                require_once "View/HomeView.php";   
+                if(!filter_var($email, FILTER_VALIDATE_EMAIL))
+                {
+                    throw new Exception("Email is not valid");
+                }
 
+                if(!strlen($password) > 6)
+                {
+                    throw new Exception("Password must be longer then 6 characters");
+                }
+
+                if($password != $confirmation)
+                {
+                    throw new Exception("There is a mis match between passwords");
+                }
+
+
+                if($this->userDAO->Register($name,$lastname,$username,$email,$password))
+                {
+                    $_SESSION['user'] = $username;
+                    $this->connected = true;
+                    require_once "View/HomeView.php";
+                }
+                else
+                {
+                    throw new Exception($this->userDAO->error);
+                }
             }
             catch(Exception $e)
             {
                 $this->connected = false;
-                $error = $conn->error;
-                require_once "View/User/UserRegisterView.php";
+                $error = $e->getMessage();
+                require_once "View/User/UserRegisterView.php";    
             }
 
         }
@@ -118,12 +173,12 @@
         }
 
 
-        function DisplayProject($projectID)
+        function ViewUserProject($projectID)
         {
             require_once "View/User/UserProjectView.php";
         }
 
-        function DisplayVersion($projectid,$Version)
+        function ViewUserVersion($projectid,$Version)
         {
             require_once "View/User/UserVersionView.php";
         }

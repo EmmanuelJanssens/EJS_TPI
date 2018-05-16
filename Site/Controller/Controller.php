@@ -7,6 +7,11 @@
     class Controller
     {
 
+        private $baseDAO;
+        function __construct($dao)
+        {
+            $this->baseDAO = $dao;
+        }
         /**
          * ViewHome
          *
