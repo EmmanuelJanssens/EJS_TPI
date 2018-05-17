@@ -70,45 +70,27 @@
     <div class="9u 12u(mobile) important(mobile)">
         <div class="content content-right">
 
-            <article class="box post">
-                <header>
-                    <h2 class="major"><span><a href="#">Project 1</a></span></h2>
-                </header>
-                <p>
-                    Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in lectus. Praesent
-                    semper mod quis eget mi. Etiam sed ante risus aliquam erat et volutpat. Praesent a
-                    dapibus velit. Curabitur sed nisi nunc, accumsan vestibulum lectus. Lorem ipsum
-                    dolor sit non aliquet sed, tempor et dolor.  Praesent a dapibus velit. Curabitur
-                    accumsan.
-                </p>
-                <a href="index.php?action=view_user_project&projectID=1" class="button">View Project</a>
-            </article>
-            <article class="box post">
-                <header>
-                    <h2 class="major"><span><a href="#">Project 2</a></span></h2>
-                </header>
-                <p>
-                    Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in lectus. Praesent
-                    semper mod quis eget mi. Etiam sed ante risus aliquam erat et volutpat. Praesent a
-                    dapibus velit. Curabitur sed nisi nunc, accumsan vestibulum lectus. Lorem ipsum
-                    dolor sit non aliquet sed, tempor et dolor.  Praesent a dapibus velit. Curabitur
-                    accumsan.
-                </p>
-                <a href="#" class="button">View Project</a>
-            </article>
-            <article class="box post">
-                <header>
-                    <h2 class="major"><span><a href="#">Project 3</a></span></h2>
-                </header>
-                <p>
-                    Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in lectus. Praesent
-                    semper mod quis eget mi. Etiam sed ante risus aliquam erat et volutpat. Praesent a
-                    dapibus velit. Curabitur sed nisi nunc, accumsan vestibulum lectus. Lorem ipsum
-                    dolor sit non aliquet sed, tempor et dolor.  Praesent a dapibus velit. Curabitur
-                    accumsan.
-                </p>
-                <a href="#" class="button">View Project</a>
-            </article>
+
+            <?php
+                foreach($projectData as $row)
+                {
+                    echo <<<"HTML"
+                    <article class = "box post">
+                        <header>
+                            <h2 class="major"><span><a href="#">$row->name</a></span></h2>
+                        </header>
+
+                        <p>
+                            $row->description 
+                        </p>
+
+                        <a href="index.php?action=view_user_project&projectID=$row->pkProject" class="button">View Project</a>
+
+                    </article>
+HTML;
+                }
+            
+            ?>
         </div>
     </div>
    

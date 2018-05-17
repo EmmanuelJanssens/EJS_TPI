@@ -7,11 +7,46 @@
     class Controller
     {
 
-        private $baseDAO;
-        function __construct($dao)
+        public $baseDAO;
+
+        public $userDAO;
+        public $projectDAO;
+        public $versionDAO;
+        public $forumDAO;
+
+
+
+        /**
+         * @param [type] $userDAO
+         * @param [type] $projectDAO
+         * @param [type] $versionDAO
+         * @param [type] $forumDAO
+         *
+         * @brief Initialises every data access Object
+         */
+        function Init($dao,$userDAO,$projectDAO,$versionDAO,$forumDAO)
         {
             $this->baseDAO = $dao;
+            $this->userDAO = $userDAO;
+            $this->projectDAO = $projectDAO;
+            $this->versionDAO = $versionDAO;
+            $this->forumDAO = $forumDAO;
         }
+
+        /**
+         * @param [type] $dao
+         * @brief Initialises base data object.
+         */
+        function __construct($dao,$userDAO,$projectDAO,$versionDAO,$forumDAO)
+        {
+            $this->baseDAO = $dao;
+            $this->userDAO = $userDAO;
+            $this->projectDAO = $projectDAO;
+            $this->versionDAO = $versionDAO;
+            $this->forumDAO = $forumDAO;
+        }
+
+
         /**
          * ViewHome
          *
@@ -25,18 +60,7 @@
             require_once "View/HomeView.php";
         }
 
-        /**
-         * ViewProject
-         *
-         * @brief Displays a list of all the project
-         * @param [in|out] type parameter_name Parameter description.
-         * @param [in|out] type parameter_name Parameter description.
-         * @return Description of returned value.
-         */
-        function ViewProjects()
-        {
-            require_once "View/AllProjectView.php";
-        }
+
 
         /**
          * ViewForums

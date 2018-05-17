@@ -2,15 +2,44 @@
     session_start();
 
     require_once "Controller/Controller.php";
+    
     require_once "Controller/UserController.php";
+    require_once "Controller/ProjectController.php";
+    require_once "Controller/VersionController.php";
+    require_once "Controller/ForumController.php";
 
     require_once "DAO/UserDAO.php";
+    require_once "DAO/ProjectDAO.php";
+    require_once "DAO/VersionDAO.php";
+    require_once "DAO/ForumDAO.php";
 
-    $controller = new Controller($BaseDAO = new DAO());
+
+    //Database Access
+    $BaseDAO = new DAO();
+    $UserDAO = new UserDAO();
+    $ProjectDAO = new ProjectDAO();
+    $VersionDAO = new VersionDAO();
+    $ForumDAO = new ForumDAO();
+
+    //Controllers
+    $controller = new Controller($BaseDAO,$UserDAO,$ProjectDAO,$VersionDAO,$ForumDAO);
+
+    $UserController = new UserController($controller);
+    $UserController->Init($BaseDAO,$UserDAO,$ProjectDAO,$VersionDAO,$ForumDAO);
+
+    $ProjectController = new ProjectController($controller);
+    $ProjectController->Init($BaseDAO,$UserDAO,$ProjectDAO,$VersionDAO,$ForumDAO);
+
+    $VersionController = new VersionController($controller);
+    $VersionController->Init($BaseDAO,$UserDAO,$ProjectDAO,$VersionDAO,$ForumDAO);
+
+    $ForumController = new ForumController($controller);
+    $ForumController->Init($BaseDAO,$UserDAO,$ProjectDAO,$VersionDAO,$ForumDAO);
+
+    
+    //Initialisation
+
     $GLOBALS['controller'] = $controller;
-
-    $UserDAO = new UserDAO;
-    $UserController = new UserController($UserDAO);
     $GLOBALS['userController'] = $UserController;
 
     try
@@ -28,7 +57,7 @@
                 break;
                 
                 case "view_project":
-                    $controller->ViewProjects();
+                    $ProjectController->ViewAllProjects(3);
                 break;
 
                 case "view_forum":
@@ -65,16 +94,18 @@
                 break;
 
                 case "view_user_profile":
-                    $UserController->ViewProfile();
+                    $user = $_GET['userID'];
+                    $UserController->ViewProfile($user);
                 break;
                 
                 case "view_user_project":
                     $projectID = $_GET['projectID'];
-                    $UserController->ViewUserProject($projectID);
+                    $ProjectController->ViewProject($projectID);
                 break;
 
                 case "view_user_version":
-                    $UserController->ViewUserVersion(1,1);
+                    $versionID = $_GET['versionID'];
+                    $VersionController->ViewUserVersion($versionID);
                 break;
                 default:   
                     //if no action was passed the default page will be displayed

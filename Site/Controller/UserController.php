@@ -13,7 +13,6 @@
      */
     class UserController extends Controller
     {
-        private $userDAO;
 
         /**
          * Undocumented variable
@@ -22,10 +21,15 @@
          */
         private $connected;
 
-        function __construct($dao)
-        {
 
-            $this->userDAO = $dao;
+        function __construct($controller)
+        {
+            $this->baseDAO = $controller->baseDAO;
+            $this->userDAO = $controller->userDAO;
+            $this->projectDAO = $controller->projectDAO;
+            $this->versionDAO = $controller->versionDAO;
+            $this->forumDAO = $controller->forumDAO;
+
             if(isset($_SESSION['user']))
             {
                 $this->connected = true;
@@ -42,11 +46,19 @@
          */
         function Login($username,$password)
         {
-            $data = $this->userDAO->GetConnectionData($username,$password);
 
-            if($data)
+            //verification of authentification entry
+            $success = $this->userDAO->GetConnectionData($username,$password);
+            
+            $error;
+            if($success)
             {
-                $_SESSION['user'] = $username;
+                $userData = $this->userDAO->GetUserData($username);
+
+                $session_data = array('username' => $username, 'userid'=> $userData[0]->pkUser);
+                $_SESSION["user_session"] = $session_data;
+
+
                 $this->connected = true;
 
                 require_once "View/HomeView.php";
@@ -66,9 +78,13 @@
          */
         function Logout()
         {
-            unset($_SESSION['user']);
-            $this->connected = false;
-            require_once "View/HomeView.php";
+            //if a user exists
+            if(isset($_SESSION['user']))
+            {
+                unset($_SESSION['user_session']);
+                $this->connected = false;
+                require_once "View/HomeView.php";
+            }
         }
 
         /**
@@ -107,40 +123,54 @@
 
             try
             {
-                if(!strlen($username) > 6 )
+                //check username Length
+                if(strlen($username) < 6 )
                 {
-                    throw new Exception("There are some errors in the form");
+                    $username_err = "User name must be longer then 6 characters";
+                    throw new Exception( $username_err);
                 }
 
+                //Can only use letters and numbers
                 if(!preg_match("/^[a-zA-Z0-9_.-]*$/",$username))
                 {
-                    throw new Exception("");
+                    $username_err = "User name must contain only number or letters, no space are allowed";
+                    throw new Exception($username_err);
                 }
-
+                
+                //basic mail form verification
                 if(!filter_var($email, FILTER_VALIDATE_EMAIL))
                 {
-                    throw new Exception("Email is not valid");
+                    $mail_err = "Please enter a valid email address";
+                    throw new Exception( $mail_err);
                 }
 
+                //check password length
                 if(!strlen($password) > 6)
                 {
-                    throw new Exception("Password must be longer then 6 characters");
+                    $pswd_error = "Password must be longer then 6 characters";
+                    throw new Exception( $pswd_error);
                 }
 
+                //check if the password confirmation is the same as the one entered
                 if($password != $confirmation)
                 {
-                    throw new Exception("There is a mis match between passwords");
+                    $pswd_conf_err = "Passwords do not match";
+                    throw new Exception($pswd_conf_err);
                 }
 
-
+                //if every check passed successfully register the user in the database, and connect the user
                 if($this->userDAO->Register($name,$lastname,$username,$email,$password))
                 {
-                    $_SESSION['user'] = $username;
+                    $userData = $this->userDAO->GetUserData($username);         
+                    $session_data = array(username => $username, userid=> $userData[0]->pkUser);
+                    $_SESSION["user_session"] = $session_data;
+
                     $this->connected = true;
                     require_once "View/HomeView.php";
                 }
                 else
                 {
+                    //if registering somehow failed
                     throw new Exception($this->userDAO->error);
                 }
             }
@@ -157,8 +187,16 @@
          *
          * @brief Only if the user is logged in he will be able to display his profile
          */
-        function ViewProfile()
+        function ViewProfile($user)
         {
+            //Get informations about a project list
+            $projectData = $this->userDAO->GetUserProjectList($user);
+
+            //Get information about the profile
+
+            //Get information about messages
+
+            
             require_once "View/User/UserProfileView.php";
         }
 
@@ -173,14 +211,7 @@
         }
 
 
-        function ViewUserProject($projectID)
-        {
-            require_once "View/User/UserProjectView.php";
-        }
 
-        function ViewUserVersion($projectid,$Version)
-        {
-            require_once "View/User/UserVersionView.php";
-        }
+
     }
 ?>

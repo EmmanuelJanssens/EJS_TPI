@@ -37,9 +37,11 @@
 					<li><a href="index.php?action=view_about">About</a></li>
 					<li>
 					<?php
-						$User = $GLOBALS['userController'];
+						$UserCtrl = $GLOBALS['userController'];
 
-						if($User->isConnected())
+						if(isset($_SESSION['user_session'])) $User = $_SESSION['user_session'];
+
+						if($UserCtrl->isConnected())
 						{
 							?>
 								<a href="#">
@@ -48,7 +50,7 @@
 								?>
 								</a>
 								<ul>
-									<li><a href="index.php?action=view_user_profile">ViewProfile</a></li>
+									<li><a href="index.php?action=view_user_profile&userID=<?php echo $User['userid'];?>&username=<?php echo $User['username'];?>">ViewProfile</a></li>
 									<li><a href="index.php?action=view_user_logout">LogOut</a></li>
 								</ul>
 							<?php

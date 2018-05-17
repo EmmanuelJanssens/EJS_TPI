@@ -17,15 +17,29 @@
 
 <div class = "box post myTabs">
     <div id="summary" class="tabcontent">
-        <p>This project is dope</p>
+        <p>
+        <?php
+        //Write project description
+            echo $projectData[0]->description;
+        ?>   
+        </p>
     </div>
 
     <div id="version" class="tabcontent">
+
+
         <ul>
-            <li><a href="index.php?action=view_user_version">version 1.4</a></li>
-            <li><a>version 1.3</a></li>
-            <li><a>version 1.2</a></li>
-            <li><a>version 1.1</a></li>
+
+            <?php
+            //Get the date from the projects
+                foreach($versionList as $row)
+                {
+                    echo <<<"HTML"
+                    <li><a href = "index.php?action=view_user_version&versionID= $row->pkVersion">$row->title</a></li> 
+HTML;
+                }                                     
+            ?>
+
         </ul>
     </div>
 

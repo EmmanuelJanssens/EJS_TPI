@@ -15,9 +15,17 @@
                                 <h1><a href="#">Project List</a></h1>
                                 <p>
                                     <ul>
-                                        <li><a href ="index.php?action=view_user_project&id=1&user=manu">Project 1</a></li>
-                                        <li><a href ="index.php?action=view_user_project&id=2&user=manu">Project 2</a></li>
-                                        <li><a href ="index.php?action=view_user_project&id=3&user=manu">Project 3</a></li>                                            
+
+                                    <?php
+                                    //Get the date from the projects
+                                        foreach($projectData as $row)
+                                        {
+                                            echo <<<"HTML"
+                                            <li><a href = "index.php?action=view_user_project&projectID= $row->pkProject">$row->name</a></li> 
+HTML;
+                                        }                                     
+                                    ?>
+                                               
                                     </ul>
                                 </p>
                             </section>

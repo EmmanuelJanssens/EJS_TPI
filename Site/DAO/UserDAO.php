@@ -92,14 +92,57 @@
             }
         }
 
-        function GetConnectionData($user,$password)
+        function GetIDByUserName($username)
+        {
+            try
+            {
+
+            }
+            catch(Exception $e)
+            {
+                $this->error = $e->getMessage();
+            }
+        }
+        /**
+         * GetUserData
+         *
+         * @param [string] $user
+         *
+         * @brief Get all the columns data from the database
+         * @return Array the request result
+         */
+        function GetUserData($user)
+        {
+            try
+            {
+                $conn = $this->connect();
+
+                $query = $conn->prepare("SELECT pkUser,username,name,lastname,email FROM user where username = :username ");
+                $query->bindParam(":username",$user,PDO::PARAM_STR);
+                $query->execute();
+
+                $result = array();
+                
+                while($row = $query->fetchObject())
+                {
+                    array_push($result,$row);
+                }
+                return $result;
+            }
+            catch(Exception $e)
+            {
+                $this->error = $e->getMessage();
+                return false;
+            }          
+        }
+        function GetConnectionData($username,$password)
         {
             try
             {
                 $conn = $this->connect();
 
                 $query = $conn->prepare("SELECT username,password FROM user where username = :username ");
-                $query->bindParam(":username",$user,PDO::PARAM_STR);
+                $query->bindParam(":username",$username,PDO::PARAM_STR);
                 $query->execute();
 
                 $count = $query->rowCount();
@@ -123,10 +166,49 @@
             }
             catch(Exception $e)
             {
-                $error = $e->getMessage();
-                    return false;
+                $this->error = $e->getMessage();
+                return false;
             }
         }
+
+        /**
+         * GetProjectList
+         *
+         * @param [strng] $user
+         *
+         * @brief Get the data of the project from the user
+         * @param [in|out] type parameter_name Parameter description.
+         * @param [in|out] type parameter_name Parameter description.
+         * @return Description of returned value.
+         */
+        function GetUserProjectList($user)
+        {
+            try
+            {
+                $conn = $this->connect();
+
+                $query = $conn->prepare("SELECT pkProject,name FROM project  WHERE :userID = fkUser");
+                $query->bindParam(":userID",$user,PDO::PARAM_INT);
+                $query->execute();
+                
+                $result = array();
+
+                while($row = $query->fetchObject())
+                {
+                    array_push($result,$row);
+                }
+
+                return $result;
+            }
+            catch(Exception$e)
+            {
+                $this->error = $e->getMessage();
+                return null;
+            }
+        }
+
+
+        
     }
     
 ?>

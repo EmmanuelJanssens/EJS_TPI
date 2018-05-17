@@ -14,7 +14,12 @@
 
 <div class = "box post myTabs">
     <div id="summary" class="tabcontent">
-        <p>This project is dope</p>
+        <p>
+        <?php
+        //Write project description
+            echo $versionData[0]->description;
+        ?>   
+        </p>
     </div>
 
     <div id="files" class="tabcontent">
@@ -27,7 +32,12 @@
     </div>
 
     <div id="devlog" class="tabcontent">
-        <p>a lot of changes changes changes<p>
+        <p>
+        <?php
+        //Write project description
+            echo $versionData[0]->DevLog;
+        ?>   
+        <p>
      </div>
 
 </div>
