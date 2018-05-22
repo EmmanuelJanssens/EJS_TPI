@@ -19,6 +19,7 @@
         {
             $projectData = $this->projectDAO->GetAllProject($limit);
 
+            $error = $this->projectDAO->error;
             require_once "View/AllProjectView.php";
         }
         function ViewProject($projectID)

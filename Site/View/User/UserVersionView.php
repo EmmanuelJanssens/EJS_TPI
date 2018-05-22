@@ -23,12 +23,12 @@
     </div>
 
     <div id="files" class="tabcontent">
-        <ul>
-            <li><a>List of files </a></li>
-            <li><a>List of files </a></li>
-            <li><a>List of files </a></li>
-            <li><a>List of files </a></li>
-        </ul>
+    <?php
+        foreach($FILES as $row)
+        {
+            echo $row.'<br>';
+        }
+    ?>
     </div>
 
     <div id="devlog" class="tabcontent">

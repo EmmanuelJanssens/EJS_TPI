@@ -11,7 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="../assets/css/custom.css" />
+		<link rel="stylesheet" href="assets/css/custom.css" />
 
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
@@ -37,6 +37,8 @@
 					<li><a href="index.php?action=view_about">About</a></li>
 					<li>
 					<?php
+
+
 						$UserCtrl = $GLOBALS['userController'];
 
 						if(isset($_SESSION['user_session'])) $User = $_SESSION['user_session'];
@@ -46,7 +48,7 @@
 							?>
 								<a href="#">
 								<?php
-								 echo $_SESSION['user'];
+									echo $User['username'];			
 								?>
 								</a>
 								<ul>
@@ -69,6 +71,7 @@
 								</ul>
 							<?php
 						}
+
 					?>
 					
 

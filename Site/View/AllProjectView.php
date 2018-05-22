@@ -72,6 +72,11 @@
 
 
             <?php
+
+            if(isset($error))
+            {
+                echo 'erreur '.$error;
+            }
                 foreach($projectData as $row)
                 {
                     echo <<<"HTML"

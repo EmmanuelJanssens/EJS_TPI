@@ -13,7 +13,8 @@
     require_once "DAO/VersionDAO.php";
     require_once "DAO/ForumDAO.php";
 
-
+    require_once "FTPHandler.php";
+    
     //Database Access
     $BaseDAO = new DAO();
     $UserDAO = new UserDAO();
@@ -21,11 +22,16 @@
     $VersionDAO = new VersionDAO();
     $ForumDAO = new ForumDAO();
 
+
+
+
     //Controllers
     $controller = new Controller($BaseDAO,$UserDAO,$ProjectDAO,$VersionDAO,$ForumDAO);
 
-    $UserController = new UserController($controller);
-    $UserController->Init($BaseDAO,$UserDAO,$ProjectDAO,$VersionDAO,$ForumDAO);
+    $userController = new UserController($controller);
+    $userController->Init($BaseDAO,$UserDAO,$ProjectDAO,$VersionDAO,$ForumDAO);
+
+
 
     $ProjectController = new ProjectController($controller);
     $ProjectController->Init($BaseDAO,$UserDAO,$ProjectDAO,$VersionDAO,$ForumDAO);
@@ -37,11 +43,7 @@
     $ForumController->Init($BaseDAO,$UserDAO,$ProjectDAO,$VersionDAO,$ForumDAO);
 
     
-    //Initialisation
-
-    $GLOBALS['controller'] = $controller;
-    $GLOBALS['userController'] = $UserController;
-
+    $FTPHandler = new FTPHandler("172.17.101.246");
     try
     {       
         if(isset($_GET['action']))
@@ -70,32 +72,32 @@
                 
                 case "user_login":
                     extract($_POST);
-                    $UserController->Login($username,$password);
+                    $userController->Login($username,$password);
                 break;
 
                 case "user_logout":
-                    $UserController->Logout();
+                    $userController->Logout();
                 break;
                 
                 case "user_register":
                     extract($_POST);
-                    $UserController->Register($name,$lastname,$username,$email,$password,$passwordconfirm);
+                    $userController->Register($name,$lastname,$username,$email,$password,$passwordconfirm);
                 break;
                 
                 case "view_user_register":
-                    $UserController->ViewRegister();
+                    $userController->ViewRegister();
                 break;
                 case "view_user_login":
-                    $UserController->ViewLogin();
+                    $userController->ViewLogin();
                 break;         
 
                 case "view_user_logout":
-                    $UserController->Logout();
+                    $userController->Logout();
                 break;
 
                 case "view_user_profile":
                     $user = $_GET['userID'];
-                    $UserController->ViewProfile($user);
+                    $userController->ViewProfile($user);
                 break;
                 
                 case "view_user_project":
@@ -105,7 +107,7 @@
 
                 case "view_user_version":
                     $versionID = $_GET['versionID'];
-                    $VersionController->ViewUserVersion($versionID);
+                    $VersionController->ViewUserVersion($versionID,$FTPHandler);
                 break;
                 default:   
                     //if no action was passed the default page will be displayed
@@ -124,4 +126,4 @@
     {
         
     }
-?>
+    ?>

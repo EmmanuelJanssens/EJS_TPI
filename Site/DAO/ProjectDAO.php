@@ -3,14 +3,14 @@
 
     class ProjectDAO extends DAO
     {
-
+        
         function GetAllProject($limit)
         {
             try
             {
                 $conn = $this->connect();
 
-                $query = $conn->prepare("SELECT pkProject,name,description,creationDate,root,topic,fkUser FROM project");
+                $query = $conn->prepare("SELECT pkProject,name,description,creationDate,root,topic,fkUser FROM Project");
                 $query->execute();
                 
                 $result = array();
@@ -34,7 +34,7 @@
             {
                 $conn = $this->connect();
 
-                $query = $conn->prepare("SELECT pkProject,description,creationDate,root,topic,name FROM project WHERE :projectID = pkProject");
+                $query = $conn->prepare("SELECT pkProject,description,creationDate,root,topic,name FROM Project WHERE :projectID = pkProject");
                 $query->bindParam(":projectID",$ProjectID,PDO::PARAM_INT);
                 $query->execute();
                 

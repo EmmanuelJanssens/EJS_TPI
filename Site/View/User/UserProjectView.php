@@ -35,7 +35,7 @@
                 foreach($versionList as $row)
                 {
                     echo <<<"HTML"
-                    <li><a href = "index.php?action=view_user_version&versionID= $row->pkVersion">$row->title</a></li> 
+                    <li><a href = "index.php?action=view_user_version&versionID=$row->pkVersion">$row->title</a></li> 
 HTML;
                 }                                     
             ?>

@@ -30,7 +30,7 @@
             $this->versionDAO = $controller->versionDAO;
             $this->forumDAO = $controller->forumDAO;
 
-            if(isset($_SESSION['user']))
+            if(isset($_SESSION['user_session']))
             {
                 $this->connected = true;
             }
@@ -50,7 +50,6 @@
             //verification of authentification entry
             $success = $this->userDAO->GetConnectionData($username,$password);
             
-            $error;
             if($success)
             {
                 $userData = $this->userDAO->GetUserData($username);
@@ -79,7 +78,7 @@
         function Logout()
         {
             //if a user exists
-            if(isset($_SESSION['user']))
+            if(isset($_SESSION['user_session']))
             {
                 unset($_SESSION['user_session']);
                 $this->connected = false;

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="990985c2-f803-4828-afd9-b49d2056af5e" name="TPI" url="http://172.17.101.246/">
+        <fileTransfer host="172.17.101.246" port="22" rootFolder="/var/www/TPIEJS" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

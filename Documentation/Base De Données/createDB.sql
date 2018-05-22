@@ -85,7 +85,7 @@ DROP TABLE IF EXISTS `EJSTPI`.`Message` ;
 CREATE TABLE IF NOT EXISTS `EJSTPI`.`Message` (
   `pkMessage` INT NOT NULL AUTO_INCREMENT,
   `date` DATETIME NOT NULL,
-  `content` VARCHAR(45) NOT NULL,
+  `content` TEXT(10000) NOT NULL,
   `fkUser` INT NOT NULL,
   PRIMARY KEY (`pkMessage`),
   INDEX `fk_Message_User1_idx` (`fkUser` ASC),
