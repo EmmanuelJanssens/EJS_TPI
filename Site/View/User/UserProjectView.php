@@ -2,7 +2,7 @@
     ob_start();
 ?>
 
-<h3>Project <?php echo $projectID?></h3>
+<h3>Project</h3>
 
 <a class="button">Download Latest</a>
 <nav id="my_nav">
@@ -35,7 +35,7 @@
                 foreach($versionList as $row)
                 {
                     echo <<<"HTML"
-                    <li><a href = "index.php?action=view_user_version&versionID=$row->pkVersion">$row->title</a></li> 
+                    <li><a href = "index.php?action=view_user_version&versionID=$row->pkVersion&username=$row->username">$row->title</a></li> 
 HTML;
                 }                                     
             ?>

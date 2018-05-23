@@ -22,13 +22,13 @@
             $error = $this->projectDAO->error;
             require_once "View/AllProjectView.php";
         }
-        function ViewProject($projectID)
+        function ViewProject($username,$projectid)
         {
             //Get the data from the specified project by ID
-            $projectData = $this->projectDAO->GetProjectDetails($projectID);
+            $projectData = $this->projectDAO->GetProjectDetails($username,$projectid);
 
             //Get a list of all the versions from the project
-            $versionList = $this->versionDAO->GetVersionList($projectID);
+            $versionList = $this->versionDAO->GetVersionList($username);
 
             require_once "View/User/UserProjectView.php";
         }
@@ -36,6 +36,13 @@
         function ViewVersion($projectid,$Version)
         {
             require_once "View/User/UserVersionView.php";
+        }
+
+        function CreateProject($name,$description)
+        {
+
+            $this->projectDAO>$this->CreateProject($name,$description);
+            require_once "View/User/UserProfileView.php";
         }
     }
 ?>

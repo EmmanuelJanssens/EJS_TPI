@@ -43,7 +43,9 @@
     $ForumController->Init($BaseDAO,$UserDAO,$ProjectDAO,$VersionDAO,$ForumDAO);
 
     
-    $FTPHandler = new FTPHandler("172.17.101.246");
+    $FTPHandler = new FTPHandler("192.168.154.130",'FTP','Pa$$w0rd');
+
+
     try
     {       
         if(isset($_GET['action']))
@@ -81,7 +83,7 @@
                 
                 case "user_register":
                     extract($_POST);
-                    $userController->Register($name,$lastname,$username,$email,$password,$passwordconfirm);
+                    $userController->Register($name,$lastname,$username,$email,$password,$passwordconfirm,$FTPHandler);
                 break;
                 
                 case "view_user_register":
@@ -96,19 +98,29 @@
                 break;
 
                 case "view_user_profile":
-                    $user = $_GET['userID'];
+                    $user = $_GET['username'];
                     $userController->ViewProfile($user);
                 break;
                 
                 case "view_user_project":
-                    $projectID = $_GET['projectID'];
-                    $ProjectController->ViewProject($projectID);
+                    $username = $_GET['username'];
+                    $projectid = $_GET['projectID'];
+                    $ProjectController->ViewProject($username,$projectid);
                 break;
 
                 case "view_user_version":
                     $versionID = $_GET['versionID'];
-                    $VersionController->ViewUserVersion($versionID,$FTPHandler);
+                    $username = $_GET['username'];
+                    $VersionController->ViewUserVersion($username,$versionID,$FTPHandler);
                 break;
+
+                case "user_create_project":
+                    $userController->CreateProjectForm();
+                    break;
+                case "create_project":
+                    extract($_POST);
+                    $ProjectController->CreateProject($projectname,$projectdescription);
+                    break;
                 default:   
                     //if no action was passed the default page will be displayed
                     $controller->ViewHome();

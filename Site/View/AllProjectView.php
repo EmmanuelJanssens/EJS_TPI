@@ -89,7 +89,7 @@
                             $row->description 
                         </p>
 
-                        <a href="index.php?action=view_user_project&projectID=$row->pkProject" class="button">View Project</a>
+                        <a href="index.php?action=view_user_project&username=$row->username&projectID=$row->pkProject" class="button">View Project</a>
 
                     </article>
 HTML;

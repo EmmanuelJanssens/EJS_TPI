@@ -10,7 +10,8 @@
             {
                 $conn = $this->connect();
 
-                $query = $conn->prepare("SELECT pkProject,name,description,creationDate,root,topic,fkUser FROM Project");
+                $q = "SELECT Project.pkProject,Project.description, Project.name, Project.creationDate, User.username FROM Project INNER JOIN User ON Project.fkUser = User.pkUser";
+                $query = $conn->prepare($q);
                 $query->execute();
                 
                 $result = array();
@@ -28,14 +29,17 @@
                 return null;
             }
         }
-        function GetProjectDetails($ProjectID)
+        function GetProjectDetails($username,$projectid)
         {
             try
             {
                 $conn = $this->connect();
 
-                $query = $conn->prepare("SELECT pkProject,description,creationDate,root,topic,name FROM Project WHERE :projectID = pkProject");
-                $query->bindParam(":projectID",$ProjectID,PDO::PARAM_INT);
+                $q = "SELECT Project.pkProject, Project.description, Project.CreationDate, Project.root, Project.topic, Project.name FROM Project INNER JOIN User ON Project.fkUser = User.pkUser WHERE User.username = :username AND Project.pkProject = :projectid";
+                $query = $conn->prepare($q);
+                $query->bindParam(":projectid",$projectid,PDO::PARAM_INT);
+                $query->bindParam(":username",$username,PDO::PARAM_INT);
+
                 $query->execute();
                 
                 $result = array();
@@ -52,6 +56,40 @@
                 $this->error = $e->getMessage();
                 return null;
             }          
+        }
+
+        function CreateProject($name,$description)
+        {
+            try
+            {
+                $user = $GLOBALS['user_session'];
+                $creation_data = date("y-m-d");
+                $root = "/var/www/EJSTPI";
+                $topic = "Topic of $name";
+
+                $conn = $this->connect();
+
+                $qs = "INSERT INTO Project(name,description,creationDate,root,topic,fkUser) VALUES (:name,:description,:creationdate,:root,:topic,:creator)";
+
+                $query = $conn->prepare($qs);
+
+                $query->bindParam(":name",$name);
+                $query->bindParam(":description",$description);
+                $query->bindParam(":creationDate",$creation_data);
+                $query->bindParam(":root",$root);
+                $query->bindParam(":topic",$topic);
+                $query->bindParam(":creator",$user["userid"]);
+
+                $query->execute();
+
+                return true;
+
+            }
+            catch(Exception $e)
+            {
+                return false;
+            }
+
         }
     }
 ?>

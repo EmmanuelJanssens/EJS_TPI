@@ -21,7 +21,7 @@
                                         foreach($projectData as $row)
                                         {
                                             echo <<<"HTML"
-                                            <li><a href = "index.php?action=view_user_project&projectID= $row->pkProject">$row->name</a></li> 
+                                            <li><a href = "index.php?action=view_user_project&projectID= $row->pkProject&username=$row->username">$row->name</a></li> 
 HTML;
                                         }                                     
                                     ?>
@@ -65,7 +65,7 @@ HTML;
                     <div class="row">
                         <div class="12u">
                             <ul class="actions">
-                                <li><a href="#" class="button big">Create Project</a></li>
+                                <li><a href="index.php?action=user_create_project" class="button big">Create Project</a></li>
                                 <li><a href="#" class="button alt big">Update profile</a></li>
                             </ul>
                         </div>

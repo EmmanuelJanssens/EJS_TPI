@@ -7,7 +7,10 @@
     {
         private $host;
 
-        public $error;
+        private $ftp_user;
+        private $ftp_userpwd;
+
+        public $status;
         /**
          * @brief Initialises the FTP Handler
          *
@@ -16,9 +19,11 @@
          * @param [string] $password
 
          */
-        function __construct($host)
+        function __construct($host, $ftp_user,$ftp_userpwd)
         {
             $this->host = $host;
+            $this->ftp_user = $ftp_user;
+            $this->ftp_userpwd = $ftp_userpwd;
         }
 
         /**
@@ -32,15 +37,15 @@
         {
 
             $connectionID = ssh2_connect($this->host);
-            $connectionResult = ssh2_auth_password ($connectionID, 'FTP', 'Pa$$w0rd');
+            $connectionResult = ssh2_auth_password ($connectionID, $username, $password);
             if(!$connectionResult)
             {
                
-                $this->error = 'could not connect to ' . $this->host;
+                $this->status = 'could not connect to ' . $this->host;
             }
             else
             {
-                $this->error = "connected";
+                $this->status = "connected";
             }
 
             return $connectionID;
@@ -55,21 +60,25 @@
          * is called when someone wants to visualise a specific version
          * @return null
          */
-        function GetFileList($rootFolder,$username,$password)
+        function GetFileList($rootfolder,$username)
         {
-            $connection = $this->Connect($username,$password);
+            $connection = $this->Connect($this->ftp_user,$this->ftp_userpwd);
 
             $sftp = ssh2_sftp($connection);
 
 
-            $data = scandir("ssh2.sftp://$sftp/$rootFolder");
+            $data = scandir("ssh2.sftp://$sftp/$rootfolder/$username");
 
             return $data;
         }
 
-        function OpenDirectory()
+        function CreateDirectory($rootfolder,$username)
         {
+            $connection = $this->Connect($this->ftp_user,$this->ftp_userpwd);
+            $sftp = ssh2_sftp($connection);
 
+            $folder = "$rootfolder/$username";
+            ssh2_sftp_mkdir($sftp,$folder,0777,true);
         }
 
         /**
@@ -78,11 +87,17 @@
          * @param [string] $username
          *
          * is called when a new user is registered
+         *
+         * @return true
+         * @return false
          */
-        function CreateUser($username)
-        {   
+        function CreateUser($username,$password)
+        {
+            $command = 'useradd -d /data/'.$username.' '.$username;
 
-            exec("adduser -c 'FTP USER Tom' -m tom");
+            exec($command);
+
+            return true;
         }
 
         

@@ -117,7 +117,7 @@
          * @brief Inserts the data of the register form into the database
 
          */
-        function Register($name,$lastname,$username,$email,$password,$confirmation)
+        function Register($name,$lastname,$username,$email,$password,$confirmation,  $FTPHandler)
         {
 
             try
@@ -161,10 +161,13 @@
                 if($this->userDAO->Register($name,$lastname,$username,$email,$password))
                 {
                     $userData = $this->userDAO->GetUserData($username);         
-                    $session_data = array(username => $username, userid=> $userData[0]->pkUser);
+                    $session_data = array('username' => $username, 'userid'=> $userData[0]->pkUser);
                     $_SESSION["user_session"] = $session_data;
 
                     $this->connected = true;
+
+                    $FTPHandler->CreateDirectory("/var/www/EJSTPI/data/",$username);
+
                     require_once "View/HomeView.php";
                 }
                 else
@@ -210,6 +213,11 @@
         }
 
 
+        function CreateProjectForm()
+        {
+
+            require_once "View/User/UserCreateProjectView.php";
+        }
 
 
     }

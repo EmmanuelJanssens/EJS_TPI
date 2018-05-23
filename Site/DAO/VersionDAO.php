@@ -3,14 +3,16 @@
 
     class VersionDAO extends DAO 
     {
-        function GetVersionList($projectID)
+        function GetVersionList($username)
         {
             try
             {
                 $conn = $this->connect();
 
-                $query = $conn->prepare("SELECT pkVersion,title FROM Version  WHERE :projectID = fkProject");
-                $query->bindParam(":projectID",$projectID,PDO::PARAM_INT);
+                $q = "SELECT Version.pkVersion, Version.title,  Project.name, User.username from Version inner join Project on Version.fkProject = Project.pkProject inner join User on Project.fkUser = User.pkUser WHERE User.username = :username";
+
+                $query = $conn->prepare($q);
+                $query->bindParam(":username",$username,PDO::PARAM_INT);
                 $query->execute();
                 
                 $result = array();

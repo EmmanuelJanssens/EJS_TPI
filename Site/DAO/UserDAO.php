@@ -110,6 +110,7 @@
             {
                 $conn = $this->connect();
 
+
                 $query = $conn->prepare("SELECT pkUser,username,name,lastname,email FROM User where username = :username ");
                 $query->bindParam(":username",$user,PDO::PARAM_STR);
                 $query->execute();
@@ -187,9 +188,11 @@
             try
             {
                 $conn = $this->connect();
+                //$q = "SELECT Project.pkProject, Project.description, Project.creationDate, Project.root, Project.topic, Project.name, User.username FROM Project INNER  JOIN User ON Project.fkUser = User.pkUser WHERE User.Username = :username";
 
-                $query = $conn->prepare("SELECT pkProject,name FROM Project  WHERE :userID = fkUser");
-                $query->bindParam(":userID",$user,PDO::PARAM_INT);
+                $q = "SELECT Project.pkProject, Project.name, Project.description, User.username, User.pkUser FROM Project INNER JOIN User ON Project.fkUser = User.pkUser WHERE User.username = :username";
+                $query = $conn->prepare( $q);
+                $query->bindParam(":username",$user,PDO::PARAM_INT);
                 $query->execute();
                 
                 $result = array();

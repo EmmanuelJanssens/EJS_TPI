@@ -5,7 +5,7 @@
       <paths name="TPI">
         <serverdata>
           <mappings>
-            <mapping deploy="/" local="$PROJECT_DIR$" web="/TPIEJS" />
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/EJSTPI" />
           </mappings>
         </serverdata>
       </paths>

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="990985c2-f803-4828-afd9-b49d2056af5e" name="TPI" url="http://172.17.101.246/">
-        <fileTransfer host="172.17.101.246" port="22" rootFolder="/var/www/TPIEJS" accessType="SFTP">
+      <webServer id="990985c2-f803-4828-afd9-b49d2056af5e" name="TPI" url="http://192.168.154.130/">
+        <fileTransfer host="192.168.154.130" port="22" rootFolder="/var/www/EJSTPI" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
