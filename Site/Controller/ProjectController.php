@@ -30,6 +30,8 @@
             //Get a list of all the versions from the project
             $versionList = $this->versionDAO->GetVersionList($username);
 
+            $messageList = $this->forumDAO->GetProjectMessage($projectid);
+
             require_once "View/User/UserProjectView.php";
         }
 
@@ -38,11 +40,23 @@
             require_once "View/User/UserVersionView.php";
         }
 
-        function CreateProject($name,$description)
+        function CreateProject($name,$description,FTPHandler $ftp)
         {
 
-            $this->projectDAO>$this->CreateProject($name,$description);
-            require_once "View/User/UserProfileView.php";
+            $id = $this->projectDAO->CreateProject($name,$description);
+
+            if($id > 0)
+            {
+                $user = $_SESSION['user_session'];
+                $ftp->CreateDirectory("/var/www/EJSTPI/data/".$user['username']."/$name");
+                header("Location: index.php?action=view_user_project&username=".$user['username']."&projectID=".$id) ;
+            }
+            else
+            {
+                $error = $this->projectDAO->error;
+                require_once "View/User/UserProfileView.php";
+            }
+
         }
     }
 ?>

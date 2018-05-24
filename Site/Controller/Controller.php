@@ -62,18 +62,7 @@
 
 
 
-        /**
-         * ViewForums
-         *
-         * @brief Displays a list of all the topics/project
-         * @param [in|out] type parameter_name Parameter description.
-         * @param [in|out] type parameter_name Parameter description.
-         * @return Description of returned value.
-         */
-        function ViewForums()
-        {
-            require_once "View/AllForumView.php";
-        }
+
 
         /**
          * ViewAbout

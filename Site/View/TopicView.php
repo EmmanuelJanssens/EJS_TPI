@@ -1,13 +1,18 @@
 <?php
-    ob_start();
-?>
-<div class="row">
-<div class="3u 12u(mobile)">
-        <div class="sidebar">
+ob_start();
 
-        <!-- Sidebar -->
+if(isset($_SESSION['user_session'])) {
+    $User = $_SESSION['user_session']['username'];
+    $UserID = $_SESSION['user_session']['userid'];
+    ?>
 
-            <!-- Recent Posts -->
+    <div class="row">
+        <div class="3u 12u(mobile)">
+            <div class="sidebar">
+
+                <!-- Sidebar -->
+
+                <!-- Recent Posts -->
                 <section>
                     <h2 class="major"><span>Recent Posts</span></h2>
                     <ul class="divided">
@@ -42,10 +47,10 @@
                     <a href="#" class="button alt">Browse Archives</a>
                 </section>
 
-            <!-- Something -->
+                <!-- Something -->
                 <section>
                     <h2 class="major"><span>Ipsum Dolore</span></h2>
-                    <a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+                    <a href="#" class="image featured"><img src="images/pic03.jpg" alt=""/></a>
                     <p>
                         Donec sagittis massa et leo semper scele risque metus faucibus. Morbi congue mattis mi.
                         Phasellus sed nisl vitae risus tristique volutpat. Cras rutrum sed commodo luctus blandit.
@@ -53,52 +58,59 @@
                     <a href="#" class="button alt">Learn more</a>
                 </section>
 
-            <!-- Something -->
+                <!-- Something -->
                 <section>
                     <h2 class="major"><span>Magna Feugiat</span></h2>
                     <p>
-                        Rhoncus dui quis euismod. Maecenas lorem tellus, congue et condimentum ac, ullamcorper non sapien.
+                        Rhoncus dui quis euismod. Maecenas lorem tellus, congue et condimentum ac, ullamcorper non
+                        sapien.
                         Donec sagittis massa et leo semper scele risque metus faucibus. Morbi congue mattis mi.
                         Phasellus sed nisl vitae risus tristique volutpat. Cras rutrum sed commodo luctus blandit.
                     </p>
                     <a href="#" class="button alt">Learn more</a>
                 </section>
 
+            </div>
+
         </div>
 
-    </div>
-    <div class="9u 12u(mobile) important(mobile)">
-        <div class="content content-right">
-            <?php
+        <div class="9u 12u(mobile) important(mobile)">
+            <div class="content content-right">
+                <h2 class="major">Here you can view All the messages related to <?=$projectName?> by <a href="index.php?action=view_user_profile&userID=<?=$author[0]->fkUser?>&username=<?=$author[0]->username?>""><?=$author[0]->username?></a></h2>
 
-            if(isset($error))
-            {
-                echo 'erreur '.$error;
-            }
-                foreach($projectData as $row)
-                {
-                    echo <<<"HTML"
-                    
+                <?php
+                    if(isset($error))
+                    {
+                        echo 'erreur '.$error;
+                    }
+                    foreach($topicData as $row)
+                    {
+                        echo <<<"HTML"
                     <ul class="divided">
                         <li>
                             <article class="box post-summary">
-                                <h2 class="major"><a href="index.php?action=view_user_project&username=$row->username&projectID=$row->pkProject">Project $row->name by $row->username</a></h2>
-                                <p> $row->description</p>   
+                                <h3>Answer by $row->username on $row->date</h3>
+                                <p> $row->content</p>   
                             </article>
                         </li>
-                        <a href="index.php?action=view_user_project&username=$row->username&projectID=$row->pkProject" class="button">View Project</a>
-
                     </ul>
-
 HTML;
-                }
-            
-            ?>
+                    }
+
+
+                ?>
+            </div>
         </div>
+
     </div>
-   
-</div>
-<?php
-    $content  = ob_get_clean();
-    require_once "Template.php";
+    <?php
+}
+else
+{
+    ?>
+    <p>YOU MUST BE LOGED IN TO ACCES THIS PAGE</p>
+    <?php
+}
+$content  = ob_get_clean();
+require_once "Template.php";
 ?>

@@ -12,3 +12,4 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " current";
 }
 
+document.getElementById("defaultOpen").click();

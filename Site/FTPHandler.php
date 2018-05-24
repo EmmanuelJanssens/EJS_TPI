@@ -60,25 +60,40 @@
          * is called when someone wants to visualise a specific version
          * @return null
          */
-        function GetFileList($rootfolder,$username)
+        function GetFileList($rootfolder)
         {
             $connection = $this->Connect($this->ftp_user,$this->ftp_userpwd);
 
             $sftp = ssh2_sftp($connection);
 
+            if(is_dir("ssh2.sftp://$sftp/$rootfolder"))
+            {
+                $data = scandir("ssh2.sftp://$sftp/$rootfolder");
+                return $data;
 
-            $data = scandir("ssh2.sftp://$sftp/$rootfolder/$username");
+            }
+            else
+            {
+                return null;
+            }
 
-            return $data;
         }
 
-        function CreateDirectory($rootfolder,$username)
+        function CreateDirectory($rootfolder)
         {
             $connection = $this->Connect($this->ftp_user,$this->ftp_userpwd);
             $sftp = ssh2_sftp($connection);
 
-            $folder = "$rootfolder/$username";
+            $folder = "$rootfolder";
             ssh2_sftp_mkdir($sftp,$folder,0777,true);
+        }
+
+        function Upload($file, $destination)
+        {
+            $connection = $this->Connect($this->ftp_user,$this->ftp_userpwd);
+            $sftp = ssh2_sftp($connection);
+            ssh2_scp_send($connection, '/local/filename', '/remote/filename', 0644);
+
         }
 
         /**

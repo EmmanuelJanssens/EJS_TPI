@@ -24,10 +24,18 @@
 
     <div id="files" class="tabcontent">
     <?php
+    if($FILES != null)
+    {
         foreach($FILES as $row)
         {
             echo $row.'<br>';
         }
+    }
+    else
+    {
+        echo "NO files available";
+    }
+
     ?>
     </div>
 

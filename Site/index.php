@@ -12,6 +12,7 @@
     require_once "DAO/ProjectDAO.php";
     require_once "DAO/VersionDAO.php";
     require_once "DAO/ForumDAO.php";
+    require_once "DAO/MessageDAO.php";
 
     require_once "FTPHandler.php";
     
@@ -21,7 +22,7 @@
     $ProjectDAO = new ProjectDAO();
     $VersionDAO = new VersionDAO();
     $ForumDAO = new ForumDAO();
-
+    $MessageDAO = new MessageDAO();
 
 
 
@@ -40,10 +41,12 @@
     $VersionController->Init($BaseDAO,$UserDAO,$ProjectDAO,$VersionDAO,$ForumDAO);
 
     $ForumController = new ForumController($controller);
-    $ForumController->Init($BaseDAO,$UserDAO,$ProjectDAO,$VersionDAO,$ForumDAO);
+    $ForumController->Init($BaseDAO,$UserDAO,$ProjectDAO,$VersionDAO,$ForumDAO,$MessageDAO);
 
     
     $FTPHandler = new FTPHandler("192.168.154.130",'FTP','Pa$$w0rd');
+    //$FTPHandler = new FTPHandler("192.168.8.116",'FTP','Pa$$w0rd');
+
 
 
     try
@@ -65,7 +68,7 @@
                 break;
 
                 case "view_forum":
-                    $controller->ViewForums();
+                    $ForumController->ViewForums();
                 break;
 
                 case "view_about":
@@ -119,7 +122,18 @@
                     break;
                 case "create_project":
                     extract($_POST);
-                    $ProjectController->CreateProject($projectname,$projectdescription);
+                    $ProjectController->CreateProject($projectname,$projectdescription,$FTPHandler);
+                    break;
+                case "user_upload_version";
+                    $userController->UploadVersionForm();
+                    break;
+                case "upload_version";
+                    extract($_POST);
+                    $VersionController->UploadVersion($versionname,$versiondescription,$versionlog,$filetoupload,$projectID,$FTPHandler);
+                    break;
+                case "view_project_topic":
+                    extract($_GET);
+                    $ForumController->DisplayMessage($action,$projectID,$projectName);
                     break;
                 default:   
                     //if no action was passed the default page will be displayed

@@ -4,8 +4,7 @@
 
     class VersionController extends Controller
     {
-        private $DAO;
-        
+
         function __construct()
         {
 
@@ -19,11 +18,33 @@
          **/
         function ViewUserVersion($username,$versionID,$FTPHandler)
         {
-
-            $FILES = $FTPHandler-> GetFileList("/var/www/EJSTPI/data/$username",$versionID);
             $versionData = $this->versionDAO->GetVersionDetails($versionID);
 
+            $versionName = $versionData[0]->title;
+            $projectName = $this->projectDAO->GetProjectName($versionData[0]->fkProject);
+
+            $FILES = $FTPHandler-> GetFileList("/var/www/EJSTPI/data/$username/$projectName/$versionName");
+
             require_once "View/User/UserVersionView.php";
+        }
+
+
+        function UploadVersion($name,$description,$log,$file,$project,FTPHandler $ftp)
+        {
+            $versionID  = $this->versionDAO->CreateVersion($name,$description,$log,$file,$project) ;
+            if($versionID> 0)
+            {
+                $username = $this->userDAO->GetCurrentUser();
+                $projectName = $this->projectDAO->GetProjectName($project);
+                $ftp->CreateDirectory("/var/www/EJSTPI/data/$username/$projectName/$name");
+
+                //$ftp->CreateVresion("var/www/EJSTPI/",$this->userDAO->GetCurrentUser(),$this->projectDAO->GetProjectName($project));
+                $versionData = $this->versionDAO->GetVersionDetails($versionID);
+                $FILES = $ftp-> GetFileList("/var/www/EJSTPI/data/$username/$projectName/$name");
+
+
+                require_once "View/User/UserVersionView.php";
+            }
         }
 
     }

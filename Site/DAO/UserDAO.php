@@ -89,12 +89,38 @@
         {
             try
             {
+                $conn = $this->connect();
 
+
+                $query = $conn->prepare("SELECT pkUser,username FROM User where username = :username ");
+                $query->bindParam(":username",$username,PDO::PARAM_STR);
+                $query->execute();
+
+                $result = array();
+
+                while($row = $query->fetchObject())
+                {
+                    array_push($result,$row);
+                }
+                return $result[0]->pkUser;
             }
             catch(Exception $e)
             {
                 $this->error = $e->getMessage();
             }
+        }
+
+        function GetCurrentUser()
+        {
+
+            if(isset($_SESSION['user_session']))
+            {
+                $user = $_SESSION['user_session']['username'];
+
+                return $user;
+            }
+
+            return null;
         }
         /**
          * GetUserData

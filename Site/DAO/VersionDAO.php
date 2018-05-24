@@ -56,5 +56,35 @@
                 return null;
             }                     
         }
+
+        function CreateVersion($name,$description,$log,$file,$project)
+        {
+            try
+            {
+                $user = $_SESSION['user_session'];
+
+                $conn = $this->connect();
+
+                $qs = "INSERT INTO Version(title,description,devLog,fkState,fkProject) VALUES (:title,:description,:log,:state,:project)";
+                $query = $conn->prepare($qs);
+
+                $state =1;
+                $query->bindParam(":title",$name);
+                $query->bindParam(":description",$description);
+                $query->bindParam(":log",$log);
+                $query->bindParam(":state",$state);
+                $query->bindParam(":project",$project);
+
+                $query->execute();
+
+                return $conn->lastInsertId();
+
+            }
+            catch(Exception $e)
+            {
+                $this->error = $e->getMessage();
+                return 0;
+            }
+        }
     }
 ?>

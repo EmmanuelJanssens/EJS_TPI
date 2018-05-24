@@ -12,6 +12,8 @@
         function connect()
         {
             $conn = new PDO('mysql:host=192.168.154.130;dbname=EJSTPI;charset=utf8','emmanuel','Pa$$w0rd');
+            //$conn = new PDO('mysql:host=192.168.8.116;dbname=EJSTPI;charset=utf8','emmanuel','Pa$$w0rd');
+
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
    
             return $conn;

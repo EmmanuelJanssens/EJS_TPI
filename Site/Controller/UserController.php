@@ -86,6 +86,7 @@
             }
         }
 
+
         /**
          * ViewLogin
          *
@@ -192,13 +193,13 @@
         function ViewProfile($user)
         {
             //Get informations about a project list
-            $projectData = $this->userDAO->GetUserProjectList($user);
+            $userData = $this->userDAO->GetUserProjectList($user);
 
             //Get information about the profile
 
             //Get information about messages
-
-            
+            $userID = $this->userDAO->GetIDByUserName($user);
+            $userMessages = $this->forumDAO->GetUserMessage($userID);
             require_once "View/User/UserProfileView.php";
         }
 
@@ -219,6 +220,11 @@
             require_once "View/User/UserCreateProjectView.php";
         }
 
+
+        function UploadVersionForm()
+        {
+            require_once "View/User/UserUploadVersionView.php";
+        }
 
     }
 ?>

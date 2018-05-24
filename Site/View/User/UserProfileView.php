@@ -1,11 +1,22 @@
 <?php
     ob_start();
+
+
+    if(isset($_SESSION['user_session']))
+    {
+        $current_user = $_SESSION['user_session']['username'];
+    }
+    else
+    {
+        $current_user = "visitor";
+    }
 ?>
 <div class="row 200%">
     <div class="12u">
         <!-- Features -->
             <section class="box features">
-                <h2 class="major"><span>UserName</span></h2>
+
+                <h2 class="major"><span><?=$_GET['username']?></span></h2>
                 <div>
                     <div class="row">
                         <div class="3u 12u(mobile)">
@@ -17,8 +28,9 @@
                                     <ul>
 
                                     <?php
+
                                     //Get the date from the projects
-                                        foreach($projectData as $row)
+                                        foreach($userData as $row)
                                         {
                                             echo <<<"HTML"
                                             <li><a href = "index.php?action=view_user_project&projectID= $row->pkProject&username=$row->username">$row->name</a></li> 
@@ -45,9 +57,16 @@ HTML;
                             <section class="box feature">
                                 <h3><a href="#">Recent Messages</a></h3>
                                 <ul>
-                                        <li><a href ="#">Message 1</a></li>
-                                        <li><a href ="#">Message 2</a></li>
-                                        <li><a href ="#">Message 3</a></li>   
+                                    <?php
+
+                                    //Get the date from the projects
+                                    foreach($userMessages as $row)
+                                    {
+                                        echo <<<"HTML"
+                                            <li><a href = "#">Message On $row->projectName</a></li> 
+HTML;
+                                    }
+                                    ?>
                                 </ul>
                             </section>
                         </div>
@@ -62,14 +81,28 @@ HTML;
                             </section>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="12u">
-                            <ul class="actions">
-                                <li><a href="index.php?action=user_create_project" class="button big">Create Project</a></li>
-                                <li><a href="#" class="button alt big">Update profile</a></li>
-                            </ul>
-                        </div>
-                    </div>
+
+                    <?php
+
+
+                    if($current_user == $_GET['username'])
+                    {
+
+                        echo <<<"HTML"
+                        <div class="row">
+                            <div class="12u">
+                                <ul class="actions">
+                                    <li><a href="index.php?action=user_create_project" class="button big">Create Project</a></li>
+                                    <li><a href="#" class="button alt big">Update profile</a></li>
+                                </ul>
+                            </div>
+                        </div>                    
+HTML;
+                        }
+                    
+                    ?>
+                    
+
                 </div>
             </section>
 

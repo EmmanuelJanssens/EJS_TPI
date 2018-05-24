@@ -1,5 +1,7 @@
 <?php
     ob_start();
+
+    $connected = isset($_SESSION['user_session']);
 ?>
 
 <h3>Project</h3>
@@ -9,7 +11,11 @@
     <ul>
         <li><a class="tablinks current" onclick="openTab(event, 'summary')" id="defaultOpen">Summary</a></li>
         <li><a class="tablinks" onclick="openTab(event, 'version')">Version</a></li>
-        <li><a class="tablinks" onclick="openTab(event, 'forum')">Forum</a></li>
+        <?php if($connected)
+            echo <<<"HTML"
+<li><a class="tablinks" onclick="openTab(event, 'forum')">Forum</a></li>
+HTML;
+        ?>
         <li><a class="tablinks" onclick="openTab(event, 'accessibility')">Accessibility</a></li>
 
     </ul>
@@ -41,16 +47,44 @@ HTML;
             ?>
 
         </ul>
+
+        <?php
+
+            if($connected)
+            {
+                $username = $_SESSION['user_session']['username'];
+                $id = $projectData[0]->pkProject;
+                if($username == $projectData[0]->username)
+                {
+
+                    echo <<<"HTML"
+                         <a class="button" href="index.php?action=user_upload_version&projectID=$id">Upload Version</a>
+HTML;
+                }
+            }
+        ?>
     </div>
 
-    <div id="forum" class="tabcontent">
-        <ul>
-            <li><a>message 300</a></li>
-            <li><a>message 299</a></li>
-            <li><a>message 298</a></li>
-            <li><a>message 297</a></li>
-        </ul>   
-     </div>
+
+        <?php
+            if($connected)
+            {
+                ?>
+                <div id="forum" class="tabcontent">
+                <ul>
+
+                <?php
+                foreach($messageList as $row)
+                {
+                    echo <<<"HTML"
+                    <li><a href="#">message</a> by <a href="#">$row->username</a></li>
+HTML;
+                }
+
+            }
+            ?>
+                </ul>
+                </div>
 
     <div id="accessibility" class="tabcontent">
         <p>Tokyo is the capital of Japan.</p>
