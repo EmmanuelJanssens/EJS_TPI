@@ -58,5 +58,41 @@
             }
 
         }
+
+        function UpdateProject($projectName,$projectID,$description,$username)
+        {
+
+            $this->projectDAO->UpdateProject($projectName,$projectID,$description,$username);
+
+            //Get the data that was updated
+
+            //Get the data from the specified project by ID
+            $projectData = $this->projectDAO->GetProjectDetails($username,$projectID);
+
+            //Get a list of all the versions from the project
+            $versionList = $this->versionDAO->GetVersionList($username);
+
+            $messageList = $this->forumDAO->GetProjectMessage($projectID);
+
+            require_once "View/User/UserProjectView.php";
+        }
+
+        function DeleteProject($projectID,$user)
+        {
+
+            //Delete
+            $this->projectDAO->DeleteProject($projectID);
+            $error = $this->projectDAO->error ;
+
+            //Get informations about a project list
+            $userData = $this->userDAO->GetUserProjectList($user);
+
+
+            //Get information about messages
+            $userID = $this->userDAO->GetIDByUserName($user);
+            $userMessages = $this->forumDAO->GetUserMessage($userID);
+
+            require_once "View/User/UserProfileView.php";
+        }
     }
 ?>

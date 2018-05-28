@@ -10,13 +10,24 @@
     {
         $current_user = "visitor";
     }
+
+    if(isset($error))
+    {
+        echo $error;
+    }
+
+    $UserCtrl = $GLOBALS['userController'];
+
+    $UserType = $UserCtrl->GetUserType($_GET['username']);
 ?>
+
 <div class="row 200%">
     <div class="12u">
         <!-- Features -->
             <section class="box features">
 
                 <h2 class="major"><span><?=$_GET['username']?></span></h2>
+                <h1><?=$UserCtrl->GetUserType($_GET['username'])?></h1>
                 <div>
                     <div class="row">
                         <div class="3u 12u(mobile)">
@@ -26,7 +37,6 @@
                                 <h1><a href="#">Project List</a></h1>
                                 <p>
                                     <ul>
-
                                     <?php
 
                                     //Get the date from the projects
@@ -88,16 +98,25 @@ HTML;
                     if($current_user == $_GET['username'])
                     {
 
-                        echo <<<"HTML"
+                        echo '
                         <div class="row">
                             <div class="12u">
                                 <ul class="actions">
                                     <li><a href="index.php?action=user_create_project" class="button big">Create Project</a></li>
-                                    <li><a href="#" class="button alt big">Update profile</a></li>
+                            ';
+                                    if($UserType == "Admin")
+                                    {
+                                        echo '                                                                                                                
+                                            <li><a href="index.php?action=manage_all_user" class ="button big">Manage User</a></li>
+                                            <li><a href="index.php?action=Manage_all_project" class ="button big">Manage Projects</a></li>
+                                            ';
+                                    }
+                        echo'
                                 </ul>
                             </div>
-                        </div>                    
-HTML;
+                        </div>     
+                        ';
+
                         }
                     
                     ?>

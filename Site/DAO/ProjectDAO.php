@@ -3,7 +3,14 @@
 
     class ProjectDAO extends DAO
     {
-        
+
+        /**
+         * @brief get a list of all project to be displayed on the main project page
+         *
+         * @param [int] $limit How many rows does it return
+         *
+         * @return array of project limited by $limit
+        **/
         function GetAllProject($limit)
         {
             try
@@ -57,6 +64,10 @@
                 return null;
             }          
         }
+
+        /**
+         * @brief get the author of the specified project
+         **/
         function GetProjectAuthor($project)
         {
             try
@@ -116,7 +127,7 @@
             try
             {
                 $user = $_SESSION['user_session'];
-                $creation_data = date("Y-m-d");
+                $creation_date = date("Y-m-d");
                 $root = "/var/www/EJSTPI";
                 $topic = "Topic of $name";
 
@@ -128,7 +139,7 @@
 
                 $query->bindParam(":name",$name);
                 $query->bindParam(":description",$description);
-                $query->bindParam(":creationdate",$creation_data);
+                $query->bindParam(":creationdate",$creation_date);
                 $query->bindParam(":root",$root);
                 $query->bindParam(":topic",$topic);
                 $query->bindParam(":creator",$user["userid"]);
@@ -144,6 +155,60 @@
                 return 0;
             }
 
+        }
+
+        /**
+         * @brief updates the description, name, update date
+         **/
+        function UpdateProject($projectName,$projectID,$description,$username)
+        {
+            try
+            {
+                $conn = $this->connect();
+
+
+                $qs = "UPDATE Project SET name = :projectName, description =:description WHERE pkProject=:projectID";
+
+                $query = $conn->prepare($qs);
+
+                $query->bindParam(":projectName",$projectName);
+                $query->bindParam(":projectID",$projectID);
+                $query->bindParam(":description",$description);
+
+                $query->execute();
+            }
+            catch(Exception $e)
+            {
+                $this->error = $e->getMessage();
+            }
+        }
+
+        function DeleteProject($projectID)
+        {
+            try
+            {
+                $conn = $this->connect();
+
+                $qs = "DELETE FROM Message WHERE fkProject=:projectID";
+                $query = $conn->prepare($qs);
+                $query->bindParam(":projectID",$projectID);
+                $query->execute();
+
+                $qs = "DELETE FROM Version WHERE fkProject=:projectID";
+                $query = $conn->prepare($qs);
+                $query->bindParam(":projectID",$projectID);
+                $query->execute();
+
+                $qs = "DELETE FROM Project WHERE pkProject=:projectID";
+                $query = $conn->prepare($qs);
+                $query->bindParam(":projectID",$projectID);
+                $query->execute();
+
+            }
+            catch(Exception $e)
+            {
+                $this->error = $e->getMessage();
+            }
         }
     }
 ?>

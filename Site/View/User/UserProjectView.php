@@ -1,12 +1,55 @@
 <?php
     ob_start();
 
+    //to be able to check if a user is connected
     $connected = isset($_SESSION['user_session']);
+
+    //Get what action is ongoing
+    if(isset($_GET['action']))
+    {
+        $action = $_GET['action'];
+        $updating = $action == 'update_project';
+    }
+
+    //Get the username if one is cpnnected
+
+    if($connected)
+    {
+        $username = $_SESSION['user_session']['username'];
+        $id = $projectData[0]->pkProject;
+    }
+echo '<form action="index.php?action=save_project&username='.$username.'&projectID='.$id.'" method=post>';
+
+    if($updating)
+    {
+        echo '<input type="text" name="projectName" value="'.$projectData[0]->name.'">';
+    }
+    else
+    {
+        echo '<h3>'.$projectData[0]->name.'</h3>';
+    }
+
+echo '<a class="button">Download Latest</a>';
+
+if($connected)
+{
+    if($username == $projectData[0]->username)
+    {
+        if($updating)
+        {
+            echo'<input type="submit"  class="button" value = "save"></a>';
+        }
+        else
+        {
+            echo '<a href="index.php?action=update_project&username='.$username.'&projectID='.$id.'" class="button">Update</a>';
+            echo '<a href="index.php?action=delete_project&username='.$username.'&projectID='.$id.'" class="button">Delete</a>';
+        }
+
+
+    }
+}
 ?>
 
-<h3>Project</h3>
-
-<a class="button">Download Latest</a>
 <nav id="my_nav">
     <ul>
         <li><a class="tablinks current" onclick="openTab(event, 'summary')" id="defaultOpen">Summary</a></li>
@@ -23,19 +66,22 @@ HTML;
 
 <div class = "box post myTabs">
     <div id="summary" class="tabcontent">
-        <p>
         <?php
-        //Write project description
-            echo $projectData[0]->description;
-        ?>   
-        </p>
+            if($updating)
+            {
+                echo '<textarea name = "projectDescription">'.$projectData[0]->description.'</textarea> ';
+            }
+            else
+            {
+                //Write project description
+                echo '<p>'.$projectData[0]->description.'</p>';
+            }
+
+        ?>
     </div>
 
     <div id="version" class="tabcontent">
-
-
         <ul>
-
             <?php
             //Get the date from the projects
                 foreach($versionList as $row)
@@ -52,8 +98,6 @@ HTML;
 
             if($connected)
             {
-                $username = $_SESSION['user_session']['username'];
-                $id = $projectData[0]->pkProject;
                 if($username == $projectData[0]->username)
                 {
 
@@ -90,7 +134,7 @@ HTML;
         <p>Tokyo is the capital of Japan.</p>
     </div>
 </div>
-
+</form>
 <?php
     $content = ob_get_clean();
     require_once "View/Template.php";

@@ -34,6 +34,7 @@
 
              $pwd = password_hash($pwd,PASSWORD_DEFAULT);
 
+
              $this->userpassword = $pwd;
 
              try{          
@@ -66,6 +67,91 @@
         }
 
         /**
+         * @brief get the type of the user
+         * @param username to be checked
+         * @return string  type of the user
+         **/
+        function GetUserType($username)
+        {
+            try
+            {
+                $conn = $this->connect();
+
+                $qs = "SELECT type FROM Type INNER JOIN User ON User.fkType = Type.pkType WHERE User.userName = :userName";
+
+                $query =$conn->prepare($qs);
+                $query->bindParam(":userName",$username);
+
+                $query->execute();
+
+                $result = array();
+
+                while($row = $query->fetchObject())
+                {
+                    array_push($result,$row);
+                }
+                return $result[0]->type;
+            }
+            catch(Exception $e)
+            {
+                $this->error = $e->getMessage();
+            }
+        }
+
+        function GetUserTypeID($userName)
+        {
+            try
+            {
+                $conn = $this->connect();
+
+                $qs = "SELECT type FROM Type INNER JOIN User ON User.fkType = Type.pkType WHERE User.userName = :userName";
+
+                $query =$conn->prepare($qs);
+                $query->bindParam(":userName",$userName);
+
+                $query->execute();
+
+                $result = array();
+
+                while($row = $query->fetchObject())
+                {
+                    array_push($result,$row);
+                }
+                return $result[0]->type;
+            }
+            catch(Exception $e)
+            {
+                $this->error = $e->getMessage();
+            }
+        }
+
+        function GetTypeID($type)
+        {
+            try
+            {
+                $conn = $this->connect();
+
+                $qs = "SELECT pkType FROM Type WHERE type = :type";
+
+                $query =$conn->prepare($qs);
+                $query->bindParam(":type",$type);
+
+                $query->execute();
+
+                $result = array();
+
+                while($row = $query->fetchObject())
+                {
+                    array_push($result,$row);
+                }
+                return $result[0]->pkType;
+            }
+            catch(Exception $e)
+            {
+                $this->error = $e->getMessage();
+            }
+        }
+        /**
          * @brief Get the username by ID
          *
          * @param [int] $id
@@ -85,6 +171,13 @@
             }
         }
 
+        /**
+         * @brief Returns the ID of the specified Username
+         *
+         * @param [int] $zsername username to be passed
+         *
+         * @return returns the first ID found must be limited to ine
+        **/
         function GetIDByUserName($username)
         {
             try
@@ -237,6 +330,129 @@
             }
         }
 
+        function GetAllUsers()
+        {
+            try
+            {
+                $conn = $this->connect();
+
+                $qs = "SELECT * FROM User";
+
+                $query =$conn->prepare($qs);
+
+                $query->execute();
+
+                $result = array();
+
+                while($row = $query->fetchObject())
+                {
+                    array_push($result,$row);
+                }
+
+                return $result;
+
+            }
+            catch(Exception $e)
+            {
+                $this->error = $e->getMessage();
+            }
+        }
+        function GetAllUserTypes()
+        {
+            try
+            {
+                $conn = $this->connect();
+
+                $qs = "SELECT * FROM Type";
+
+                $query =$conn->prepare($qs);
+
+                $query->execute();
+
+                $result = array();
+
+                while($row = $query->fetchObject())
+                {
+                    array_push($result,$row);
+                }
+
+                return $result;
+
+            }
+            catch(Exception $e)
+            {
+                $this->error = $e->getMessage();
+            }
+        }
+        function SaveUpdatedUser($userID,$name,$lastName,$userName,$email,$password,$userType)
+        {
+            try
+            {
+
+                $type = $this->GetTypeID($userType);
+                $conn = $this->connect();
+
+                $qs = "UPDATE User SET name = :name, lastName = :lastName, userName = :userName,email = :email,password = :password,fkType = :type WHERE pkUser = :userID";
+
+                $query = $conn->prepare($qs);
+
+                $query->bindParam(":name",$name);
+                $query->bindParam(":lastName",$lastName);
+                $query->bindParam("userName",$userName);
+                $query->bindParam(":email",$email);
+                $query->bindParam(":password",$password);
+                $query->bindParam(":userID",$userID);
+                $query->bindParam(":type",$type);
+
+                $query->execute();
+
+            }
+            catch(Exception $e)
+            {
+                $this->error = $e->getMessage();
+            }
+        }
+        function DeleteUser($userName)
+        {
+            try
+            {
+                $conn = $this->connect();
+
+                $userProject = $this->GetUserProjectList($userName);
+
+                foreach($userProject as $project)
+                {
+                    $qs = "DELETE FROM Version where fkProject = :project";
+                    $query = $conn->prepare($qs);
+                    $query->bindParam(":project",$project->pkProject);
+                    $query->execute();
+
+                    $qs = "DELETE FROM Message where fkProject = :project";
+                    $query = $conn->prepare($qs);
+                    $query->bindParam(":project",$project->pkProject);
+                    $query->execute();
+
+                }
+                $id = $this->GetIDByUserName($userName);
+
+
+                $qs = "DELETE FROM Project where fkUser = :userID";
+                $query = $conn->prepare($qs);
+                $query->bindParam(":userID",$id);
+                $query->execute();
+
+                $qs = "DELETE FROM User where userName = :userName";
+                $query = $conn->prepare($qs);
+                $query->bindParam(":userName",$userName);
+                $query->execute();
+
+            }
+            catch (Exception $e)
+            {
+                $this->error = $e->getMessage();
+            }
+
+        }
 
         
     }

@@ -135,7 +135,38 @@
                     extract($_GET);
                     $ForumController->DisplayMessage($action,$projectID,$projectName);
                     break;
-                default:   
+                case "update_project":
+                    $username = $_GET['username'];
+                    $projectid = $_GET['projectID'];
+                    $ProjectController->ViewProject($username,$projectid);
+                    break;
+                case "save_project":
+                    $username = $_GET['username'];
+                    $projectid = $_GET['projectID'];
+                    $projectName = $_POST['projectName'];
+                    $projectDecription =$_POST['projectDescription'];
+                    $ProjectController->UpdateProject($projectName,$projectid,$projectDecription,$username);
+                    break;
+                case "delete_project":
+                    $user = $_GET['username'];
+                    $projectID = $_GET['projectID'];
+                    $ProjectController->DeleteProject($projectID,$user);
+                    break;
+                case "manage_all_user":
+                    $userController->DisplayAllUsers();
+                    break;
+                case "admin_start_user_update":
+                    $userController->DisplayAllUsers();
+                    break;
+                case "admin_user_update":
+                    extract($_POST);
+                    $userController->SaveUpdatedUser($userID,$name,$lastName,$username,$email,$password,$userType);
+                    break;
+                case "admin_delete_user":
+                    $user = $_GET['userName'];
+                    $userController->DeleteUser($user);
+                    break;
+                default:
                     //if no action was passed the default page will be displayed
                     $controller->ViewHome();
                 break;

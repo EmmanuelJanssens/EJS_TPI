@@ -203,6 +203,35 @@
             require_once "View/User/UserProfileView.php";
         }
 
+        function GetUserType($username)
+        {
+            return $this->userDAO->GetUserType($username);
+        }
+        function GetUserTypeID($type)
+        {
+            return $this->userDAO->GetUserTypeID($type);
+        }
+        function DisplayAllUsers()
+        {
+
+            $users = $this->userDAO->GetAllUsers();
+            $types = $this->userDAO->GetAllUserTypes();
+
+            require_once "View/User/AdminViewUser.php";
+        }
+        function SaveUpdatedUser($userID,$name,$lastName,$userName,$email,$password,$userType)
+        {
+            $this->userDAO->SaveUpdatedUser($userID,$name,$lastName,$userName,$email,$password,$userType);
+
+            $users = $this->userDAO->GetAllUsers();
+            require_once "View/User/AdminViewUser.php";
+        }
+        function DeleteUser($userName)
+        {
+            $this->userDAO->DeleteUser($userName);
+            $users = $this->userDAO->GetAllUsers();
+            require_once "View/User/AdminViewUser.php";
+        }
         /**
          * isConnected
          *
