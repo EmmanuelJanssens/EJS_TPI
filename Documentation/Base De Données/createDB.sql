@@ -8,22 +8,21 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 	
 -- -----------------------------------------------------
--- Schema EJSTPI
+-- Schema emmanue4_TPI
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `EJSTPI` ;
 
 -- -----------------------------------------------------
--- Schema EJSTPI
+-- Schema emmanue4_TPI
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `EJSTPI` DEFAULT CHARACTER SET latin1 COLLATE latin1_general_cs  ;
-USE `EJSTPI` ;
+CREATE SCHEMA IF NOT EXISTS `emmanue4_TPI` DEFAULT CHARACTER SET latin1 COLLATE latin1_general_cs  ;
+USE `emmanue4_TPI` ;
 
 -- -----------------------------------------------------
--- Table `EJSTPI`.`Type`
+-- Table `emmanue4_TPI`.`Type`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `EJSTPI`.`Type` ;
+DROP TABLE IF EXISTS `emmanue4_TPI`.`Type` ;
 
-CREATE TABLE IF NOT EXISTS `EJSTPI`.`Type` (
+CREATE TABLE IF NOT EXISTS `emmanue4_TPI`.`Type` (
   `pkType` INT NOT NULL AUTO_INCREMENT,
   `type` VARCHAR(45) NULL,
   PRIMARY KEY (`pkType`))
@@ -31,11 +30,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `EJSTPI`.`User`
+-- Table `emmanue4_TPI`.`User`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `EJSTPI`.`User` ;
+DROP TABLE IF EXISTS `emmanue4_TPI`.`User` ;
 
-CREATE TABLE IF NOT EXISTS `EJSTPI`.`User` (
+CREATE TABLE IF NOT EXISTS `emmanue4_TPI`.`User` (
   `pkUser` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `lastName` VARCHAR(45) NOT NULL,
@@ -48,18 +47,18 @@ CREATE TABLE IF NOT EXISTS `EJSTPI`.`User` (
   UNIQUE INDEX `userName_UNIQUE` (`userName` ASC),
   CONSTRAINT `fk_User_Type`
     FOREIGN KEY (`fkType`)
-    REFERENCES `EJSTPI`.`Type` (`pkType`)
+    REFERENCES `emmanue4_TPI`.`Type` (`pkType`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `EJSTPI`.`Project`
+-- Table `emmanue4_TPI`.`Project`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `EJSTPI`.`Project` ;
+DROP TABLE IF EXISTS `emmanue4_TPI`.`Project` ;
 
-CREATE TABLE IF NOT EXISTS `EJSTPI`.`Project` (
+CREATE TABLE IF NOT EXISTS `emmanue4_TPI`.`Project` (
   `pkProject` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `description` TEXT(65000) NULL,
@@ -71,18 +70,18 @@ CREATE TABLE IF NOT EXISTS `EJSTPI`.`Project` (
   INDEX `fk_Project_User1_idx` (`fkUser` ASC),
   CONSTRAINT `fk_Project_User1`
     FOREIGN KEY (`fkUser`)
-    REFERENCES `EJSTPI`.`User` (`pkUser`)
+    REFERENCES `emmanue4_TPI`.`User` (`pkUser`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `EJSTPI`.`Message`
+-- Table `emmanue4_TPI`.`Message`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `EJSTPI`.`Message` ;
+DROP TABLE IF EXISTS `emmanue4_TPI`.`Message` ;
 
-CREATE TABLE IF NOT EXISTS `EJSTPI`.`Message` (
+CREATE TABLE IF NOT EXISTS `emmanue4_TPI`.`Message` (
   `pkMessage` INT NOT NULL AUTO_INCREMENT,
   `date` DATETIME NOT NULL,
   `content` VARCHAR(45) NOT NULL,
@@ -93,23 +92,23 @@ CREATE TABLE IF NOT EXISTS `EJSTPI`.`Message` (
   INDEX `fk_Message_Project1_idx` (`fkProject` ASC),
   CONSTRAINT `fk_Message_User1`
     FOREIGN KEY (`fkUser`)
-    REFERENCES `EJSTPI`.`User` (`pkUser`)
+    REFERENCES `emmanue4_TPI`.`User` (`pkUser`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Message_Project1`
     FOREIGN KEY (`fkProject`)
-    REFERENCES `EJSTPI`.`Project` (`pkProject`)
+    REFERENCES `emmanue4_TPI`.`Project` (`pkProject`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `EJSTPI`.`State`
+-- Table `emmanue4_TPI`.`State`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `EJSTPI`.`State` ;
+DROP TABLE IF EXISTS `emmanue4_TPI`.`State` ;
 
-CREATE TABLE IF NOT EXISTS `EJSTPI`.`State` (
+CREATE TABLE IF NOT EXISTS `emmanue4_TPI`.`State` (
   `pkState` INT NOT NULL AUTO_INCREMENT,
   `state` VARCHAR(45) NULL,
   PRIMARY KEY (`pkState`))
@@ -117,11 +116,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `EJSTPI`.`Version`
+-- Table `emmanue4_TPI`.`Version`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `EJSTPI`.`Version` ;
+DROP TABLE IF EXISTS `emmanue4_TPI`.`Version` ;
 
-CREATE TABLE IF NOT EXISTS `EJSTPI`.`Version` (
+CREATE TABLE IF NOT EXISTS `emmanue4_TPI`.`Version` (
   `pkVersion` INT NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(45) NOT NULL,
   `description` TEXT(65000) NULL,
@@ -133,29 +132,29 @@ CREATE TABLE IF NOT EXISTS `EJSTPI`.`Version` (
   INDEX `fk_Version_Project1_idx` (`fkProject` ASC),
   CONSTRAINT `fk_Version_State1`
     FOREIGN KEY (`fkState`)
-    REFERENCES `EJSTPI`.`State` (`pkState`)
+    REFERENCES `emmanue4_TPI`.`State` (`pkState`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Version_Project1`
     FOREIGN KEY (`fkProject`)
-    REFERENCES `EJSTPI`.`Project` (`pkProject`)
+    REFERENCES `emmanue4_TPI`.`Project` (`pkProject`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-USE `EJSTPI` ;
+USE `emmanue4_TPI` ;
 
 -- -----------------------------------------------------
--- Placeholder table for view `EJSTPI`.`view1`
+-- Placeholder table for view `emmanue4_TPI`.`view1`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `EJSTPI`.`view1` (`id` INT);
+CREATE TABLE IF NOT EXISTS `emmanue4_TPI`.`view1` (`id` INT);
 
 -- -----------------------------------------------------
--- View `EJSTPI`.`view1`
+-- View `emmanue4_TPI`.`view1`
 -- -----------------------------------------------------
-DROP VIEW IF EXISTS `EJSTPI`.`view1` ;
-DROP TABLE IF EXISTS `EJSTPI`.`view1`;
-USE `EJSTPI`;
+DROP VIEW IF EXISTS `emmanue4_TPI`.`view1` ;
+DROP TABLE IF EXISTS `emmanue4_TPI`.`view1`;
+USE `emmanue4_TPI`;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

@@ -1,9 +1,11 @@
 <?php
 ob_start();
 
+
 if(isset($_SESSION['user_session'])) {
     $User = $_SESSION['user_session']['username'];
     $UserID = $_SESSION['user_session']['userid'];
+
     ?>
 
     <div class="row">
@@ -87,7 +89,7 @@ if(isset($_SESSION['user_session'])) {
                     {
                         echo <<<"HTML"
                     <ul class="divided">
-                        <li>
+                        <li id="$row->pkMessage">
                             <article class="box post-summary">
                                 <h3>Answer by $row->username on $row->date</h3>
                                 <p> $row->content</p>   
@@ -99,6 +101,16 @@ HTML;
 
 
                 ?>
+
+                <form action="index.php?action=user_post_message&projectID=<?=$_GET['projectID']?>" method = "post">
+                    <input type="hidden" name="date" value="<?=date("Y-m-d G:i:s")?>">
+                    <input type="hidden" name="userName" value="<?=$User?>">
+                    <input type="hidden" name="projectID" value="<?=$_GET['projectID']?>">
+                    <textarea  name = "message" rows="4" cols="50" >
+
+                    </textarea>
+                    <input type="submit" value="Post">
+                </form>
             </div>
         </div>
 

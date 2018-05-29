@@ -10,14 +10,13 @@
             
         }
 
-        function Init($dao,$userDAO,$projectDAO,$versionDAO,$forumDAO,$MessageDAO)
+        function Init($dao,$userDAO,$projectDAO,$versionDAO,$forumDAO)
         {
             $this->baseDAO = $dao;
             $this->userDAO = $userDAO;
             $this->projectDAO = $projectDAO;
             $this->versionDAO = $versionDAO;
             $this->forumDAO = $forumDAO;
-            $this->messageDAO = $MessageDAO;
         }
         /**
          * ViewForums
@@ -34,12 +33,23 @@
             require_once "View/AllForumView.php";
         }
 
-        function DisplayMessage($action,$projectID,$project)
+        function DisplayMessage($projectID)
         {
             $topicData = $this->forumDAO->GetProjectMessage($projectID);
             $author = $this->projectDAO->GetProjectAuthor($projectID);
-            $projectName = $project;
+            $projectName =  $this->projectDAO->GetProjectName($projectID);
+
+            $error = $this->forumDAO->error;
+
             require_once "View/TopicView.php";
+        }
+
+        function PostMessage($date,$userName,$projectID,$message)
+        {
+            $userID = $this->userDAO->GetIDByUserName($userName);
+
+            $this->forumDAO->PostMessage($date,$userID,$projectID,$message);
+            $this->DisplayMessage($projectID);
         }
     }
 ?>

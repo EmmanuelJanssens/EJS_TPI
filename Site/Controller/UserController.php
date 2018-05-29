@@ -167,7 +167,7 @@
 
                     $this->connected = true;
 
-                    $FTPHandler->CreateDirectory("/var/www/EJSTPI/data/",$username);
+                    $FTPHandler->CreateDirectory($username);
 
                     require_once "View/HomeView.php";
                 }
@@ -207,10 +207,20 @@
         {
             return $this->userDAO->GetUserType($username);
         }
+
+        /**
+         * @brief get the user's category ID
+         *
+         * @return int ID of the user's category
+        **/
         function GetUserTypeID($type)
         {
             return $this->userDAO->GetUserTypeID($type);
         }
+
+        /**
+         * @brief displays a list of all the users administrator only
+        **/
         function DisplayAllUsers()
         {
 
@@ -219,6 +229,17 @@
 
             require_once "View/User/AdminViewUser.php";
         }
+
+        /**
+         * @brief Saves the use when updated Administrator only
+         *
+         * @param [int] $userID user's ID
+         * @param [string] $name user's name
+         * @param [string] $lastName user's last name
+         * @param [string] $userName user's user name
+         * @param [string] $email user's email
+         * @param [string] $userType user's category
+        **/
         function SaveUpdatedUser($userID,$name,$lastName,$userName,$email,$password,$userType)
         {
             $this->userDAO->SaveUpdatedUser($userID,$name,$lastName,$userName,$email,$password,$userType);
@@ -226,11 +247,117 @@
             $users = $this->userDAO->GetAllUsers();
             require_once "View/User/AdminViewUser.php";
         }
+
+        /**
+         * @brief Delete the user only for administrator
+         *
+         * @param [string] $username user to be deleted
+        **/
         function DeleteUser($userName)
         {
             $this->userDAO->DeleteUser($userName);
             $users = $this->userDAO->GetAllUsers();
             require_once "View/User/AdminViewUser.php";
+        }
+
+        /**
+         * @brief displays the new password form
+        **/
+        function DisplayNewPasswordForm()
+        {
+
+            require_once "View/User/NewPasswordView.php";
+        }
+
+        /**
+         * @brief generates a order of letters
+        **/
+        function getRandomWord($len = 10)
+        {
+            $word = array_merge(range('a', 'z'), range('A', 'Z'));
+            shuffle($word);
+            return substr(implode($word), 0, $len);
+        }
+
+        /**
+         * @brief Send an email to the user with a new password
+         *
+         * @param [string] $username username corresponding to the email to be sent
+         * @param [string] $email mail destination
+        **/
+        function SendNewPassword($username,$email)
+        {
+
+            $userdata = $this->userDAO->GetUserMailAndUserName($username);
+
+            try
+            {
+
+                $to = $userdata->email;
+                $subject = "New password";
+                $header = 'From: filewupload@admin.com'."\r\n" .
+                'X-Mailer: PHP/'.phpversion();
+
+                if($userdata->username == $username && $userdata->email == $email)
+                {
+
+                    //Get a random order of letters
+                    $pwd = $this->getRandomWord(6);
+
+                    $message = "here is your new password ".$pwd." please change it as soon as possible";
+
+                    $pwd = password_hash($pwd,PASSWORD_DEFAULT);
+
+                    //Update
+                    $this->userDAO->UpdatePassword($username,$pwd);
+
+                    //Send
+                    mail($to,$subject,$message,$header);
+
+                    $message = "A new Password has been sent";
+                    require_once "View/User/UserLoginView.php";
+                }
+                else
+                {
+                    throw new Exception($this->userDAO->error);
+                }
+            }
+            catch(Exception $e)
+            {
+                $message = $e->getMessage();
+                require_once "View/User/NewPasswordView.php";
+            }
+
+        }
+
+        function DisplayUpdatePasswordForm()
+        {
+            require_once "View/User/UserUpdatePasswordView.php";
+        }
+
+        /**
+         * @brief Updates the user's password
+         *
+         * @param [string] $user user to be updated
+         * @param [string] $password password that was entered
+         * @param [string] $confirmation confirmation of $password
+        **/
+        function UpdateUserPassword($user,$password,$confirmation)
+        {
+
+            if($password == $confirmation)
+            {
+                $pwd = password_hash($password,PASSWORD_DEFAULT);
+                $this->userDAO->UpdatePassword($user,$pwd);
+                $this->ViewProfile($user);
+            }
+            else
+            {
+                $error = "passwords do not match";
+                require_once "View/User/UserUpdatePasswordView.php";
+
+            }
+
         }
         /**
          * isConnected
@@ -242,16 +369,20 @@
             return $this->connected;
         }
 
-
+        /**
+         * @brief displays the project creation form
+        **/
         function CreateProjectForm()
         {
-
             require_once "View/User/UserCreateProjectView.php";
         }
 
-
+        /**
+         * @brief displays the upload version form
+        **/
         function UploadVersionForm()
         {
+
             require_once "View/User/UserUploadVersionView.php";
         }
 

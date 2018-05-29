@@ -8,6 +8,7 @@
         private $host;
 
         private $ftp_user;
+        private $ftp_domain;
         private $ftp_userpwd;
 
         public $status;
@@ -19,11 +20,12 @@
          * @param [string] $password
 
          */
-        function __construct($host, $ftp_user,$ftp_userpwd)
+        function __construct($host, $ftp_user,$ftp_domain,$ftp_userpwd)
         {
             $this->host = $host;
             $this->ftp_user = $ftp_user;
             $this->ftp_userpwd = $ftp_userpwd;
+            $this->ftp_domain = $ftp_domain;
         }
 
         /**
@@ -35,9 +37,9 @@
          */
         function Connect($username,$password)
         {
-
-            $connectionID = ssh2_connect($this->host);
-            $connectionResult = ssh2_auth_password ($connectionID, $username, $password);
+            $connectionID = ftp_connect($this->host);
+            $user = $this->ftp_user.'@'.$this->ftp_domain;
+            $connectionResult = ftp_login($connectionID, $user, $password);
             if(!$connectionResult)
             {
                
@@ -64,11 +66,11 @@
         {
             $connection = $this->Connect($this->ftp_user,$this->ftp_userpwd);
 
-            $sftp = ssh2_sftp($connection);
+            $ftp = "$this->ftp_user:$this->ftp_userpwd@$this->ftp_domain";
 
-            if(is_dir("ssh2.sftp://$sftp/$rootfolder"))
+            if(is_dir("ftp://$ftp/$rootfolder"))
             {
-                $data = scandir("ssh2.sftp://$sftp/$rootfolder");
+                $data = scandir("ftp://$ftp/$rootfolder");
                 return $data;
 
             }
@@ -82,10 +84,8 @@
         function CreateDirectory($rootfolder)
         {
             $connection = $this->Connect($this->ftp_user,$this->ftp_userpwd);
-            $sftp = ssh2_sftp($connection);
 
-            $folder = "$rootfolder";
-            ssh2_sftp_mkdir($sftp,$folder,0777,true);
+            ftp_mkdir($connection,$rootfolder);
         }
 
         function Upload($file, $destination)

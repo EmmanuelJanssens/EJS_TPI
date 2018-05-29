@@ -66,6 +66,26 @@
             }
         }
 
+        function UpdatePassword($username,$pwd)
+        {
+            try
+            {
+                $conn = $this->connect();
+
+                $qs = "UPDATE User SET password=:pwd WHERE username= :userName";
+
+                $query =$conn->prepare($qs);
+                $query->bindParam(":userName",$username);
+                $query->bindParam(":pwd",$pwd);
+
+                $query->execute();
+
+            }
+            catch(Exception $e)
+            {
+                $this->error = $e->getMessage();
+            }
+        }
         /**
          * @brief get the type of the user
          * @param username to be checked
@@ -172,6 +192,42 @@
         }
 
         /**
+         * @brief get the user's username and mail address
+         * @param [string] $username the user's user name
+         *
+         * @return array first and single entry of the user name if one exists
+        **/
+        function GetUserMailAndUserName($username)
+        {
+            try
+            {
+                $conn = $this->connect();
+
+                $qs = "SELECT username,email FROM User where username = :username";
+
+                $query = $conn->prepare($qs);
+                $query->bindParam(":username",$username);
+                $query->execute();
+
+                $result = array();
+
+                while($row = $query->fetchObject())
+                {
+                    array_push($result,$row);
+                }
+
+                if(count($result) <= 0)
+                    throw new Exception("Username does not match with mail address");
+
+                return $result[0];
+            }
+            catch(Exception $e)
+            {
+                $this->error = $e->getMessage();
+                return null;
+            }
+        }
+        /**
          * @brief Returns the ID of the specified Username
          *
          * @param [int] $zsername username to be passed
@@ -195,11 +251,16 @@
                 {
                     array_push($result,$row);
                 }
+
+                if($result  <= 0)
+                    throw new Exception("Such user name does not exist");
+
                 return $result[0]->pkUser;
             }
             catch(Exception $e)
             {
                 $this->error = $e->getMessage();
+                return null;
             }
         }
 
@@ -209,7 +270,6 @@
             if(isset($_SESSION['user_session']))
             {
                 $user = $_SESSION['user_session']['username'];
-
                 return $user;
             }
 
@@ -427,13 +487,22 @@
                     $query->bindParam(":project",$project->pkProject);
                     $query->execute();
 
+                    //delete messages from the projects
                     $qs = "DELETE FROM Message where fkProject = :project";
                     $query = $conn->prepare($qs);
                     $query->bindParam(":project",$project->pkProject);
                     $query->execute();
 
                 }
+
+                //delete the messagfes from the user
                 $id = $this->GetIDByUserName($userName);
+
+                $qs = "DELETE FROM Message where fkUser = :userID";
+                $query = $conn->prepare($qs);
+                $query->bindParam(":userID",$id);
+                $query->execute();
+
 
 
                 $qs = "DELETE FROM Project where fkUser = :userID";

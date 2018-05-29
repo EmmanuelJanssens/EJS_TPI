@@ -38,7 +38,7 @@
             {
                 $conn = $this->connect();
 
-                $qs = "SELECT User.username,User.pkUser,Message.content,Message.date,Project.name as projectName FROM Message INNER JOIN Project ON Project.pkProject = Message.fkProject INNER JOIN User ON Message.fkUser = User.pkUser WHERE fkProject = :project";
+                $qs = "SELECT Message.pkMessage, User.username,User.pkUser,Message.content,DATE_FORMAT(Message.date,'%d/%m/%Y %k:%i') as date ,Project.name as projectName FROM Message INNER JOIN Project ON Project.pkProject = Message.fkProject INNER JOIN User ON Message.fkUser = User.pkUser WHERE fkProject = :project";
 
                 $query = $conn->prepare($qs);
 
@@ -68,7 +68,7 @@
             {
                 $conn = $this->connect();
 
-                $qs = "SELECT User.username,User.pkUser,Message.date , Project.name as projectName  FROM Message  INNER JOIN Project ON Message.fkProject = Project.pkProject INNER JOIN User ON Message.fkUser = User.pkUser WHERE Message.fkUser = :user ORDER BY date DESC LIMIT 5";
+                $qs = "SELECT Message.pkMessage,User.username,User.pkUser,DATE_FORMAT(Message.date,'%d/%m/%Y %k:%i') as date , Project.name as projectName ,Project.pkProject  FROM Message  INNER JOIN Project ON Message.fkProject = Project.pkProject INNER JOIN User ON Message.fkUser = User.pkUser WHERE Message.fkUser = :user ORDER BY date DESC LIMIT 5";
 
                 $query = $conn->prepare($qs);
 
@@ -91,5 +91,31 @@
                 return null;
             }
         }
+
+        function PostMessage($date,$userID,$projectID,$message)
+        {
+            try
+            {
+                $conn = $this->connect();
+
+                $qs = "INSERT INTO Message(date,content,fkUser,fkProject) VALUES (:date,:content,:userID,:projectID)";
+
+                $query = $conn->prepare($qs);
+
+                $query->bindParam(":date",$date);
+                $query->bindParam(":content",$message);
+                $query->bindParam(":userID",$userID);
+                $query->bindParam(":projectID",$projectID);
+
+                $query->execute();
+            }
+            catch(Exception $e)
+            {
+                $this->error = $e->getMessage();
+            }
+
+
+        }
+
     }
 ?>

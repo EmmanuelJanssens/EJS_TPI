@@ -2,16 +2,12 @@
 
     class DAO 
     {
-        private $dsn = 'mysql:host=172.17.101.246;dbname=ejstpi;charset=utf8';
-        private $server ="localhost";
-        private $username="root";
-        private $password='Pa$$w0rd';
-        private $db ="ejstpi";
 
         public $error;
         function connect()
         {
-            $conn = new PDO('mysql:host=192.168.154.130;dbname=EJSTPI;charset=utf8','emmanuel','Pa$$w0rd');
+            $conn = new PDO('mysql:host=emmanue4.mysql.db.hostpoint.ch;dbname=emmanue4_TPI;charset=utf8;port=3306','emmanue4_tpi','19-Madagascar-94');
+            //$conn = new PDO('mysql:host=192.168.154.130;dbname=EJSTPI;charset=utf8','emmanue4_tpi','Pa$$w0rd');
             //$conn = new PDO('mysql:host=192.168.8.116;dbname=EJSTPI;charset=utf8','emmanuel','Pa$$w0rd');
 
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

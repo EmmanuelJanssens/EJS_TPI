@@ -127,7 +127,7 @@
             try
             {
                 $user = $_SESSION['user_session'];
-                $creation_date = date("Y-m-d");
+                $creation_date = date("Y-m-d h:i:s");
                 $root = "/var/www/EJSTPI";
                 $topic = "Topic of $name";
 

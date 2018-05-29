@@ -2,12 +2,12 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="990985c2-f803-4828-afd9-b49d2056af5e" name="TPI" url="http://192.168.154.130/">
-        <fileTransfer host="192.168.154.130" port="22" rootFolder="/var/www/EJSTPI" accessType="SFTP">
+      <webServer id="990985c2-f803-4828-afd9-b49d2056af5e" name="TPI" url="http://emmanue4.myhostpoint.ch/">
+        <fileTransfer host="sl203.web.hostpoint.ch" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
-          <option name="port" value="22" />
+          <option name="port" value="21" />
         </fileTransfer>
       </webServer>
     </option>

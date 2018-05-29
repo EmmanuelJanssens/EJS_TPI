@@ -11,14 +11,14 @@
         $updating = $action == 'update_project';
     }
 
-    //Get the username if one is cpnnected
+    //Get the username if one is connected
 
     if($connected)
     {
         $username = $_SESSION['user_session']['username'];
-        $id = $projectData[0]->pkProject;
+        $projectID = $projectData[0]->pkProject;
     }
-echo '<form action="index.php?action=save_project&username='.$username.'&projectID='.$id.'" method=post>';
+echo '<form action="index.php?action=save_project&username='.$username.'&projectID='.$projectID.'" method=post>';
 
     if($updating)
     {
@@ -26,10 +26,14 @@ echo '<form action="index.php?action=save_project&username='.$username.'&project
     }
     else
     {
-        echo '<h3>'.$projectData[0]->name.'</h3>';
+        echo '<h3 class="major">project : '.$projectData[0]->name.'</h3>';
     }
 
-echo '<a class="button">Download Latest</a>';
+echo '<section>';
+echo '<div class="row">';
+echo '<div class="12u">';
+echo '<ul class="actions">';
+echo '<li><a class="button">Download Latest</a></li>';
 
 if($connected)
 {
@@ -37,17 +41,22 @@ if($connected)
     {
         if($updating)
         {
-            echo'<input type="submit"  class="button" value = "save"></a>';
+            echo'<li><input type="submit"  class="button" value = "save"></a></li>';
         }
         else
         {
-            echo '<a href="index.php?action=update_project&username='.$username.'&projectID='.$id.'" class="button">Update</a>';
-            echo '<a href="index.php?action=delete_project&username='.$username.'&projectID='.$id.'" class="button">Delete</a>';
+            echo '<li><a href="index.php?action=update_project&username='.$username.'&projectID='.$projectID.'" class="button">Update</a></li>';
+            echo '<li><a href="index.php?action=delete_project&username='.$username.'&projectID='.$projectID.'" class="button">Delete</a></li>';
         }
 
 
     }
 }
+echo '</ul>';
+echo '</div>';
+echo '</div>';
+echo '</section>';
+
 ?>
 
 <nav id="my_nav">
@@ -102,7 +111,7 @@ HTML;
                 {
 
                     echo <<<"HTML"
-                         <a class="button" href="index.php?action=user_upload_version&projectID=$id">Upload Version</a>
+                         <a class="button" href="index.php?action=user_upload_version&projectID=$projectID">Upload Version</a>
 HTML;
                 }
             }
@@ -115,19 +124,19 @@ HTML;
             {
                 ?>
                 <div id="forum" class="tabcontent">
-                <ul>
+                    <ul>
 
-                <?php
-                foreach($messageList as $row)
-                {
-                    echo <<<"HTML"
-                    <li><a href="#">message</a> by <a href="#">$row->username</a></li>
+                    <?php
+                    foreach($messageList as $row)
+                    {
+                        echo <<<"HTML"
+                        <li><a href="#">message</a> by <a href="#">$row->username</a></li>
 HTML;
+                    }
+                    echo '<a href="index.php?action=view_project_topic&projectID='.$projectID.'&projectName='.$projectData[0]->name.'" class = "button">GO</a>';
                 }
-
-            }
-            ?>
-                </ul>
+                ?>
+                    </ul>
                 </div>
 
     <div id="accessibility" class="tabcontent">

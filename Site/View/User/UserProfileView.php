@@ -73,7 +73,7 @@ HTML;
                                     foreach($userMessages as $row)
                                     {
                                         echo <<<"HTML"
-                                            <li><a href = "#">Message On $row->projectName</a></li> 
+                                            <li><a href = "index.php?action=view_project_topic&projectID=$row->pkProject&projectName=$row->projectName#$row->pkMessage">Message On $row->projectName</a></li> 
 HTML;
                                     }
                                     ?>
@@ -103,6 +103,8 @@ HTML;
                             <div class="12u">
                                 <ul class="actions">
                                     <li><a href="index.php?action=user_create_project" class="button big">Create Project</a></li>
+                                    <li><a href="index.php?action=user_update_password&user='.$current_user.'" class="button big">Update Password</a></li>
+
                             ';
                                     if($UserType == "Admin")
                                     {

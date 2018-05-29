@@ -47,8 +47,8 @@
 
             if($id > 0)
             {
-                $user = $_SESSION['user_session'];
-                $ftp->CreateDirectory("/var/www/EJSTPI/data/".$user['username']."/$name");
+                $user = $_SESSION['user_session']['username'];
+                $ftp->CreateDirectory($user.'/'.$name);
                 header("Location: index.php?action=view_user_project&username=".$user['username']."&projectID=".$id) ;
             }
             else

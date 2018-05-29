@@ -12,7 +12,6 @@
     require_once "DAO/ProjectDAO.php";
     require_once "DAO/VersionDAO.php";
     require_once "DAO/ForumDAO.php";
-    require_once "DAO/MessageDAO.php";
 
     require_once "FTPHandler.php";
     
@@ -22,7 +21,6 @@
     $ProjectDAO = new ProjectDAO();
     $VersionDAO = new VersionDAO();
     $ForumDAO = new ForumDAO();
-    $MessageDAO = new MessageDAO();
 
 
 
@@ -41,10 +39,10 @@
     $VersionController->Init($BaseDAO,$UserDAO,$ProjectDAO,$VersionDAO,$ForumDAO);
 
     $ForumController = new ForumController($controller);
-    $ForumController->Init($BaseDAO,$UserDAO,$ProjectDAO,$VersionDAO,$ForumDAO,$MessageDAO);
+    $ForumController->Init($BaseDAO,$UserDAO,$ProjectDAO,$VersionDAO,$ForumDAO);
 
     
-    $FTPHandler = new FTPHandler("192.168.154.130",'FTP','Pa$$w0rd');
+    $FTPHandler = new FTPHandler("sl203.web.hostpoint.ch",'FTP','emmanue4.myhostpoint.ch','Madagascar-1994');
     //$FTPHandler = new FTPHandler("192.168.8.116",'FTP','Pa$$w0rd');
 
 
@@ -133,7 +131,7 @@
                     break;
                 case "view_project_topic":
                     extract($_GET);
-                    $ForumController->DisplayMessage($action,$projectID,$projectName);
+                    $ForumController->DisplayMessage($projectID);
                     break;
                 case "update_project":
                     $username = $_GET['username'];
@@ -165,6 +163,26 @@
                 case "admin_delete_user":
                     $user = $_GET['userName'];
                     $userController->DeleteUser($user);
+                    break;
+                case "user_post_message":
+                    extract($_POST);
+                    $ForumController->PostMessage($date,$userName,$projectID,$message);
+                    break;
+                case "forgot_password":
+                    $userController->DisplayNewPasswordForm();
+                    break;
+                case "send_new_password":
+                    $username = $_POST['username'];
+                    $email = $_POST['email'];
+                    $userController->SendNewPassword($username,$email);
+                    break;
+
+                case "user_update_password":
+                    $userController->DisplayUpdatePasswordForm();
+                    break;
+                case "update_user_password":
+                    extract($_POST);
+                    $userController->UpdateUserPassword($user,$password,$confirmation);
                     break;
                 default:
                     //if no action was passed the default page will be displayed
