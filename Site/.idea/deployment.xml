@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="TPI">
+  <component name="PublishConfigData" serverName="TURNKEY">
     <serverData>
-      <paths name="TPI">
+      <paths name="HOSTPOINT">
         <serverdata>
           <mappings>
-            <mapping deploy="/www/emmanue4.myhostpoint.ch" local="$PROJECT_DIR$" web="" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="TURNKEY">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/var/www/EJSTPI" local="$PROJECT_DIR$" web="/EJSTPI" />
           </mappings>
         </serverdata>
       </paths>

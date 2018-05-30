@@ -49,7 +49,7 @@
             {
                 $user = $_SESSION['user_session']['username'];
                 $ftp->CreateDirectory($user.'/'.$name);
-                header("Location: index.php?action=view_user_project&username=".$user['username']."&projectID=".$id) ;
+                header("Location: index.php?action=view_user_project&username=".$user."&projectID=".$id) ;
             }
             else
             {

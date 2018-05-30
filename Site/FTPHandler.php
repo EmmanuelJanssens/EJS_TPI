@@ -11,6 +11,8 @@
         private $ftp_domain;
         private $ftp_userpwd;
 
+        private $ftp;
+
         public $status;
         /**
          * @brief Initialises the FTP Handler
@@ -26,6 +28,8 @@
             $this->ftp_user = $ftp_user;
             $this->ftp_userpwd = $ftp_userpwd;
             $this->ftp_domain = $ftp_domain;
+
+            $this->ftp = "$this->ftp_user:$this->ftp_userpwd@$this->ftp_domain";
         }
 
         /**
@@ -38,7 +42,7 @@
         function Connect($username,$password)
         {
             $connectionID = ftp_connect($this->host);
-            $user = $this->ftp_user.'@'.$this->ftp_domain;
+            $user = $this->ftp_user;
             $connectionResult = ftp_login($connectionID, $user, $password);
             if(!$connectionResult)
             {
@@ -66,11 +70,10 @@
         {
             $connection = $this->Connect($this->ftp_user,$this->ftp_userpwd);
 
-            $ftp = "$this->ftp_user:$this->ftp_userpwd@$this->ftp_domain";
 
-            if(is_dir("ftp://$ftp/$rootfolder"))
+            if(is_dir("ftp://$this->ftp/$rootfolder"))
             {
-                $data = scandir("ftp://$ftp/$rootfolder");
+                $data = scandir("ftp://$this->ftp/$rootfolder");
                 return $data;
 
             }
@@ -78,6 +81,7 @@
             {
                 return null;
             }
+            ftp_close($connection);
 
         }
 
@@ -86,13 +90,40 @@
             $connection = $this->Connect($this->ftp_user,$this->ftp_userpwd);
 
             ftp_mkdir($connection,$rootfolder);
+
+            ftp_close($connection);
         }
 
-        function Upload($file, $destination)
+        function Upload($file,$destination)
         {
             $connection = $this->Connect($this->ftp_user,$this->ftp_userpwd);
-            $sftp = ssh2_sftp($connection);
-            ssh2_scp_send($connection, '/local/filename', '/remote/filename', 0644);
+
+
+            ftp_chdir($connection,$destination);
+            ftp_fput($connection,$file['name'],$file['tmp_name'],FTP_BINARY);
+
+            ftp_close($connection);
+
+        }
+
+
+        function DeleteDirectory($username)
+        {
+            $connection = $this->Connect($this->ftp_user,$this->ftp_userpwd);
+
+            if(!ftp_rmdir($connection,$username))
+            {
+                $filelist = ftp_nlist($connection, $username);
+
+                foreach($filelist as $file)
+                {
+                    if(is_dir("ftp://$this->ftp/$file") )
+                    {
+                        $filelist = ftp_nlist($connection,$file);
+                    }
+                }
+            }
+            ftp_close($connection);
 
         }
 

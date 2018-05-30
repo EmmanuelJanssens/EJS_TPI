@@ -38,6 +38,8 @@
                 $projectName = $this->projectDAO->GetProjectName($project);
                 $ftp->CreateDirectory($username."/".$projectName."/".$name);
 
+                $ftp->Upload($file,$username."/".$projectName."/".$name."/");
+
                 //$ftp->CreateVresion("var/www/EJSTPI/",$this->userDAO->GetCurrentUser(),$this->projectDAO->GetProjectName($project));
                 $versionData = $this->versionDAO->GetVersionDetails($versionID);
                 $FILES = $ftp-> GetFileList($username."/".$projectName."/".$name);

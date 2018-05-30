@@ -42,10 +42,10 @@
     $ForumController->Init($BaseDAO,$UserDAO,$ProjectDAO,$VersionDAO,$ForumDAO);
 
     
-    $FTPHandler = new FTPHandler("sl203.web.hostpoint.ch",'FTP','emmanue4.myhostpoint.ch','Madagascar-1994');
-    //$FTPHandler = new FTPHandler("192.168.8.116",'FTP','Pa$$w0rd');
+    //$FTPHandler = new FTPHandler("sl203.web.hostpoint.ch",'FTP','emmanue4.myhostpoint.ch','Madagascar-1994');
+    $FTPHandler = new FTPHandler("192.168.154.131",'root','emmanue4.myhostpoint.ch','Pa$$w0rd');
 
-
+    //$FTPHandler->DeleteDirectory("UserTest");
 
     try
     {       
@@ -127,7 +127,7 @@
                     break;
                 case "upload_version";
                     extract($_POST);
-                    $VersionController->UploadVersion($versionname,$versiondescription,$versionlog,$filetoupload,$projectID,$FTPHandler);
+                    $VersionController->UploadVersion($versionname,$versiondescription,$versionlog,$_FILES['fileToUpload'],$projectID,$FTPHandler);
                     break;
                 case "view_project_topic":
                     extract($_GET);
@@ -162,7 +162,7 @@
                     break;
                 case "admin_delete_user":
                     $user = $_GET['userName'];
-                    $userController->DeleteUser($user);
+                    $userController->DeleteUser($user,$FTPHandler);
                     break;
                 case "user_post_message":
                     extract($_POST);

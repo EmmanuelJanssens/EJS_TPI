@@ -253,9 +253,10 @@
          *
          * @param [string] $username user to be deleted
         **/
-        function DeleteUser($userName)
+        function DeleteUser($userName,FTPHandler $ftp)
         {
             $this->userDAO->DeleteUser($userName);
+            $ftp->DeleteDirectory($userName);
             $users = $this->userDAO->GetAllUsers();
             require_once "View/User/AdminViewUser.php";
         }

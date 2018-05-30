@@ -12,7 +12,7 @@ ob_start();
 
 <div class="form">
     <h1> Upload a new version </h1>
-    <form action="index.php?action=upload_version" method="post">
+    <form action="index.php?action=upload_version" method="post" enctype="multipart/form-data">
 
         <?php if(isset($versionname_error)) echo $versionname_error;?>
         <p><input type="text" placeholder="Project Name" name="versionname" required></p>
@@ -30,12 +30,9 @@ ob_start();
         </p>
 
         <p>
-            <input type="file" class="button" text="Choose" name="filetoupload" accept=".zip" id ="myFile" required>
+            <input type="file" class="button" text="Choose" name="fileToUpload" accept=".zip" id ="fileToUpload" required>
         </p>
 
-        <p>
-            <input type="hidden" name ="filepath" value ="">
-        </p>
         <input type="hidden" value="<?=$_GET['projectID']?>" name="projectID">
         <p>
             <input type="submit" value="send" text="submit"  onclick="myFunction()"></p>
