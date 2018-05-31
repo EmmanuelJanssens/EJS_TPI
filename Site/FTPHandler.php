@@ -29,7 +29,6 @@
             $this->ftp_userpwd = $ftp_userpwd;
             $this->ftp_domain = $ftp_domain;
 
-            $this->ftp = "$this->ftp_user:$this->ftp_userpwd@$this->ftp_domain";
         }
 
         /**
@@ -41,9 +40,9 @@
          */
         function Connect($username,$password)
         {
-            $connectionID = ftp_connect($this->host);
+            $connectionID = ssh2_connect($this->host,22);
             $user = $this->ftp_user;
-            $connectionResult = ftp_login($connectionID, $user, $password);
+            $connectionResult = ssh2_auth_password($connectionID, $user, $password);
             if(!$connectionResult)
             {
                
@@ -69,40 +68,43 @@
         function GetFileList($rootfolder)
         {
             $connection = $this->Connect($this->ftp_user,$this->ftp_userpwd);
+            $ftp = ssh2_sftp($connection);
 
-
-            if(is_dir("ftp://$this->ftp/$rootfolder"))
+            if(is_dir("ssh2.sftp://$ftp/home/Users/$rootfolder"))
             {
-                $data = scandir("ftp://$this->ftp/$rootfolder");
+                $data = scandir("ssh2.sftp://$ftp/home/Users/$rootfolder");
                 return $data;
-
             }
             else
             {
                 return null;
             }
-            ftp_close($connection);
 
         }
 
+        /**
+         * @brief creates a directory in the home folder from linux
+         *
+         * @param []
+        **/
         function CreateDirectory($rootfolder)
         {
             $connection = $this->Connect($this->ftp_user,$this->ftp_userpwd);
+            $ftp = ssh2_sftp($connection);
 
-            ftp_mkdir($connection,$rootfolder);
-
-            ftp_close($connection);
+            mkdir("ssh2.sftp://$ftp/home/Users/$rootfolder");
         }
 
+        function Download($file)
+        {
+
+        }
         function Upload($file,$destination)
         {
             $connection = $this->Connect($this->ftp_user,$this->ftp_userpwd);
+            $ftp = ssh2_sftp($connection);
 
-
-            ftp_chdir($connection,$destination);
-            ftp_fput($connection,$file['name'],$file['tmp_name'],FTP_BINARY);
-
-            ftp_close($connection);
+            move_uploaded_file($file['tmp_name'],"ssh2.sftp://$ftp/home/Users/$destination/".$file['name']."");
 
         }
 
@@ -110,42 +112,11 @@
         function DeleteDirectory($username)
         {
             $connection = $this->Connect($this->ftp_user,$this->ftp_userpwd);
+            $ftp = ssh2_sftp($connection);
 
-            if(!ftp_rmdir($connection,$username))
-            {
-                $filelist = ftp_nlist($connection, $username);
-
-                foreach($filelist as $file)
-                {
-                    if(is_dir("ftp://$this->ftp/$file") )
-                    {
-                        $filelist = ftp_nlist($connection,$file);
-                    }
-                }
-            }
-            ftp_close($connection);
+            rmdir("ssh2.sftp://$ftp/home/Users/$username");
 
         }
 
-        /**
-         * @brief Create the user
-         *
-         * @param [string] $username
-         *
-         * is called when a new user is registered
-         *
-         * @return true
-         * @return false
-         */
-        function CreateUser($username,$password)
-        {
-            $command = 'useradd -d /data/'.$username.' '.$username;
-
-            exec($command);
-
-            return true;
-        }
-
-        
     }
 ?>

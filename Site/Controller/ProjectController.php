@@ -77,8 +77,10 @@
             require_once "View/User/UserProjectView.php";
         }
 
-        function DeleteProject($projectID,$user)
+        function DeleteProject($projectID,$user, FTPHandler $ftp)
         {
+            $projectname = $this->projectDAO->GetProjectName($projectID);
+            $ftp->DeleteDirectory("$user/$projectname");
 
             //Delete
             $this->projectDAO->DeleteProject($projectID);
@@ -91,6 +93,8 @@
             //Get information about messages
             $userID = $this->userDAO->GetIDByUserName($user);
             $userMessages = $this->forumDAO->GetUserMessage($userID);
+
+
 
             require_once "View/User/UserProfileView.php";
         }

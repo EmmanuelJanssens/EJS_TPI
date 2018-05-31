@@ -30,8 +30,6 @@
     $userController = new UserController($controller);
     $userController->Init($BaseDAO,$UserDAO,$ProjectDAO,$VersionDAO,$ForumDAO);
 
-
-
     $ProjectController = new ProjectController($controller);
     $ProjectController->Init($BaseDAO,$UserDAO,$ProjectDAO,$VersionDAO,$ForumDAO);
 
@@ -42,10 +40,8 @@
     $ForumController->Init($BaseDAO,$UserDAO,$ProjectDAO,$VersionDAO,$ForumDAO);
 
     
-    //$FTPHandler = new FTPHandler("sl203.web.hostpoint.ch",'FTP','emmanue4.myhostpoint.ch','Madagascar-1994');
-    $FTPHandler = new FTPHandler("192.168.154.131",'root','emmanue4.myhostpoint.ch','Pa$$w0rd');
+    $FTPHandler = new FTPHandler("192.168.154.132",'FTP','','Pa$$w0rd');
 
-    //$FTPHandler->DeleteDirectory("UserTest");
 
     try
     {       
@@ -58,15 +54,15 @@
             switch($action)
             {
                 case "view_home":
-                    $controller->ViewHome();
+                    $controller->ViewHome(4);
                 break;
                 
                 case "view_project":
-                    $ProjectController->ViewAllProjects(3);
+                    $ProjectController->ViewAllProjects(20);
                 break;
 
                 case "view_forum":
-                    $ForumController->ViewForums();
+                    $ForumController->ViewForums(20);
                 break;
 
                 case "view_about":
@@ -148,7 +144,7 @@
                 case "delete_project":
                     $user = $_GET['username'];
                     $projectID = $_GET['projectID'];
-                    $ProjectController->DeleteProject($projectID,$user);
+                    $ProjectController->DeleteProject($projectID,$user,$FTPHandler);
                     break;
                 case "manage_all_user":
                     $userController->DisplayAllUsers();
@@ -186,14 +182,14 @@
                     break;
                 default:
                     //if no action was passed the default page will be displayed
-                    $controller->ViewHome();
+                    $controller->ViewHome(4);
                 break;
             }
         }
         else
         {
             //Default page
-            $controller->ViewHome();
+            $controller->ViewHome(4);
         }
 
     }

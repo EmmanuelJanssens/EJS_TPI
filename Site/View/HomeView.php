@@ -7,70 +7,31 @@
 
         <!-- Features -->
             <section class="box features">
-                <h2 class="major"><span>View projects</span></h2>
+                <h2 class="major"><span>Recent projects</span></h2>
                 <div>
                     <div class="row">
-                        <div class="3u 12u(mobile)">
 
-                            <!-- Feature -->
-                                <section class="box feature">
-                                    <a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-                                    <h3><a href="#">A Subheading</a></h3>
-                                    <p>
-                                        Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
-                                        lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
-                                    </p>
-                                </section>
 
-                        </div>
-                        <div class="3u 12u(mobile)">
+                        <?php
 
-                            <!-- Feature -->
-                                <section class="box feature">
-                                    <a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-                                    <h3><a href="#">Another Subheading</a></h3>
-                                    <p>
-                                        Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
-                                        lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
-                                    </p>
-                                </section>
-
-                        </div>
-                        <div class="3u 12u(mobile)">
-
-                            <!-- Feature -->
-                                <section class="box feature">
-                                    <a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-                                    <h3><a href="#">And Another</a></h3>
-                                    <p>
-                                        Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
-                                        lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
-                                    </p>
-                                </section>
-
-                        </div>
-                        <div class="3u 12u(mobile)">
-
-                            <!-- Feature -->
-                                <section class="box feature">
-                                    <a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-                                    <h3><a href="#">And One More</a></h3>
-                                    <p>
-                                        Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
-                                        lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
-                                    </p>
-                                </section>
-
-                        </div>
+                        if(isset($projectData) > 0)
+                        {
+                            foreach($projectData as $row)
+                            {
+                                echo '<div class="3u 12u(mobile)">';
+                                echo '<section class="box feature">';
+                                echo '<a href="#" class="image featured"><img src="images/pic01.jpg" alt=""></a>';
+                                echo '<h3><a href="index.php?action=view_user_project&username='.$row->username.'&projectID='.$row->pkProject.'" >Project</a>'.$row->name.'</h3>';
+                                echo '<p>';
+                                echo  $row->description;
+                                echo '</p>';
+                                echo '</section>';
+                                echo '</div>';
+                            }
+                        }
+                        ?>
                     </div>
-                    <div class="row">
-                        <div class="12u">
-                            <ul class="actions">
-                                <li><a href="#" class="button big">Do Something</a></li>
-                                <li><a href="#" class="button alt big">Think About It</a></li>
-                            </ul>
-                        </div>
-                    </div>
+
                 </div>
             </section>
 
@@ -81,7 +42,7 @@
 
         <!-- Blog -->
             <section class="box blog">
-                <h2 class="major"><span>Popular Subjects</span></h2>
+                <h2 class="major"><span>Today's most popular project</span></h2>
                 <div>
                     <div class="row">
                         <div class="9u 12u(mobile)">
@@ -90,8 +51,8 @@
                                 <!-- Featured Post -->
                                     <article class="box post">
                                         <header>
-                                            <h3><a href="#">Here's a really big heading</a></h3>
-                                            <p>With a smaller subtitle that attempts to elaborate</p>
+                                            <h3><a href="#">Website</a></h3>
+                                            <p>Website develloped for my school work</p>
                                             <ul class="meta">
                                                 <li class="icon fa-clock-o">15 minutes ago</li>
                                                 <li class="icon fa-comments"><a href="#">8</a></li>

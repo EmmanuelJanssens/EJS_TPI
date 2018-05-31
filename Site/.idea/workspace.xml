@@ -14,8 +14,17 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="45" column="84" lean-forward="true" selection-start-line="45" selection-start-column="84" selection-end-line="45" selection-end-column="84" />
+            <state relative-caret-position="952">
+              <caret line="56" column="43" selection-start-line="56" selection-start-column="43" selection-end-line="56" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserProfileView.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/View/User/UserProfileView.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
             </state>
           </provider>
         </entry>
@@ -23,26 +32,17 @@
       <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Controller/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="169" selection-start-line="169" selection-end-line="169" />
+            <state relative-caret-position="2179">
+              <caret line="210" lean-forward="true" selection-start-line="210" selection-end-line="210" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserUploadVersionView.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/View/User/UserUploadVersionView.php">
+      <file leaf-file-name="ForumDAO.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DAO/ForumDAO.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="14" column="94" selection-start-line="14" selection-start-column="94" selection-end-line="14" selection-end-column="94" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VersionController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Controller/VersionController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+            <state relative-caret-position="255">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
@@ -50,35 +50,8 @@
       <file leaf-file-name="ProjectDAO.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DAO/ProjectDAO.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="116" selection-start-line="116" selection-end-line="116" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserDAO.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DAO/UserDAO.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="545">
-              <caret line="272" selection-start-line="272" selection-end-line="272" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VersionDAO.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DAO/VersionDAO.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="50" selection-start-line="50" selection-end-line="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseDAO.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DAO/BaseDAO.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="70" lean-forward="true" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="70" />
+            <state relative-caret-position="329">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
@@ -86,17 +59,44 @@
       <file leaf-file-name="FTPHandler.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FTPHandler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-198">
-              <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+            <state relative-caret-position="372">
+              <caret line="99" selection-start-line="99" selection-end-line="99" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="php.ini" pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;d0c6bce6-7a02-4770-82d0-8db49f11bc9e&gt;/etc/php5/apache2/php.ini">
+      <file leaf-file-name="HomeView.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/View/HomeView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="1940" column="42" selection-start-line="1940" selection-start-column="42" selection-end-line="1940" selection-end-column="42" />
+            <state relative-caret-position="493">
+              <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AllProjectView.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/View/AllProjectView.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="84" column="59" lean-forward="true" selection-start-line="84" selection-start-column="59" selection-end-line="84" selection-end-column="143" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProjectController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Controller/ProjectController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="19" selection-start-line="19" selection-end-line="21" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ForumController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Controller/ForumController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="148">
+              <caret line="30" column="61" selection-start-line="30" selection-start-column="61" selection-end-line="30" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -133,29 +133,29 @@
         <option value="$PROJECT_DIR$/DAO/MessageDAO.php" />
         <option value="$PROJECT_DIR$/View/User/UserVersionView.php" />
         <option value="$PROJECT_DIR$/View/AllProjectView.php" />
-        <option value="$PROJECT_DIR$/Controller/Controller.php" />
         <option value="$PROJECT_DIR$/View/User/AdminViewUser.php" />
-        <option value="$PROJECT_DIR$/Controller/ForumController.php" />
         <option value="$PROJECT_DIR$/View/NewPasswordView.php" />
         <option value="$PROJECT_DIR$/View/User/NewPasswordView.php" />
         <option value="$PROJECT_DIR$/View/User/UserLoginView.php" />
-        <option value="$PROJECT_DIR$/View/User/UserProfileView.php" />
         <option value="$PROJECT_DIR$/DAO/UserDAO.php" />
         <option value="$PROJECT_DIR$/View/User/UserUpdatePasswordView.php" />
         <option value="$PROJECT_DIR$/View/User/UserProjectView.php" />
         <option value="$PROJECT_DIR$/View/Template.php" />
-        <option value="$PROJECT_DIR$/View/HomeView.php" />
-        <option value="$PROJECT_DIR$/DAO/ProjectDAO.php" />
-        <option value="$PROJECT_DIR$/DAO/ForumDAO.php" />
         <option value="$PROJECT_DIR$/View/TopicView.php" />
-        <option value="$PROJECT_DIR$/Controller/UserController.php" />
         <option value="&lt;a4b7ae7c-e20d-4ca0-b057-a952a16f6d56&gt;/FTPHandler.php" />
-        <option value="$PROJECT_DIR$/Controller/ProjectController.php" />
         <option value="$PROJECT_DIR$/Controller/VersionController.php" />
         <option value="&lt;d0c6bce6-7a02-4770-82d0-8db49f11bc9e&gt;/etc/php5/apache2/php.ini" />
         <option value="$PROJECT_DIR$/View/User/UserUploadVersionView.php" />
+        <option value="$PROJECT_DIR$/Controller/ProjectController.php" />
+        <option value="$PROJECT_DIR$/Controller/Controller.php" />
+        <option value="$PROJECT_DIR$/Controller/ForumController.php" />
         <option value="$PROJECT_DIR$/DAO/BaseDAO.php" />
+        <option value="$PROJECT_DIR$/Controller/UserController.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/View/HomeView.php" />
+        <option value="$PROJECT_DIR$/DAO/ForumDAO.php" />
+        <option value="$PROJECT_DIR$/DAO/ProjectDAO.php" />
+        <option value="$PROJECT_DIR$/View/User/UserProfileView.php" />
         <option value="$PROJECT_DIR$/FTPHandler.php" />
       </list>
     </option>
@@ -192,6 +192,11 @@
           <mapping local-root="$PROJECT_DIR$" remote-root="/var/www/EJSTPI" />
         </path_mappings>
       </server>
+      <server host="192.168.154.132" id="c2f0889e-35a6-4dea-8452-b8cbd7123fc6" name="192.168.154.132" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$" remote-root="/var/www/EJSTPI" />
+        </path_mappings>
+      </server>
     </servers>
   </component>
   <component name="PhpWebServerValidation" deployment_server_id="d0c6bce6-7a02-4770-82d0-8db49f11bc9e" path_to_validation_script="C:\Users\Emmanuel.JANSSENS\Documents\EJS_TPI\Site" selected_validation_type="REMOTE" web_path_to_validation_script="http://172.17.101.246:80" />
@@ -216,27 +221,6 @@
               <item name="Site" type="b2602c69:ProjectViewProjectNode" />
               <item name="Site" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Site" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Site" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Site" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Site" type="462c0819:PsiDirectoryNode" />
-              <item name="DAO" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Site" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Site" type="462c0819:PsiDirectoryNode" />
-              <item name="View" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Site" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Site" type="462c0819:PsiDirectoryNode" />
-              <item name="View" type="462c0819:PsiDirectoryNode" />
-              <item name="User" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -251,7 +235,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Documentation/Images" />
     <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
   <component name="RecentsManager">
@@ -302,26 +286,29 @@
       <workItem from="1527666727691" duration="1273000" />
       <workItem from="1527680693693" duration="3602000" />
       <workItem from="1527684556318" duration="3830000" />
+      <workItem from="1527753420610" duration="7092000" />
+      <workItem from="1527767831216" duration="5788000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107323000" />
+    <option name="totallyTimeSpent" value="120203000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" x="569" y="647" width="1137" height="534" id="Event Log" order="7" sideWeight="0.0734375" side_tool="true" type="FLOATING" weight="0.4069641" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="File Transfer" order="8" weight="0.32589287" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" x="569" y="647" width="1137" height="534" id="Event Log" order="12" sideWeight="0.0734375" side_tool="true" type="FLOATING" weight="0.4069641" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="File Transfer" order="11" weight="0.32589287" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32924107" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32924107" />
-      <window_info anchor="right" id="Remote Host" order="3" visible="true" weight="0.20255864" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22814499" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32924107" />
+      <window_info anchor="right" id="Remote Host" order="3" visible="true" weight="0.15191898" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28624734" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.9265625" weight="0.3002232" />
@@ -333,29 +320,6 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32849163" />
     </layout>
-    <layout-to-restore>
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Remote Host" order="3" visible="true" weight="0.16684435" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21748401" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.9265625" visible="true" weight="0.3002232" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" x="335" y="560" width="1870" height="368" id="Event Log" order="11" sideWeight="0.0734375" side_tool="true" type="FLOATING" weight="0.4069641" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="File Transfer" order="12" weight="0.32589287" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32849163" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -367,30 +331,18 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/FTPHandler.php</url>
-          <line>101</line>
-          <option name="timeStamp" value="82" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/Controller/UserController.php</url>
-          <line>169</line>
-          <option name="timeStamp" value="85" />
+          <url>file://$PROJECT_DIR$/DAO/ProjectDAO.php</url>
+          <line>114</line>
+          <option name="timeStamp" value="91" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="86" />
+      <option name="time" value="95" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/View/Template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="48" lean-forward="true" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html" />
     <entry file="file://$PROJECT_DIR$/Test.php" />
     <entry file="file://$PROJECT_DIR$/User.php" />
@@ -435,53 +387,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/User.php" />
     <entry file="file://$PROJECT_DIR$/index.html" />
-    <entry file="uml://PHP/C:/Users/Emmanuel.JANSSENS/Documents/EJS_TPI/Site/DAO">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>PHP</ID>
-          <OriginalElement>$PROJECT_DIR$/DAO</OriginalElement>
-          <nodes>
-            <node x="115.99999999999999" y="79.0">\ProjectDAO</node>
-            <node x="330.0" y="79.0">\ForumDAO</node>
-            <node x="230.0" y="79.0">\UserDAO</node>
-            <node x="0.0" y="79.0">\VersionDAO</node>
-            <node x="188.0" y="-27.0">\DAO</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="\VersionDAO" target="\DAO">
-              <point x="0.0" y="-14.5" />
-              <point x="48.0" y="49.0" />
-              <point x="195.125" y="49.0" />
-              <point x="-21.375" y="14.5" />
-            </edge>
-            <edge source="\UserDAO" target="\DAO">
-              <point x="0.0" y="-14.5" />
-              <point x="270.0" y="59.0" />
-              <point x="223.625" y="59.0" />
-              <point x="7.125" y="14.5" />
-            </edge>
-            <edge source="\ForumDAO" target="\DAO">
-              <point x="0.0" y="-14.5" />
-              <point x="376.0" y="49.0" />
-              <point x="237.875" y="49.0" />
-              <point x="21.375" y="14.5" />
-            </edge>
-            <edge source="\ProjectDAO" target="\DAO">
-              <point x="0.0" y="-14.5" />
-              <point x="163.0" y="59.0" />
-              <point x="209.375" y="59.0" />
-              <point x="-7.125" y="14.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="23.0" y="50.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://JavaScript-modules-diagram/C:/Users/Emmanuel.JANSSENS/Documents/EJS_TPI/Site">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -527,13 +432,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DAO/MessageDAO.php" />
-    <entry file="file://$PROJECT_DIR$/View/AllProjectView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="101" selection-start-line="101" selection-end-line="101" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/View/User/Version.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -593,31 +491,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controller/ForumController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="38" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/View/TopicView.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="22" column="55" selection-start-line="22" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/View/User/UserProfileView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1717">
-          <caret line="101" column="5" selection-start-line="101" selection-start-column="5" selection-end-line="118" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DAO/ForumDAO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="70" column="111" selection-start-line="70" selection-start-column="111" selection-end-line="70" selection-end-column="111" />
         </state>
       </provider>
     </entry>
@@ -628,13 +505,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="30" selection-start-line="30" selection-end-line="30" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controller/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
         </state>
       </provider>
     </entry>
@@ -659,84 +529,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controller/ProjectController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="50" column="33" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/View/HomeView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="136" column="78" lean-forward="true" selection-start-line="136" selection-start-column="78" selection-end-line="136" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://PHP/C:/Users/Emmanuel.JANSSENS/Documents/EJS_TPI/Site/Controller">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>PHP</ID>
-          <OriginalElement>$PROJECT_DIR$/Controller</OriginalElement>
-          <nodes>
-            <node x="374.99999999999994" y="532.5">\VersionController</node>
-            <node x="558.25" y="0.0">\Controller</node>
-            <node x="740.0" y="279.0">\UserController</node>
-            <node x="1246.0" y="488.5">\ProjectController</node>
-            <node x="0.0" y="510.5">\ForumController</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="\ForumController" target="\Controller">
-              <point x="0.0" y="-70.0" />
-              <point x="177.5" y="249.0" />
-              <point x="610.0" y="249.0" />
-              <point x="-155.25" y="114.5" />
-            </edge>
-            <edge source="\UserController" target="\Controller">
-              <point x="0.0" y="-301.5" />
-              <point x="983.0" y="259.0" />
-              <point x="817.0" y="259.0" />
-              <point x="51.75" y="114.5" />
-            </edge>
-            <edge source="\VersionController" target="\Controller">
-              <point x="0.0" y="-48.0" />
-              <point x="547.5" y="259.0" />
-              <point x="713.5" y="259.0" />
-              <point x="-51.75" y="114.5" />
-            </edge>
-            <edge source="\ProjectController" target="\Controller">
-              <point x="0.0" y="-92.0" />
-              <point x="1438.5" y="249.0" />
-              <point x="920.5" y="249.0" />
-              <point x="155.25" y="114.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="0.6493034524530588" x="360.0" y="161.0" />
-          <SelectedNodes>
-            <node>\ForumController</node>
-          </SelectedNodes>
-          <Categories>
-            <Category>Fields</Category>
-            <Category>Constants</Category>
-            <Category>Constructors</Category>
-            <Category>Methods</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DAO/ProjectDAO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="116" selection-start-line="116" selection-end-line="116" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DAO/VersionDAO.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
+        <state relative-caret-position="850">
           <caret line="50" selection-start-line="50" selection-end-line="50" />
         </state>
       </provider>
@@ -744,21 +539,7 @@
     <entry file="file://$PROJECT_DIR$/Controller/VersionController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
-          <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DAO/BaseDAO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="70" lean-forward="true" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DAO/UserDAO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="272" selection-start-line="272" selection-end-line="272" />
+          <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -769,24 +550,224 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DAO/UserDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6732">
+          <caret line="396" selection-start-line="396" selection-end-line="396" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://PHP/C:/Users/Emmanuel.JANSSENS/Documents/EJS_TPI/Site/Controller">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>PHP</ID>
+          <OriginalElement>$PROJECT_DIR$/Controller</OriginalElement>
+          <nodes>
+            <node x="375.0" y="532.5">\VersionController</node>
+            <node x="533.0" y="0.0">\Controller</node>
+            <node x="1145.0" y="279.0">\UserController</node>
+            <node x="740.0" y="488.5">\ProjectController</node>
+            <node x="0.0" y="510.5">\ForumController</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="\UserController" target="\Controller">
+              <point x="0.0" y="-301.5" />
+              <point x="1388.0" y="249.0" />
+              <point x="895.25" y="249.0" />
+              <point x="155.25" y="114.5" />
+            </edge>
+            <edge source="\VersionController" target="\Controller">
+              <point x="0.0" y="-48.0" />
+              <point x="547.5" y="259.0" />
+              <point x="688.25" y="259.0" />
+              <point x="-51.75" y="114.5" />
+            </edge>
+            <edge source="\ProjectController" target="\Controller">
+              <point x="0.0" y="-92.0" />
+              <point x="932.5" y="259.0" />
+              <point x="791.75" y="259.0" />
+              <point x="51.75" y="114.5" />
+            </edge>
+            <edge source="\ForumController" target="\Controller">
+              <point x="0.0" y="-70.0" />
+              <point x="177.5" y="249.0" />
+              <point x="584.75" y="249.0" />
+              <point x="-155.25" y="114.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.290732889158086" x="815.5000000000001" y="441.0" />
+          <SelectedNodes>
+            <node>\VersionController</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constants</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://PHP/C:/Users/Emmanuel.JANSSENS/Documents/EJS_TPI/Site/DAO">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>PHP</ID>
+          <OriginalElement>$PROJECT_DIR$/DAO</OriginalElement>
+          <nodes>
+            <node x="1167.0" y="289.5">\ProjectDAO</node>
+            <node x="340.0" y="322.5">\ForumDAO</node>
+            <node x="661.0" y="124.0">\UserDAO</node>
+            <node x="0.0" y="333.5">\VersionDAO</node>
+            <node x="643.75" y="0.0">\DAO</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="\UserDAO" target="\DAO">
+              <point x="0.0" y="-257.0" />
+              <point x="904.0" y="104.0" />
+              <point x="710.625" y="104.0" />
+              <point x="13.375" y="37.0" />
+            </edge>
+            <edge source="\ForumDAO" target="\DAO">
+              <point x="0.0" y="-58.5" />
+              <point x="490.5" y="104.0" />
+              <point x="683.875" y="104.0" />
+              <point x="-13.375" y="37.0" />
+            </edge>
+            <edge source="\VersionDAO" target="\DAO">
+              <point x="0.0" y="-47.5" />
+              <point x="160.0" y="94.0" />
+              <point x="657.125" y="94.0" />
+              <point x="-40.125" y="37.0" />
+            </edge>
+            <edge source="\ProjectDAO" target="\DAO">
+              <point x="0.0" y="-91.5" />
+              <point x="1359.5" y="94.0" />
+              <point x="737.375" y="94.0" />
+              <point x="40.125" y="37.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.3053435114503817" x="776.0" y="319.0" />
+          <SelectedNodes>
+            <node>\DAO</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constants</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://PHP/\FTPHandler">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>PHP</ID>
+          <OriginalElement>\FTPHandler</OriginalElement>
+          <nodes>
+            <node x="0.0" y="0.0">\FTPHandler</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="-18.5" y="-17.5" />
+          <SelectedNodes>
+            <node>\FTPHandler</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constants</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DAO/BaseDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controller/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="59" column="3" selection-start-line="59" selection-start-column="3" selection-end-line="61" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controller/ForumController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="30" column="61" selection-start-line="30" selection-start-column="61" selection-end-line="30" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/AllProjectView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="84" column="59" lean-forward="true" selection-start-line="84" selection-start-column="59" selection-end-line="84" selection-end-column="143" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controller/ProjectController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="19" selection-start-line="19" selection-end-line="21" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/HomeView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DAO/ForumDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DAO/ProjectDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="45" column="84" lean-forward="true" selection-start-line="45" selection-start-column="84" selection-end-line="45" selection-end-column="84" />
+        <state relative-caret-position="952">
+          <caret line="56" column="43" selection-start-line="56" selection-start-column="43" selection-end-line="56" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/User/UserProfileView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Controller/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="169" selection-start-line="169" selection-end-line="169" />
+        <state relative-caret-position="2179">
+          <caret line="210" lean-forward="true" selection-start-line="210" selection-end-line="210" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FTPHandler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-198">
-          <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+        <state relative-caret-position="372">
+          <caret line="99" selection-start-line="99" selection-end-line="99" />
         </state>
       </provider>
     </entry>

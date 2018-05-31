@@ -17,7 +17,7 @@
             {
                 $conn = $this->connect();
 
-                $q = "SELECT Project.pkProject,Project.description, Project.name, Project.creationDate, User.username FROM Project INNER JOIN User ON Project.fkUser = User.pkUser";
+                $q = "SELECT Project.pkProject,Project.description, Project.name, Project.creationDate, User.username FROM Project INNER JOIN User ON Project.fkUser = User.pkUser ORDER BY Project.creationDate DESC LIMIT  $limit";
                 $query = $conn->prepare($q);
                 $query->execute();
                 

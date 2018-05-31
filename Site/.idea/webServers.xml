@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="d0c6bce6-7a02-4770-82d0-8db49f11bc9e" name="TURNKEY" url="http://192.168.154.131">
-        <fileTransfer host="192.168.154.131" port="22" accessType="SFTP">
+      <webServer id="d0c6bce6-7a02-4770-82d0-8db49f11bc9e" name="TURNKEY" url="http://192.168.154.132">
+        <fileTransfer host="192.168.154.132" port="22" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>

@@ -27,7 +27,6 @@
             <section class="box features">
 
                 <h2 class="major"><span><?=$_GET['username']?></span></h2>
-                <h1><?=$UserCtrl->GetUserType($_GET['username'])?></h1>
                 <div>
                     <div class="row">
                         <div class="3u 12u(mobile)">

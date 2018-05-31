@@ -168,7 +168,8 @@
                     $this->connected = true;
 
                     $FTPHandler->CreateDirectory($username);
-
+                    $projectData = $this->projectDAO->GetAllProject(4);
+                    $error = $this->projectDAO->error;
                     require_once "View/HomeView.php";
                 }
                 else

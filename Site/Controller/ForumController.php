@@ -26,9 +26,9 @@
          * @param [in|out] type parameter_name Parameter description.
          * @return Description of returned value.
          */
-        function ViewForums()
+        function ViewForums($limit)
         {
-            $forumData = $this->forumDAO->GetAllTopics();
+            $forumData = $this->forumDAO->GetAllTopics($limit);
 
             require_once "View/AllForumView.php";
         }

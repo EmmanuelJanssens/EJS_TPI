@@ -55,8 +55,11 @@
          * @param [in|out] type parameter_name Parameter description.
          * @return Description of returned value.
          */
-        function ViewHome()
+        function ViewHome($limit)
         {
+            $projectData = $this->projectDAO->GetAllProject($limit);
+
+            $error = $this->projectDAO->error;
             require_once "View/HomeView.php";
         }
 

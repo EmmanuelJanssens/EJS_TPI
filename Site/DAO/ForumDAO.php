@@ -3,17 +3,16 @@
 
     class ForumDAO extends DAO 
     {
-        function GetAllTopics()
+        function GetAllTopics($limit)
         {
 
             try
             {
                 $conn = $this->connect();
 
-                $qs = "SELECT * FROM Project";
+                $qs = "SELECT * FROM Project LIMIT $limit";
 
                 $query = $conn->prepare($qs);
-
                 $query->execute();
 
                 $result = array();
