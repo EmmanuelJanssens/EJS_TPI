@@ -1,0 +1,105 @@
+\hypertarget{class_forum_controller}{}\section{Forum\+Controller Class Reference}
+\label{class_forum_controller}\index{Forum\+Controller@{Forum\+Controller}}
+
+
+Handles Control over the forum.  
+
+
+
+
+Inherits \hyperlink{class_controller}{Controller}.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_forum_controller_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct} ()
+\begin{DoxyCompactList}\small\item\em basic constructor \end{DoxyCompactList}\item 
+\hyperlink{class_forum_controller_a4b9462f290a447541323a8a21484c193}{Init} (\$dao, \$user\+D\+AO, \$project\+D\+AO, \$version\+D\+AO, \$forum\+D\+AO)
+\begin{DoxyCompactList}\small\item\em initialises the data access objects \end{DoxyCompactList}\item 
+\hyperlink{class_forum_controller_ac91f2abbd0e5638d85281ba298f69b8d}{View\+Forums} (\$limit)
+\begin{DoxyCompactList}\small\item\em Displays a list of all the topics/project. \end{DoxyCompactList}\item 
+\hyperlink{class_forum_controller_ae680809f7a8b645666ee0f185315e632}{Display\+Message} (\$project\+ID)
+\begin{DoxyCompactList}\small\item\em displays all the message concerning a project \end{DoxyCompactList}\item 
+\hyperlink{class_forum_controller_a6aa6340089c9cbf1d660ede98e40a89f}{Post\+Message} (\$date, \$user\+Name, \$project\+ID, \$message)
+\begin{DoxyCompactList}\small\item\em Write a message on a specific topic. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Handles Control over the forum. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_forum_controller_a095c5d389db211932136b53f25f39685}\label{class_forum_controller_a095c5d389db211932136b53f25f39685}} 
+\index{Forum\+Controller@{Forum\+Controller}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!Forum\+Controller@{Forum\+Controller}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+basic constructor 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_forum_controller_ae680809f7a8b645666ee0f185315e632}\label{class_forum_controller_ae680809f7a8b645666ee0f185315e632}} 
+\index{Forum\+Controller@{Forum\+Controller}!Display\+Message@{Display\+Message}}
+\index{Display\+Message@{Display\+Message}!Forum\+Controller@{Forum\+Controller}}
+\subsubsection{\texorpdfstring{Display\+Message()}{DisplayMessage()}}
+{\footnotesize\ttfamily Display\+Message (\begin{DoxyParamCaption}\item[{}]{\$project\+ID }\end{DoxyParamCaption})}
+
+
+
+displays all the message concerning a project 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}int\mbox{]}} & \$project\+ID the ID of the project from wich the messages will be displayed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_forum_controller_a4b9462f290a447541323a8a21484c193}\label{class_forum_controller_a4b9462f290a447541323a8a21484c193}} 
+\index{Forum\+Controller@{Forum\+Controller}!Init@{Init}}
+\index{Init@{Init}!Forum\+Controller@{Forum\+Controller}}
+\subsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily Init (\begin{DoxyParamCaption}\item[{}]{\$dao,  }\item[{}]{\$user\+D\+AO,  }\item[{}]{\$project\+D\+AO,  }\item[{}]{\$version\+D\+AO,  }\item[{}]{\$forum\+D\+AO }\end{DoxyParamCaption})}
+
+
+
+initialises the data access objects 
+
+\mbox{\Hypertarget{class_forum_controller_a6aa6340089c9cbf1d660ede98e40a89f}\label{class_forum_controller_a6aa6340089c9cbf1d660ede98e40a89f}} 
+\index{Forum\+Controller@{Forum\+Controller}!Post\+Message@{Post\+Message}}
+\index{Post\+Message@{Post\+Message}!Forum\+Controller@{Forum\+Controller}}
+\subsubsection{\texorpdfstring{Post\+Message()}{PostMessage()}}
+{\footnotesize\ttfamily Post\+Message (\begin{DoxyParamCaption}\item[{}]{\$date,  }\item[{}]{\$user\+Name,  }\item[{}]{\$project\+ID,  }\item[{}]{\$message }\end{DoxyParamCaption})}
+
+
+
+Write a message on a specific topic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}date\mbox{]}} & \$date date and time when the message was posted \\
+\hline
+{\em \mbox{[}string\mbox{]}} & \$user\+Name wich user posted the message \\
+\hline
+{\em \mbox{[}int\mbox{]}} & \$project\+ID id from the project on wich the user writes \\
+\hline
+{\em \mbox{[}string\mbox{]}} & \$message content of the message that the user wrote \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_forum_controller_ac91f2abbd0e5638d85281ba298f69b8d}\label{class_forum_controller_ac91f2abbd0e5638d85281ba298f69b8d}} 
+\index{Forum\+Controller@{Forum\+Controller}!View\+Forums@{View\+Forums}}
+\index{View\+Forums@{View\+Forums}!Forum\+Controller@{Forum\+Controller}}
+\subsubsection{\texorpdfstring{View\+Forums()}{ViewForums()}}
+{\footnotesize\ttfamily View\+Forums (\begin{DoxyParamCaption}\item[{}]{\$limit }\end{DoxyParamCaption})}
+
+
+
+Displays a list of all the topics/project. 
+
+View\+Forums 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Controller/\hyperlink{_forum_controller_8php}{Forum\+Controller.\+php}\end{DoxyCompactItemize}

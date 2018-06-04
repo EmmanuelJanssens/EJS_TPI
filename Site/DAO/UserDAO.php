@@ -1,6 +1,9 @@
 <?php
     require_once "BaseDAO.php";
 
+    /**
+     * @brief access data for the user controller
+    **/
     class UserDAO extends DAO
     {
         private $username;
@@ -15,10 +18,10 @@
         /**
          * Insert userdata into the database
          *
-         * @param [type] $name
-         * @param [type] $lastname
-         * @param [type] $pseudo
-         * @param [type] $email
+         * @param [type] $name name of the user
+         * @param [type] $lastname last name of the user
+         * @param [type] $pseudo username of the user
+         * @param [type] $email mail adress of the user
          * @param [type] $pwd
          *
 
@@ -66,6 +69,12 @@
             }
         }
 
+        /**
+         * @brief updates an entry in the user table
+         *
+         * @param [string] $username username whose password will be updated
+         * @param [string] $pwd hashed password that was updated
+        **/
         function UpdatePassword($username,$pwd)
         {
             try
@@ -88,7 +97,9 @@
         }
         /**
          * @brief get the type of the user
-         * @param username to be checked
+         *
+         * @param [string] $username to be checked
+         *
          * @return string  type of the user
          **/
         function GetUserType($username)
@@ -118,6 +129,13 @@
             }
         }
 
+        /**
+         * @brief get the user's type
+         *
+         * @param [string] $userName userme to get the type ID
+         *
+         * @return string type of the user
+        **/
         function GetUserTypeID($userName)
         {
             try
@@ -144,7 +162,13 @@
                 $this->error = $e->getMessage();
             }
         }
-
+        /**
+         * @brief get the user's type ID
+         *
+         * @param [string] $userName username to get the type ID
+         *
+         * @return string type of the user
+         **/
         function GetTypeID($type)
         {
             try
@@ -390,6 +414,11 @@
             }
         }
 
+        /**
+         * @brief get a list of all the user in the database
+         *
+         * @return array of entries from the database
+        **/
         function GetAllUsers()
         {
             try
@@ -417,6 +446,12 @@
                 $this->error = $e->getMessage();
             }
         }
+
+        /**
+         * @brief get a list of all user types from database
+         *
+         * @return array of user types
+        **/
         function GetAllUserTypes()
         {
             try
@@ -444,6 +479,19 @@
                 $this->error = $e->getMessage();
             }
         }
+
+
+        /**
+         * Updates userData into the database
+         *
+         * @param [inz] $userID id of the user to be updated
+         * @param [string] $name name of the user
+         * @param [string] $lastName last name of the user
+         * @param [string] $pseudo username of the user
+         * @param [string] $email mail adress of the user
+         * @param [string] $pwd password of the user
+         * @param [int] $userType ID of the type
+         */
         function SaveUpdatedUser($userID,$name,$lastName,$userName,$email,$password,$userType)
         {
             try
@@ -472,6 +520,13 @@
                 $this->error = $e->getMessage();
             }
         }
+
+        /**
+         *
+         * @brief Deletes a user from the database
+         *
+         * @param [string] $usernName
+        **/
         function DeleteUser($userName)
         {
             try

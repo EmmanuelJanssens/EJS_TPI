@@ -1,0 +1,170 @@
+\hypertarget{class_project_d_a_o}{}\section{Project\+D\+AO Class Reference}
+\label{class_project_d_a_o}\index{Project\+D\+AO@{Project\+D\+AO}}
+
+
+access data for the project \hyperlink{class_controller}{Controller}  
+
+
+
+
+Inherits \hyperlink{class_d_a_o}{D\+AO}.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_project_d_a_o_a66f83737d74fbe61fea6d8eeba29300a}{Get\+All\+Project} (\$limit)
+\begin{DoxyCompactList}\small\item\em get a list of all project to be displayed on the main project page \end{DoxyCompactList}\item 
+\hyperlink{class_project_d_a_o_aef077c373665972101668ce915526786}{Get\+Project\+Details} (\$username, \$projectid)
+\begin{DoxyCompactList}\small\item\em get the details/content of the project \end{DoxyCompactList}\item 
+\hyperlink{class_project_d_a_o_a2c8979ebd3a03bb6fc406d500cd128ef}{Get\+Project\+Author} (\$project)
+\begin{DoxyCompactList}\small\item\em get the author of the specified project \end{DoxyCompactList}\item 
+\hyperlink{class_project_d_a_o_a483563c27167fa2cbc95cc537527e994}{Get\+Project\+Name} (\$ID)
+\begin{DoxyCompactList}\small\item\em gets the name of the project BY ID \end{DoxyCompactList}\item 
+\hyperlink{class_project_d_a_o_ab33602f01ad5d9926c26dda5942292a3}{Create\+Project} (\$name, \$description)
+\begin{DoxyCompactList}\small\item\em insert an antry in the project table \end{DoxyCompactList}\item 
+\hyperlink{class_project_d_a_o_aaaadaf1c606b537d83daeb2995c86062}{Update\+Project} (\$project\+Name, \$project\+ID, \$description, \$username)
+\begin{DoxyCompactList}\small\item\em updates the description, name, update date \end{DoxyCompactList}\item 
+\hyperlink{class_project_d_a_o_a9aab18deae687e16af661f2ee28479af}{Delete\+Project} (\$project\+ID)
+\begin{DoxyCompactList}\small\item\em deletes an entry in the project table \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+access data for the project \hyperlink{class_controller}{Controller} 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_project_d_a_o_ab33602f01ad5d9926c26dda5942292a3}\label{class_project_d_a_o_ab33602f01ad5d9926c26dda5942292a3}} 
+\index{Project\+D\+AO@{Project\+D\+AO}!Create\+Project@{Create\+Project}}
+\index{Create\+Project@{Create\+Project}!Project\+D\+AO@{Project\+D\+AO}}
+\subsubsection{\texorpdfstring{Create\+Project()}{CreateProject()}}
+{\footnotesize\ttfamily Create\+Project (\begin{DoxyParamCaption}\item[{}]{\$name,  }\item[{}]{\$description }\end{DoxyParamCaption})}
+
+
+
+insert an antry in the project table 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}string\mbox{]}} & \$name name of the project \\
+\hline
+{\em \mbox{[}string\mbox{]}} & \$description description of the project\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int ID of the last inserted project 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_project_d_a_o_a9aab18deae687e16af661f2ee28479af}\label{class_project_d_a_o_a9aab18deae687e16af661f2ee28479af}} 
+\index{Project\+D\+AO@{Project\+D\+AO}!Delete\+Project@{Delete\+Project}}
+\index{Delete\+Project@{Delete\+Project}!Project\+D\+AO@{Project\+D\+AO}}
+\subsubsection{\texorpdfstring{Delete\+Project()}{DeleteProject()}}
+{\footnotesize\ttfamily Delete\+Project (\begin{DoxyParamCaption}\item[{}]{\$project\+ID }\end{DoxyParamCaption})}
+
+
+
+deletes an entry in the project table 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}int\mbox{]}} & project id \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_project_d_a_o_a66f83737d74fbe61fea6d8eeba29300a}\label{class_project_d_a_o_a66f83737d74fbe61fea6d8eeba29300a}} 
+\index{Project\+D\+AO@{Project\+D\+AO}!Get\+All\+Project@{Get\+All\+Project}}
+\index{Get\+All\+Project@{Get\+All\+Project}!Project\+D\+AO@{Project\+D\+AO}}
+\subsubsection{\texorpdfstring{Get\+All\+Project()}{GetAllProject()}}
+{\footnotesize\ttfamily Get\+All\+Project (\begin{DoxyParamCaption}\item[{}]{\$limit }\end{DoxyParamCaption})}
+
+
+
+get a list of all project to be displayed on the main project page 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}int\mbox{]}} & \$limit How many rows does it return\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array of project limited by \$limit 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_project_d_a_o_a2c8979ebd3a03bb6fc406d500cd128ef}\label{class_project_d_a_o_a2c8979ebd3a03bb6fc406d500cd128ef}} 
+\index{Project\+D\+AO@{Project\+D\+AO}!Get\+Project\+Author@{Get\+Project\+Author}}
+\index{Get\+Project\+Author@{Get\+Project\+Author}!Project\+D\+AO@{Project\+D\+AO}}
+\subsubsection{\texorpdfstring{Get\+Project\+Author()}{GetProjectAuthor()}}
+{\footnotesize\ttfamily Get\+Project\+Author (\begin{DoxyParamCaption}\item[{}]{\$project }\end{DoxyParamCaption})}
+
+
+
+get the author of the specified project 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}int\mbox{]}} & \$project id of the project to get the author\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array an single entry with the author from the desired project 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_project_d_a_o_aef077c373665972101668ce915526786}\label{class_project_d_a_o_aef077c373665972101668ce915526786}} 
+\index{Project\+D\+AO@{Project\+D\+AO}!Get\+Project\+Details@{Get\+Project\+Details}}
+\index{Get\+Project\+Details@{Get\+Project\+Details}!Project\+D\+AO@{Project\+D\+AO}}
+\subsubsection{\texorpdfstring{Get\+Project\+Details()}{GetProjectDetails()}}
+{\footnotesize\ttfamily Get\+Project\+Details (\begin{DoxyParamCaption}\item[{}]{\$username,  }\item[{}]{\$projectid }\end{DoxyParamCaption})}
+
+
+
+get the details/content of the project 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}string\mbox{]}} & \$username author of the project \\
+\hline
+{\em \mbox{[}int\mbox{]}} & \$project id id of the project to be displayed\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array a single entry of the project\textquotesingle{}s details 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_project_d_a_o_a483563c27167fa2cbc95cc537527e994}\label{class_project_d_a_o_a483563c27167fa2cbc95cc537527e994}} 
+\index{Project\+D\+AO@{Project\+D\+AO}!Get\+Project\+Name@{Get\+Project\+Name}}
+\index{Get\+Project\+Name@{Get\+Project\+Name}!Project\+D\+AO@{Project\+D\+AO}}
+\subsubsection{\texorpdfstring{Get\+Project\+Name()}{GetProjectName()}}
+{\footnotesize\ttfamily Get\+Project\+Name (\begin{DoxyParamCaption}\item[{}]{\$\+ID }\end{DoxyParamCaption})}
+
+
+
+gets the name of the project BY ID 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}int\mbox{]}} & \$\+ID id of the project\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string the name of the project 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_project_d_a_o_aaaadaf1c606b537d83daeb2995c86062}\label{class_project_d_a_o_aaaadaf1c606b537d83daeb2995c86062}} 
+\index{Project\+D\+AO@{Project\+D\+AO}!Update\+Project@{Update\+Project}}
+\index{Update\+Project@{Update\+Project}!Project\+D\+AO@{Project\+D\+AO}}
+\subsubsection{\texorpdfstring{Update\+Project()}{UpdateProject()}}
+{\footnotesize\ttfamily Update\+Project (\begin{DoxyParamCaption}\item[{}]{\$project\+Name,  }\item[{}]{\$project\+ID,  }\item[{}]{\$description,  }\item[{}]{\$username }\end{DoxyParamCaption})}
+
+
+
+updates the description, name, update date 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}string\mbox{]}} & \$project\+Name name of the updated project \\
+\hline
+{\em \mbox{[}int\mbox{]}} & \$project\+ID id of the project that was updated \\
+\hline
+{\em \mbox{[}description\mbox{]}} & \$description description of the updated project \\
+\hline
+{\em \mbox{[}string\mbox{]}} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+A\+O/\hyperlink{_project_d_a_o_8php}{Project\+D\+A\+O.\+php}\end{DoxyCompactItemize}

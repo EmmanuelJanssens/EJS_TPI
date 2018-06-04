@@ -7,21 +7,20 @@
      * UserController
      *
      * @brief Contains all the function linked to user control such as login, view profile, create project, ... .
-     * @param [in|out] type parameter_name Parameter description.
-     * @param [in|out] type parameter_name Parameter description.
-     * @return Description of returned value.
      */
     class UserController extends Controller
     {
 
         /**
-         * Undocumented variable
-         * 
-         * @brief Check connection state
+         *
+         * @brief Check connection state of the user
          */
         private $connected;
 
 
+        /**
+         * @brief basic constructor of the controller
+        **/
         function __construct($controller)
         {
             $this->baseDAO = $controller->baseDAO;
@@ -42,8 +41,12 @@
         /**
          * Login
          *
-         * @brief Connects the user, if login successfull, set @connected to true
-         */
+         * @brief Connects the user, if login successfull, set $connected to true
+         *
+         * @param [string] $username username that was entered by the user
+         * @param [string] $password hashed password that was entered by the user
+         *
+         **/
         function Login($username,$password)
         {
 
@@ -74,7 +77,7 @@
          * Logout
          * 
          * @brief Terminates the user session
-         */
+         **/
         function Logout()
         {
             //if a user exists
@@ -91,7 +94,7 @@
          * ViewLogin
          *
          * @brief Displays the login page for the user when no connected
-         */
+         **/
         function ViewLogin()
         {
             require_once "View/User/UserLoginView.php";
@@ -108,14 +111,14 @@
         }
 
         /**
-         * Register
-         *
-         * @param [string] $name
-         * @param [string] $lastname
-         * @param [string] $email
-         * @param [string] $password
-         *
          * @brief Inserts the data of the register form into the database
+         *
+         * @param [string] $name name of the user
+         * @param [string] $lastname last name of the user
+         * @param [string] $email mail address of the user
+         * @param [string] $password password that the user enters
+         * @param [string] $confirmation password confirmation for the user's password
+         * @param [FPPHandler] $FTPHandler file stream to create the user's directory
 
          */
         function Register($name,$lastname,$username,$email,$password,$confirmation,  $FTPHandler)
@@ -145,7 +148,7 @@
                 }
 
                 //check password length
-                if(!strlen($password) > 6)
+                if(strlen($password) < 6)
                 {
                     $pswd_error = "Password must be longer then 6 characters";
                     throw new Exception( $pswd_error);
@@ -190,6 +193,8 @@
          * ViewProfile
          *
          * @brief Only if the user is logged in he will be able to display his profile
+         *
+         * @param [string] $user wich user's profile we want to display
          */
         function ViewProfile($user)
         {
@@ -204,6 +209,13 @@
             require_once "View/User/UserProfileView.php";
         }
 
+        /**
+         * @brief get the type of the user
+         *
+         * @param [string] get the user name whose type we want to know
+         *
+         * @return string returns the type of the user
+        **/
         function GetUserType($username)
         {
             return $this->userDAO->GetUserType($username);
@@ -253,8 +265,9 @@
          * @brief Delete the user only for administrator
          *
          * @param [string] $username user to be deleted
+         * @param [FTPHandler] $ftp file stream to delete the user's folder
         **/
-        function DeleteUser($userName,FTPHandler $ftp)
+        function DeleteUser($userName,$ftp)
         {
             $this->userDAO->DeleteUser($userName);
             $ftp->DeleteDirectory($userName);
@@ -273,6 +286,10 @@
 
         /**
          * @brief generates a order of letters
+         *
+         * @param [int] length of the random password
+         *
+         * @return string a randomly generated password;
         **/
         function getRandomWord($len = 10)
         {
@@ -332,6 +349,9 @@
 
         }
 
+        /**
+         * @brief Redirects the user to the password update form
+        **/
         function DisplayUpdatePasswordForm()
         {
             require_once "View/User/UserUpdatePasswordView.php";

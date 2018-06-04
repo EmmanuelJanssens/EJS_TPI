@@ -1,0 +1,354 @@
+\hypertarget{class_user_d_a_o}{}\section{User\+D\+AO Class Reference}
+\label{class_user_d_a_o}\index{User\+D\+AO@{User\+D\+AO}}
+
+
+access data for the user controller  
+
+
+
+
+Inherits \hyperlink{class_d_a_o}{D\+AO}.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_user_d_a_o_ac3b69a336d57533a747597e093580d66}{Register} (\$name, \$lastname, \$pseudo, \$email, \$pwd)
+\item 
+\hyperlink{class_user_d_a_o_a140f38e8cbdf6aeb93146174a3a4f978}{Update\+Password} (\$username, \$pwd)
+\begin{DoxyCompactList}\small\item\em updates an entry in the user table \end{DoxyCompactList}\item 
+\hyperlink{class_user_d_a_o_ad14a0bb9938aa18999d1e9b655bb28b1}{Get\+User\+Type} (\$username)
+\begin{DoxyCompactList}\small\item\em get the type of the user \end{DoxyCompactList}\item 
+\hyperlink{class_user_d_a_o_a5c049c930f6e2a9933d752976bb721dc}{Get\+User\+Type\+ID} (\$user\+Name)
+\begin{DoxyCompactList}\small\item\em get the user\textquotesingle{}s type \end{DoxyCompactList}\item 
+\hyperlink{class_user_d_a_o_aca319b6c2beca52c72fd309d12adc9b4}{Get\+Type\+ID} (\$type)
+\begin{DoxyCompactList}\small\item\em get the user\textquotesingle{}s type ID \end{DoxyCompactList}\item 
+\hyperlink{class_user_d_a_o_a5f2cf101cdf7bb9e47c12733ca95ae72}{Get\+User\+Name\+By\+ID} (\$id)
+\begin{DoxyCompactList}\small\item\em Get the username by ID. \end{DoxyCompactList}\item 
+\hyperlink{class_user_d_a_o_a59476ad3d73dd44c3e3503af418c759c}{Get\+User\+Mail\+And\+User\+Name} (\$username)
+\begin{DoxyCompactList}\small\item\em get the user\textquotesingle{}s username and mail address \end{DoxyCompactList}\item 
+\hyperlink{class_user_d_a_o_aac741335b1b0d391cb4c2471f58a1e68}{Get\+I\+D\+By\+User\+Name} (\$username)
+\begin{DoxyCompactList}\small\item\em Returns the ID of the specified Username. \end{DoxyCompactList}\item 
+\hyperlink{class_user_d_a_o_a482eedda3e26e4255ef3a1e01bb98c3e}{Get\+Current\+User} ()
+\item 
+\hyperlink{class_user_d_a_o_a2e5ac6706ceaab2a59cdc0437904dc89}{Get\+User\+Data} (\$user)
+\begin{DoxyCompactList}\small\item\em Get all the columns data from the database. \end{DoxyCompactList}\item 
+\hyperlink{class_user_d_a_o_ac1be310e4b7f4c0a3dd4f67a3e207e65}{Get\+Connection\+Data} (\$username, \$password)
+\begin{DoxyCompactList}\small\item\em Check password of the user. \end{DoxyCompactList}\item 
+\hyperlink{class_user_d_a_o_ac0d96a9079082c5781d10904523c57b9}{Get\+User\+Project\+List} (\$user)
+\begin{DoxyCompactList}\small\item\em Get the data of the project from the user. \end{DoxyCompactList}\item 
+\hyperlink{class_user_d_a_o_a1e59c6d490364d172e493358f0639112}{Get\+All\+Users} ()
+\begin{DoxyCompactList}\small\item\em get a list of all the user in the database \end{DoxyCompactList}\item 
+\hyperlink{class_user_d_a_o_a14278a165514500ce608e1f6c96bc34c}{Get\+All\+User\+Types} ()
+\begin{DoxyCompactList}\small\item\em get a list of all user types from database \end{DoxyCompactList}\item 
+\hyperlink{class_user_d_a_o_a9717e58fe9e9236723f9bc3e80469288}{Save\+Updated\+User} (\$user\+ID, \$name, \$last\+Name, \$user\+Name, \$email, \$password, \$user\+Type)
+\item 
+\hyperlink{class_user_d_a_o_aa755c1ae7667b1f9e424171e68239123}{Delete\+User} (\$user\+Name)
+\begin{DoxyCompactList}\small\item\em Deletes a user from the database. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_user_d_a_o_aeba2ab722cedda53dbb7ec1a59f45550}{\$error}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+access data for the user controller 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_user_d_a_o_aa755c1ae7667b1f9e424171e68239123}\label{class_user_d_a_o_aa755c1ae7667b1f9e424171e68239123}} 
+\index{User\+D\+AO@{User\+D\+AO}!Delete\+User@{Delete\+User}}
+\index{Delete\+User@{Delete\+User}!User\+D\+AO@{User\+D\+AO}}
+\subsubsection{\texorpdfstring{Delete\+User()}{DeleteUser()}}
+{\footnotesize\ttfamily Delete\+User (\begin{DoxyParamCaption}\item[{}]{\$user\+Name }\end{DoxyParamCaption})}
+
+
+
+Deletes a user from the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}string\mbox{]}} & \$usern\+Name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_user_d_a_o_a1e59c6d490364d172e493358f0639112}\label{class_user_d_a_o_a1e59c6d490364d172e493358f0639112}} 
+\index{User\+D\+AO@{User\+D\+AO}!Get\+All\+Users@{Get\+All\+Users}}
+\index{Get\+All\+Users@{Get\+All\+Users}!User\+D\+AO@{User\+D\+AO}}
+\subsubsection{\texorpdfstring{Get\+All\+Users()}{GetAllUsers()}}
+{\footnotesize\ttfamily Get\+All\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get a list of all the user in the database 
+
+\begin{DoxyReturn}{Returns}
+array of entries from the database 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_user_d_a_o_a14278a165514500ce608e1f6c96bc34c}\label{class_user_d_a_o_a14278a165514500ce608e1f6c96bc34c}} 
+\index{User\+D\+AO@{User\+D\+AO}!Get\+All\+User\+Types@{Get\+All\+User\+Types}}
+\index{Get\+All\+User\+Types@{Get\+All\+User\+Types}!User\+D\+AO@{User\+D\+AO}}
+\subsubsection{\texorpdfstring{Get\+All\+User\+Types()}{GetAllUserTypes()}}
+{\footnotesize\ttfamily Get\+All\+User\+Types (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get a list of all user types from database 
+
+\begin{DoxyReturn}{Returns}
+array of user types 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_user_d_a_o_ac1be310e4b7f4c0a3dd4f67a3e207e65}\label{class_user_d_a_o_ac1be310e4b7f4c0a3dd4f67a3e207e65}} 
+\index{User\+D\+AO@{User\+D\+AO}!Get\+Connection\+Data@{Get\+Connection\+Data}}
+\index{Get\+Connection\+Data@{Get\+Connection\+Data}!User\+D\+AO@{User\+D\+AO}}
+\subsubsection{\texorpdfstring{Get\+Connection\+Data()}{GetConnectionData()}}
+{\footnotesize\ttfamily Get\+Connection\+Data (\begin{DoxyParamCaption}\item[{}]{\$username,  }\item[{}]{\$password }\end{DoxyParamCaption})}
+
+
+
+Check password of the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}string\mbox{]}} & \$username \\
+\hline
+{\em \mbox{[}string\mbox{]}} & \$password\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the entered password is correct 
+
+false if the entered password was incorrect 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_user_d_a_o_a482eedda3e26e4255ef3a1e01bb98c3e}\label{class_user_d_a_o_a482eedda3e26e4255ef3a1e01bb98c3e}} 
+\index{User\+D\+AO@{User\+D\+AO}!Get\+Current\+User@{Get\+Current\+User}}
+\index{Get\+Current\+User@{Get\+Current\+User}!User\+D\+AO@{User\+D\+AO}}
+\subsubsection{\texorpdfstring{Get\+Current\+User()}{GetCurrentUser()}}
+{\footnotesize\ttfamily Get\+Current\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_user_d_a_o_aac741335b1b0d391cb4c2471f58a1e68}\label{class_user_d_a_o_aac741335b1b0d391cb4c2471f58a1e68}} 
+\index{User\+D\+AO@{User\+D\+AO}!Get\+I\+D\+By\+User\+Name@{Get\+I\+D\+By\+User\+Name}}
+\index{Get\+I\+D\+By\+User\+Name@{Get\+I\+D\+By\+User\+Name}!User\+D\+AO@{User\+D\+AO}}
+\subsubsection{\texorpdfstring{Get\+I\+D\+By\+User\+Name()}{GetIDByUserName()}}
+{\footnotesize\ttfamily Get\+I\+D\+By\+User\+Name (\begin{DoxyParamCaption}\item[{}]{\$username }\end{DoxyParamCaption})}
+
+
+
+Returns the ID of the specified Username. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}int\mbox{]}} & \$zsername username to be passed\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns the first ID found must be limited to ine 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_user_d_a_o_aca319b6c2beca52c72fd309d12adc9b4}\label{class_user_d_a_o_aca319b6c2beca52c72fd309d12adc9b4}} 
+\index{User\+D\+AO@{User\+D\+AO}!Get\+Type\+ID@{Get\+Type\+ID}}
+\index{Get\+Type\+ID@{Get\+Type\+ID}!User\+D\+AO@{User\+D\+AO}}
+\subsubsection{\texorpdfstring{Get\+Type\+I\+D()}{GetTypeID()}}
+{\footnotesize\ttfamily Get\+Type\+ID (\begin{DoxyParamCaption}\item[{}]{\$type }\end{DoxyParamCaption})}
+
+
+
+get the user\textquotesingle{}s type ID 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}string\mbox{]}} & \$user\+Name username to get the type ID\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string type of the user 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_user_d_a_o_a2e5ac6706ceaab2a59cdc0437904dc89}\label{class_user_d_a_o_a2e5ac6706ceaab2a59cdc0437904dc89}} 
+\index{User\+D\+AO@{User\+D\+AO}!Get\+User\+Data@{Get\+User\+Data}}
+\index{Get\+User\+Data@{Get\+User\+Data}!User\+D\+AO@{User\+D\+AO}}
+\subsubsection{\texorpdfstring{Get\+User\+Data()}{GetUserData()}}
+{\footnotesize\ttfamily Get\+User\+Data (\begin{DoxyParamCaption}\item[{}]{\$user }\end{DoxyParamCaption})}
+
+
+
+Get all the columns data from the database. 
+
+Get\+User\+Data
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}string\mbox{]}} & \$user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array the request result 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_user_d_a_o_a59476ad3d73dd44c3e3503af418c759c}\label{class_user_d_a_o_a59476ad3d73dd44c3e3503af418c759c}} 
+\index{User\+D\+AO@{User\+D\+AO}!Get\+User\+Mail\+And\+User\+Name@{Get\+User\+Mail\+And\+User\+Name}}
+\index{Get\+User\+Mail\+And\+User\+Name@{Get\+User\+Mail\+And\+User\+Name}!User\+D\+AO@{User\+D\+AO}}
+\subsubsection{\texorpdfstring{Get\+User\+Mail\+And\+User\+Name()}{GetUserMailAndUserName()}}
+{\footnotesize\ttfamily Get\+User\+Mail\+And\+User\+Name (\begin{DoxyParamCaption}\item[{}]{\$username }\end{DoxyParamCaption})}
+
+
+
+get the user\textquotesingle{}s username and mail address 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}string\mbox{]}} & \$username the user\textquotesingle{}s user name\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array first and single entry of the user name if one exists 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_user_d_a_o_a5f2cf101cdf7bb9e47c12733ca95ae72}\label{class_user_d_a_o_a5f2cf101cdf7bb9e47c12733ca95ae72}} 
+\index{User\+D\+AO@{User\+D\+AO}!Get\+User\+Name\+By\+ID@{Get\+User\+Name\+By\+ID}}
+\index{Get\+User\+Name\+By\+ID@{Get\+User\+Name\+By\+ID}!User\+D\+AO@{User\+D\+AO}}
+\subsubsection{\texorpdfstring{Get\+User\+Name\+By\+I\+D()}{GetUserNameByID()}}
+{\footnotesize\ttfamily Get\+User\+Name\+By\+ID (\begin{DoxyParamCaption}\item[{}]{\$id }\end{DoxyParamCaption})}
+
+
+
+Get the username by ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}int\mbox{]}} & \$id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Description of returned value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_user_d_a_o_ac0d96a9079082c5781d10904523c57b9}\label{class_user_d_a_o_ac0d96a9079082c5781d10904523c57b9}} 
+\index{User\+D\+AO@{User\+D\+AO}!Get\+User\+Project\+List@{Get\+User\+Project\+List}}
+\index{Get\+User\+Project\+List@{Get\+User\+Project\+List}!User\+D\+AO@{User\+D\+AO}}
+\subsubsection{\texorpdfstring{Get\+User\+Project\+List()}{GetUserProjectList()}}
+{\footnotesize\ttfamily Get\+User\+Project\+List (\begin{DoxyParamCaption}\item[{}]{\$user }\end{DoxyParamCaption})}
+
+
+
+Get the data of the project from the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}string\mbox{]}} & \$user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array of the use\textquotesingle{}s project 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_user_d_a_o_ad14a0bb9938aa18999d1e9b655bb28b1}\label{class_user_d_a_o_ad14a0bb9938aa18999d1e9b655bb28b1}} 
+\index{User\+D\+AO@{User\+D\+AO}!Get\+User\+Type@{Get\+User\+Type}}
+\index{Get\+User\+Type@{Get\+User\+Type}!User\+D\+AO@{User\+D\+AO}}
+\subsubsection{\texorpdfstring{Get\+User\+Type()}{GetUserType()}}
+{\footnotesize\ttfamily Get\+User\+Type (\begin{DoxyParamCaption}\item[{}]{\$username }\end{DoxyParamCaption})}
+
+
+
+get the type of the user 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}string\mbox{]}} & \$username to be checked\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string type of the user 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_user_d_a_o_a5c049c930f6e2a9933d752976bb721dc}\label{class_user_d_a_o_a5c049c930f6e2a9933d752976bb721dc}} 
+\index{User\+D\+AO@{User\+D\+AO}!Get\+User\+Type\+ID@{Get\+User\+Type\+ID}}
+\index{Get\+User\+Type\+ID@{Get\+User\+Type\+ID}!User\+D\+AO@{User\+D\+AO}}
+\subsubsection{\texorpdfstring{Get\+User\+Type\+I\+D()}{GetUserTypeID()}}
+{\footnotesize\ttfamily Get\+User\+Type\+ID (\begin{DoxyParamCaption}\item[{}]{\$user\+Name }\end{DoxyParamCaption})}
+
+
+
+get the user\textquotesingle{}s type 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}string\mbox{]}} & \$user\+Name userme to get the type ID\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string type of the user 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_user_d_a_o_ac3b69a336d57533a747597e093580d66}\label{class_user_d_a_o_ac3b69a336d57533a747597e093580d66}} 
+\index{User\+D\+AO@{User\+D\+AO}!Register@{Register}}
+\index{Register@{Register}!User\+D\+AO@{User\+D\+AO}}
+\subsubsection{\texorpdfstring{Register()}{Register()}}
+{\footnotesize\ttfamily Register (\begin{DoxyParamCaption}\item[{}]{\$name,  }\item[{}]{\$lastname,  }\item[{}]{\$pseudo,  }\item[{}]{\$email,  }\item[{}]{\$pwd }\end{DoxyParamCaption})}
+
+Insert userdata into the database
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}type\mbox{]}} & \$name name of the user \\
+\hline
+{\em \mbox{[}type\mbox{]}} & \$lastname last name of the user \\
+\hline
+{\em \mbox{[}type\mbox{]}} & \$pseudo username of the user \\
+\hline
+{\em \mbox{[}type\mbox{]}} & \$email mail adress of the user \\
+\hline
+{\em \mbox{[}type\mbox{]}} & \$pwd\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if registered correctly 
+
+false if an error occured 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_user_d_a_o_a9717e58fe9e9236723f9bc3e80469288}\label{class_user_d_a_o_a9717e58fe9e9236723f9bc3e80469288}} 
+\index{User\+D\+AO@{User\+D\+AO}!Save\+Updated\+User@{Save\+Updated\+User}}
+\index{Save\+Updated\+User@{Save\+Updated\+User}!User\+D\+AO@{User\+D\+AO}}
+\subsubsection{\texorpdfstring{Save\+Updated\+User()}{SaveUpdatedUser()}}
+{\footnotesize\ttfamily Save\+Updated\+User (\begin{DoxyParamCaption}\item[{}]{\$user\+ID,  }\item[{}]{\$name,  }\item[{}]{\$last\+Name,  }\item[{}]{\$user\+Name,  }\item[{}]{\$email,  }\item[{}]{\$password,  }\item[{}]{\$user\+Type }\end{DoxyParamCaption})}
+
+Updates user\+Data into the database
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}inz\mbox{]}} & \$user\+ID id of the user to be updated \\
+\hline
+{\em \mbox{[}string\mbox{]}} & \$name name of the user \\
+\hline
+{\em \mbox{[}string\mbox{]}} & \$last\+Name last name of the user \\
+\hline
+{\em \mbox{[}string\mbox{]}} & \$pseudo username of the user \\
+\hline
+{\em \mbox{[}string\mbox{]}} & \$email mail adress of the user \\
+\hline
+{\em \mbox{[}string\mbox{]}} & \$pwd password of the user \\
+\hline
+{\em \mbox{[}int\mbox{]}} & \$user\+Type ID of the type \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_user_d_a_o_a140f38e8cbdf6aeb93146174a3a4f978}\label{class_user_d_a_o_a140f38e8cbdf6aeb93146174a3a4f978}} 
+\index{User\+D\+AO@{User\+D\+AO}!Update\+Password@{Update\+Password}}
+\index{Update\+Password@{Update\+Password}!User\+D\+AO@{User\+D\+AO}}
+\subsubsection{\texorpdfstring{Update\+Password()}{UpdatePassword()}}
+{\footnotesize\ttfamily Update\+Password (\begin{DoxyParamCaption}\item[{}]{\$username,  }\item[{}]{\$pwd }\end{DoxyParamCaption})}
+
+
+
+updates an entry in the user table 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}string\mbox{]}} & \$username username whose password will be updated \\
+\hline
+{\em \mbox{[}string\mbox{]}} & \$pwd hashed password that was updated \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{class_user_d_a_o_aeba2ab722cedda53dbb7ec1a59f45550}\label{class_user_d_a_o_aeba2ab722cedda53dbb7ec1a59f45550}} 
+\index{User\+D\+AO@{User\+D\+AO}!\$error@{\$error}}
+\index{\$error@{\$error}!User\+D\+AO@{User\+D\+AO}}
+\subsubsection{\texorpdfstring{\$error}{$error}}
+{\footnotesize\ttfamily \$error}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+A\+O/\hyperlink{_user_d_a_o_8php}{User\+D\+A\+O.\+php}\end{DoxyCompactItemize}

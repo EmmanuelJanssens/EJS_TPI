@@ -1,18 +1,32 @@
 <?php
     require_once "BaseDAO.php";
 
+
+    /**
+     * @brief acces the database for the version control
+    **/
     class VersionDAO extends DAO 
     {
-        function GetVersionList($username)
+
+        /**
+         * Get a list of the version from the user
+         *
+         * @param [int] id of the user
+         * @param [int] id of the project to display versions
+         *
+         * @return  array of version
+        **/
+        function GetVersionList($userID,$projectID)
         {
             try
             {
                 $conn = $this->connect();
 
-                $q = "SELECT Version.pkVersion, Version.title,  Project.name, User.username from Version inner join Project on Version.fkProject = Project.pkProject inner join User on Project.fkUser = User.pkUser WHERE User.username = :username";
+                $q = "SELECT Version.pkVersion, Version.title,  Project.name, User.username from Version inner join Project on Version.fkProject = :projectID inner join User on Project.fkUser = User.pkUser WHERE User.username = :username";
 
                 $query = $conn->prepare($q);
-                $query->bindParam(":username",$username,PDO::PARAM_INT);
+                $query->bindParam(":projectID",$projectID,PDO::PARAM_INT);
+                $query->bindParam(":username",$userID,PDO::PARAM_INT);
                 $query->execute();
                 
                 $result = array();
@@ -30,7 +44,14 @@
                 return null;
             }
         }     
-        
+
+        /**
+         * @brief get an entry of a specific version
+         *
+         * @param [int] $versionID id of the version to get from the database
+         *
+         * @return array entry of the database
+        **/
         function GetVersionDetails($versionID)
         {
             try
@@ -57,6 +78,18 @@
             }                     
         }
 
+        /**
+         *
+         * @brief creates an entry in the database
+         *
+         * @param [string] $name name of the version
+         * @param [string] $description $description of the version
+         * @param [string] $log $log of the version
+         * @param [string] $file $file that was uploaded
+         * @param [string] $project $project that contains the version
+         *
+         * @return int last inserted version
+        **/
         function CreateVersion($name,$description,$log,$file,$project)
         {
             try

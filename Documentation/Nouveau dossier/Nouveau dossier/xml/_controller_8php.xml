@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_controller_8php" kind="file" language="PHP">
+    <compoundname>Controller.php</compoundname>
+    <innerclass refid="class_controller" prot="public">Controller</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="7" refid="class_controller" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_controller" kindref="compound">Controller</ref></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_controller_1a5201c1dfa1e73dd3ab719f657d2ee5b2" kindref="member">$baseDAO</ref>;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_controller_1a3d5f01d1592f9012027dd8cd49d8d029" kindref="member">$userDAO</ref>;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_controller_1ac474a3665e60e3c2537876c94a926cfc" kindref="member">$projectDAO</ref>;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_controller_1a41947b974852ee198f45b4bb44fd6e22" kindref="member">$versionDAO</ref>;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_controller_1a492628b7bd1dcf872ab19c2bbb0af7d6" kindref="member">$forumDAO</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="class_controller_1a4b9462f290a447541323a8a21484c193" kindref="member">Init</ref>($dao,<ref refid="class_controller_1a3d5f01d1592f9012027dd8cd49d8d029" kindref="member">$userDAO</ref>,<ref refid="class_controller_1ac474a3665e60e3c2537876c94a926cfc" kindref="member">$projectDAO</ref>,<ref refid="class_controller_1a41947b974852ee198f45b4bb44fd6e22" kindref="member">$versionDAO</ref>,<ref refid="class_controller_1a492628b7bd1dcf872ab19c2bbb0af7d6" kindref="member">$forumDAO</ref>)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$this-&gt;baseDAO<sp/>=<sp/>$dao;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$this-&gt;userDAO<sp/>=<sp/><ref refid="class_controller_1a3d5f01d1592f9012027dd8cd49d8d029" kindref="member">$userDAO</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$this-&gt;projectDAO<sp/>=<sp/><ref refid="class_controller_1ac474a3665e60e3c2537876c94a926cfc" kindref="member">$projectDAO</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$this-&gt;versionDAO<sp/>=<sp/><ref refid="class_controller_1a41947b974852ee198f45b4bb44fd6e22" kindref="member">$versionDAO</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$this-&gt;forumDAO<sp/>=<sp/><ref refid="class_controller_1a492628b7bd1dcf872ab19c2bbb0af7d6" kindref="member">$forumDAO</ref>;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="class_controller_1a1dd81c9e2ac2fc2ca00acd06ce8a86e9" kindref="member">__construct</ref>($dao,<ref refid="class_controller_1a3d5f01d1592f9012027dd8cd49d8d029" kindref="member">$userDAO</ref>,<ref refid="class_controller_1ac474a3665e60e3c2537876c94a926cfc" kindref="member">$projectDAO</ref>,<ref refid="class_controller_1a41947b974852ee198f45b4bb44fd6e22" kindref="member">$versionDAO</ref>,<ref refid="class_controller_1a492628b7bd1dcf872ab19c2bbb0af7d6" kindref="member">$forumDAO</ref>)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$this-&gt;baseDAO<sp/>=<sp/>$dao;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$this-&gt;userDAO<sp/>=<sp/><ref refid="class_controller_1a3d5f01d1592f9012027dd8cd49d8d029" kindref="member">$userDAO</ref>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$this-&gt;projectDAO<sp/>=<sp/><ref refid="class_controller_1ac474a3665e60e3c2537876c94a926cfc" kindref="member">$projectDAO</ref>;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$this-&gt;versionDAO<sp/>=<sp/><ref refid="class_controller_1a41947b974852ee198f45b4bb44fd6e22" kindref="member">$versionDAO</ref>;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$this-&gt;forumDAO<sp/>=<sp/><ref refid="class_controller_1a492628b7bd1dcf872ab19c2bbb0af7d6" kindref="member">$forumDAO</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="class_controller_1a7366734beeaaaadceaff941c9929e8e5" kindref="member">ViewHome</ref>($limit)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$projectData<sp/>=<sp/>$this-&gt;projectDAO-&gt;GetAllProject($limit);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$error<sp/>=<sp/>$this-&gt;projectDAO-&gt;error;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>require_once<sp/></highlight><highlight class="stringliteral">&quot;View/HomeView.php&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="class_controller_1ac19e8736170dc90119edf57d097774d4" kindref="member">ViewAbout</ref>()</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>require_once<sp/></highlight><highlight class="stringliteral">&quot;View/AboutView.php&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">?&gt;</highlight></codeline>
+    </programlisting>
+    <location file="Controller/Controller.php"/>
+  </compounddef>
+</doxygen>

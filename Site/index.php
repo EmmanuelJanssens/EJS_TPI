@@ -100,15 +100,15 @@
                 break;
                 
                 case "view_user_project":
-                    $username = $_GET['username'];
-                    $projectid = $_GET['projectID'];
-                    $ProjectController->ViewProject($username,$projectid);
+                    $userName = $_GET['username'];
+                    $projectID = $_GET['projectID'];
+                    $ProjectController->ViewProject($userName,$projectID);
                 break;
 
                 case "view_user_version":
                     $versionID = $_GET['versionID'];
-                    $username = $_GET['username'];
-                    $VersionController->ViewUserVersion($username,$versionID,$FTPHandler);
+                    $userName = $_GET['username'];
+                    $VersionController->ViewUserVersion($userName,$versionID,$FTPHandler);
                 break;
 
                 case "user_create_project":
@@ -131,15 +131,15 @@
                     break;
                 case "update_project":
                     $username = $_GET['username'];
-                    $projectid = $_GET['projectID'];
-                    $ProjectController->ViewProject($username,$projectid);
+                    $projectID = $_GET['projectID'];
+                    $ProjectController->ViewProject($username,$projectID);
                     break;
                 case "save_project":
                     $username = $_GET['username'];
-                    $projectid = $_GET['projectID'];
+                    $projectID = $_GET['projectID'];
                     $projectName = $_POST['projectName'];
                     $projectDecription =$_POST['projectDescription'];
-                    $ProjectController->UpdateProject($projectName,$projectid,$projectDecription,$username);
+                    $ProjectController->UpdateProject($projectName,$projectID,$projectDecription,$username);
                     break;
                 case "delete_project":
                     $user = $_GET['username'];

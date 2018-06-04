@@ -15,13 +15,14 @@
 
     if($connected)
     {
-        $username = $_SESSION['user_session']['username'];
+        $userName = $_SESSION['user_session']['username'];
         $projectID = $projectData[0]->pkProject;
     }
-echo '<form action="index.php?action=save_project&username='.$username.'&projectID='.$projectID.'" method=post>';
 
     if($updating)
     {
+        echo '<form action="index.php?action=save_project&username='.$userName.'&projectID='.$projectID.'" method=post>';
+
         echo '<input type="text" name="projectName" value="'.$projectData[0]->name.'">';
     }
     else
@@ -37,7 +38,7 @@ echo '<li><a class="button">Download Latest</a></li>';
 
 if($connected)
 {
-    if($username == $projectData[0]->username)
+    if($userName == $projectData[0]->username)
     {
         if($updating)
         {
@@ -45,8 +46,8 @@ if($connected)
         }
         else
         {
-            echo '<li><a href="index.php?action=update_project&username='.$username.'&projectID='.$projectID.'" class="button">Update</a></li>';
-            echo '<li><a href="index.php?action=delete_project&username='.$username.'&projectID='.$projectID.'" class="button">Delete</a></li>';
+            echo '<li><a href="index.php?action=update_project&username='.$userName.'&projectID='.$projectID.'" class="button">Update</a></li>';
+            echo '<li><a href="index.php?action=delete_project&username='.$userName.'&projectID='.$projectID.'" class="button">Delete</a></li>';
         }
 
 
@@ -107,7 +108,7 @@ HTML;
 
             if($connected)
             {
-                if($username == $projectData[0]->username)
+                if($userName == $projectData[0]->username)
                 {
 
                     echo <<<"HTML"

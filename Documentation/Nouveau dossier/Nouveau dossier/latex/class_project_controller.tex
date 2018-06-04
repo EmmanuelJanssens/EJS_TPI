@@ -1,0 +1,144 @@
+\hypertarget{class_project_controller}{}\section{Project\+Controller Class Reference}
+\label{class_project_controller}\index{Project\+Controller@{Project\+Controller}}
+
+
+controls all the project\textquotesingle{}s functionalities such as creating, displaying deleting  
+
+
+
+
+Inherits \hyperlink{class_controller}{Controller}.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_project_controller_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct} ()
+\begin{DoxyCompactList}\small\item\em basic constructor \end{DoxyCompactList}\item 
+\hyperlink{class_project_controller_ab4f7e261c46439d3e850f0fb2a62b675}{View\+All\+Projects} (\$limit)
+\begin{DoxyCompactList}\small\item\em Displays a list of all the project. \end{DoxyCompactList}\item 
+\hyperlink{class_project_controller_aed2c87885c04d78b7b44cd207d65718d}{View\+Project} (\$user\+Name, \$project\+ID)
+\begin{DoxyCompactList}\small\item\em displays a project\textquotesingle{}s content, description, versions, and accessibility if the user is the creator of the project \end{DoxyCompactList}\item 
+\hyperlink{class_project_controller_a05a2a3a4236fc494310ba8aa360655ed}{Create\+Project} (\$name, \$description, \$ftp)
+\begin{DoxyCompactList}\small\item\em Create a project. \end{DoxyCompactList}\item 
+\hyperlink{class_project_controller_aaaadaf1c606b537d83daeb2995c86062}{Update\+Project} (\$project\+Name, \$project\+ID, \$description, \$username)
+\begin{DoxyCompactList}\small\item\em Updates a project. \end{DoxyCompactList}\item 
+\hyperlink{class_project_controller_a02b2ee7ea4d2170ef3ff1820c008f5c7}{Delete\+Project} (\$project\+ID, \$user, \$ftp)
+\begin{DoxyCompactList}\small\item\em Delete a project from the website as well from the database. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+controls all the project\textquotesingle{}s functionalities such as creating, displaying deleting 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_project_controller_a095c5d389db211932136b53f25f39685}\label{class_project_controller_a095c5d389db211932136b53f25f39685}} 
+\index{Project\+Controller@{Project\+Controller}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!Project\+Controller@{Project\+Controller}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+basic constructor 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_project_controller_a05a2a3a4236fc494310ba8aa360655ed}\label{class_project_controller_a05a2a3a4236fc494310ba8aa360655ed}} 
+\index{Project\+Controller@{Project\+Controller}!Create\+Project@{Create\+Project}}
+\index{Create\+Project@{Create\+Project}!Project\+Controller@{Project\+Controller}}
+\subsubsection{\texorpdfstring{Create\+Project()}{CreateProject()}}
+{\footnotesize\ttfamily Create\+Project (\begin{DoxyParamCaption}\item[{}]{\$name,  }\item[{}]{\$description,  }\item[{}]{\$ftp }\end{DoxyParamCaption})}
+
+
+
+Create a project. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}string\mbox{]}} & \$name name of the project \\
+\hline
+{\em \mbox{[}string\mbox{]}} & \$description description of the project \\
+\hline
+{\em \mbox{[}\+F\+T\+P\+Handler\mbox{]}} & \$ftp file stream to be used to handle folder creation on the server \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_project_controller_a02b2ee7ea4d2170ef3ff1820c008f5c7}\label{class_project_controller_a02b2ee7ea4d2170ef3ff1820c008f5c7}} 
+\index{Project\+Controller@{Project\+Controller}!Delete\+Project@{Delete\+Project}}
+\index{Delete\+Project@{Delete\+Project}!Project\+Controller@{Project\+Controller}}
+\subsubsection{\texorpdfstring{Delete\+Project()}{DeleteProject()}}
+{\footnotesize\ttfamily Delete\+Project (\begin{DoxyParamCaption}\item[{}]{\$project\+ID,  }\item[{}]{\$user,  }\item[{}]{\$ftp }\end{DoxyParamCaption})}
+
+
+
+Delete a project from the website as well from the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}int\mbox{]}} & \$project\+ID id of the project to be deleted \\
+\hline
+{\em \mbox{[}string\mbox{]}} & \$user to know in wich directory the project is \\
+\hline
+{\em \mbox{[}\+F\+T\+P\+Handler\mbox{]}} & \$ftp file stream to be used \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_project_controller_aaaadaf1c606b537d83daeb2995c86062}\label{class_project_controller_aaaadaf1c606b537d83daeb2995c86062}} 
+\index{Project\+Controller@{Project\+Controller}!Update\+Project@{Update\+Project}}
+\index{Update\+Project@{Update\+Project}!Project\+Controller@{Project\+Controller}}
+\subsubsection{\texorpdfstring{Update\+Project()}{UpdateProject()}}
+{\footnotesize\ttfamily Update\+Project (\begin{DoxyParamCaption}\item[{}]{\$project\+Name,  }\item[{}]{\$project\+ID,  }\item[{}]{\$description,  }\item[{}]{\$username }\end{DoxyParamCaption})}
+
+
+
+Updates a project. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}string\mbox{]}} & \$project\+Name name of the project to be updated \\
+\hline
+{\em \mbox{[}int\mbox{]}} & \$project\+ID ID of the project to be updated \\
+\hline
+{\em \mbox{[}string\mbox{]}} & \$description description of the object to be changed \\
+\hline
+{\em \mbox{[}string\mbox{]}} & \$username \$current to get the current user that is connected \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_project_controller_ab4f7e261c46439d3e850f0fb2a62b675}\label{class_project_controller_ab4f7e261c46439d3e850f0fb2a62b675}} 
+\index{Project\+Controller@{Project\+Controller}!View\+All\+Projects@{View\+All\+Projects}}
+\index{View\+All\+Projects@{View\+All\+Projects}!Project\+Controller@{Project\+Controller}}
+\subsubsection{\texorpdfstring{View\+All\+Projects()}{ViewAllProjects()}}
+{\footnotesize\ttfamily View\+All\+Projects (\begin{DoxyParamCaption}\item[{}]{\$limit }\end{DoxyParamCaption})}
+
+
+
+Displays a list of all the project. 
+
+View\+Project
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}int\mbox{]}} & \$limit limits the number of project to be displayed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_project_controller_aed2c87885c04d78b7b44cd207d65718d}\label{class_project_controller_aed2c87885c04d78b7b44cd207d65718d}} 
+\index{Project\+Controller@{Project\+Controller}!View\+Project@{View\+Project}}
+\index{View\+Project@{View\+Project}!Project\+Controller@{Project\+Controller}}
+\subsubsection{\texorpdfstring{View\+Project()}{ViewProject()}}
+{\footnotesize\ttfamily View\+Project (\begin{DoxyParamCaption}\item[{}]{\$user\+Name,  }\item[{}]{\$project\+ID }\end{DoxyParamCaption})}
+
+
+
+displays a project\textquotesingle{}s content, description, versions, and accessibility if the user is the creator of the project 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}string\mbox{]}} & \$username creator of the project \\
+\hline
+{\em \mbox{[}int\mbox{]}} & \$projectid ID of the project \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Controller/\hyperlink{_project_controller_8php}{Project\+Controller.\+php}\end{DoxyCompactItemize}

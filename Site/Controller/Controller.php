@@ -17,12 +17,13 @@
 
 
         /**
-         * @param [type] $userDAO
-         * @param [type] $projectDAO
-         * @param [type] $versionDAO
-         * @param [type] $forumDAO
-         *
          * @brief Initialises every data access Object
+         *
+         * @param [DAO] $dao basic data access
+         * @param [userDAO] $userDAO
+         * @param [projectDAO] $projectDAO
+         * @param [versionDAO] $versionDAO
+         * @param [forumDAO] $forumDAO
          */
         function Init($dao,$userDAO,$projectDAO,$versionDAO,$forumDAO)
         {
@@ -34,8 +35,11 @@
         }
 
         /**
-         * @param [type] $dao
          * @brief Initialises base data object.
+         * @param [DAO] $dao basic data access
+         * @param [userDAO] $useDAO access the user's data
+         * @param [versionDAO] $versionDAO access the version's dat
+         * @param [forumDAO] $forumDAO acces the forum's data
          */
         function __construct($dao,$userDAO,$projectDAO,$versionDAO,$forumDAO)
         {
@@ -51,9 +55,6 @@
          * ViewHome
          *
          * @brief Display the home page.
-         * @param [in|out] type parameter_name Parameter description.
-         * @param [in|out] type parameter_name Parameter description.
-         * @return Description of returned value.
          */
         function ViewHome($limit)
         {
@@ -71,9 +72,7 @@
          * ViewAbout
          *
          * @brief Displays the about page from the website
-         * @param [in|out] type parameter_name Parameter description.
-         * @param [in|out] type parameter_name Parameter description.
-         * @return Description of returned value.
+
          */
         function ViewAbout()
         {

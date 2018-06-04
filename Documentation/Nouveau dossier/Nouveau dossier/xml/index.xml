@@ -1,0 +1,233 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.13">
+  <compound refid="class_controller" kind="class"><name>Controller</name>
+    <member refid="class_controller_1a5201c1dfa1e73dd3ab719f657d2ee5b2" kind="variable"><name>$baseDAO</name></member>
+    <member refid="class_controller_1a3d5f01d1592f9012027dd8cd49d8d029" kind="variable"><name>$userDAO</name></member>
+    <member refid="class_controller_1ac474a3665e60e3c2537876c94a926cfc" kind="variable"><name>$projectDAO</name></member>
+    <member refid="class_controller_1a41947b974852ee198f45b4bb44fd6e22" kind="variable"><name>$versionDAO</name></member>
+    <member refid="class_controller_1a492628b7bd1dcf872ab19c2bbb0af7d6" kind="variable"><name>$forumDAO</name></member>
+    <member refid="class_controller_1a4b9462f290a447541323a8a21484c193" kind="function"><name>Init</name></member>
+    <member refid="class_controller_1a1dd81c9e2ac2fc2ca00acd06ce8a86e9" kind="function"><name>__construct</name></member>
+    <member refid="class_controller_1a7366734beeaaaadceaff941c9929e8e5" kind="function"><name>ViewHome</name></member>
+    <member refid="class_controller_1ac19e8736170dc90119edf57d097774d4" kind="function"><name>ViewAbout</name></member>
+  </compound>
+  <compound refid="class_d_a_o" kind="class"><name>DAO</name>
+    <member refid="class_d_a_o_1aeba2ab722cedda53dbb7ec1a59f45550" kind="variable"><name>$error</name></member>
+    <member refid="class_d_a_o_1a78572828d11dcdf2a498497d9001d557" kind="function"><name>connect</name></member>
+  </compound>
+  <compound refid="class_forum_controller" kind="class"><name>ForumController</name>
+    <member refid="class_forum_controller_1a095c5d389db211932136b53f25f39685" kind="function"><name>__construct</name></member>
+    <member refid="class_forum_controller_1a4b9462f290a447541323a8a21484c193" kind="function"><name>Init</name></member>
+    <member refid="class_forum_controller_1ac91f2abbd0e5638d85281ba298f69b8d" kind="function"><name>ViewForums</name></member>
+    <member refid="class_forum_controller_1ae680809f7a8b645666ee0f185315e632" kind="function"><name>DisplayMessage</name></member>
+    <member refid="class_forum_controller_1a6aa6340089c9cbf1d660ede98e40a89f" kind="function"><name>PostMessage</name></member>
+  </compound>
+  <compound refid="class_forum_d_a_o" kind="class"><name>ForumDAO</name>
+    <member refid="class_forum_d_a_o_1af42bf7b4e50ddd06c68642bbed774f13" kind="function"><name>GetAllTopics</name></member>
+    <member refid="class_forum_d_a_o_1ab74cdef7ffe766572595268923a3a3a3" kind="function"><name>GetProjectMessage</name></member>
+    <member refid="class_forum_d_a_o_1a641bb747b67128db836bf231ece2ae74" kind="function"><name>GetUserMessage</name></member>
+    <member refid="class_forum_d_a_o_1ac06809a2f0001b1ad909bebba40aefef" kind="function"><name>PostMessage</name></member>
+  </compound>
+  <compound refid="class_f_t_p_handler" kind="class"><name>FTPHandler</name>
+    <member refid="class_f_t_p_handler_1a711797613cb863ca0756df789c396bf2" kind="variable"><name>$host</name></member>
+    <member refid="class_f_t_p_handler_1ad695d04891694aefbd326ff68b59bfbf" kind="variable"><name>$ftp_user</name></member>
+    <member refid="class_f_t_p_handler_1adcf00cdacbf416e7f6949676ecd79102" kind="variable"><name>$ftp_domain</name></member>
+    <member refid="class_f_t_p_handler_1a854380bfe0792d7c0e610a4e8135a5f2" kind="variable"><name>$ftp_userpwd</name></member>
+    <member refid="class_f_t_p_handler_1a58391ea75f2d29d5d708d7050b641c33" kind="variable"><name>$status</name></member>
+    <member refid="class_f_t_p_handler_1ae301a41ddeb9078684c83c4dc15bb773" kind="function"><name>__construct</name></member>
+    <member refid="class_f_t_p_handler_1a668e910f36a3b4f42c18576ac11a3cca" kind="function"><name>Connect</name></member>
+    <member refid="class_f_t_p_handler_1a6d3bfc8bc6b10bee4f850ac6ffb631dd" kind="function"><name>GetFileList</name></member>
+    <member refid="class_f_t_p_handler_1a3a8dfc5c7a497057832a9baf8fef8fee" kind="function"><name>CreateDirectory</name></member>
+    <member refid="class_f_t_p_handler_1ac7580ca2ea33044a1be93305918cd97e" kind="function"><name>Download</name></member>
+    <member refid="class_f_t_p_handler_1ae9c342082e22d788de7b94b34b2e40d1" kind="function"><name>Upload</name></member>
+    <member refid="class_f_t_p_handler_1ade28de62e449ec73546c4093fa4d6708" kind="function"><name>DeleteDirectory</name></member>
+  </compound>
+  <compound refid="class_project_controller" kind="class"><name>ProjectController</name>
+    <member refid="class_project_controller_1a095c5d389db211932136b53f25f39685" kind="function"><name>__construct</name></member>
+    <member refid="class_project_controller_1ab4f7e261c46439d3e850f0fb2a62b675" kind="function"><name>ViewAllProjects</name></member>
+    <member refid="class_project_controller_1aed2c87885c04d78b7b44cd207d65718d" kind="function"><name>ViewProject</name></member>
+    <member refid="class_project_controller_1a05a2a3a4236fc494310ba8aa360655ed" kind="function"><name>CreateProject</name></member>
+    <member refid="class_project_controller_1aaaadaf1c606b537d83daeb2995c86062" kind="function"><name>UpdateProject</name></member>
+    <member refid="class_project_controller_1a02b2ee7ea4d2170ef3ff1820c008f5c7" kind="function"><name>DeleteProject</name></member>
+  </compound>
+  <compound refid="class_project_d_a_o" kind="class"><name>ProjectDAO</name>
+    <member refid="class_project_d_a_o_1a66f83737d74fbe61fea6d8eeba29300a" kind="function"><name>GetAllProject</name></member>
+    <member refid="class_project_d_a_o_1aef077c373665972101668ce915526786" kind="function"><name>GetProjectDetails</name></member>
+    <member refid="class_project_d_a_o_1a2c8979ebd3a03bb6fc406d500cd128ef" kind="function"><name>GetProjectAuthor</name></member>
+    <member refid="class_project_d_a_o_1a483563c27167fa2cbc95cc537527e994" kind="function"><name>GetProjectName</name></member>
+    <member refid="class_project_d_a_o_1ab33602f01ad5d9926c26dda5942292a3" kind="function"><name>CreateProject</name></member>
+    <member refid="class_project_d_a_o_1aaaadaf1c606b537d83daeb2995c86062" kind="function"><name>UpdateProject</name></member>
+    <member refid="class_project_d_a_o_1a9aab18deae687e16af661f2ee28479af" kind="function"><name>DeleteProject</name></member>
+  </compound>
+  <compound refid="class_user_controller" kind="class"><name>UserController</name>
+    <member refid="class_user_controller_1adb9756d4524181e191069eaa76afb6cf" kind="variable"><name>$connected</name></member>
+    <member refid="class_user_controller_1ad717f2a6a729542cf8f99500814c6cec" kind="function"><name>__construct</name></member>
+    <member refid="class_user_controller_1a4a533e4b69f7790e6b74bff620275edc" kind="function"><name>Login</name></member>
+    <member refid="class_user_controller_1aa14f760d541a59acb41ac8eefddafb9b" kind="function"><name>Logout</name></member>
+    <member refid="class_user_controller_1a8790b12a85714a69e244b9a2356014c4" kind="function"><name>ViewLogin</name></member>
+    <member refid="class_user_controller_1a4b78247221086a92c1688dbba1f5c6b7" kind="function"><name>ViewRegister</name></member>
+    <member refid="class_user_controller_1a73865eeee67d29dd7f3e888bbc8a90cb" kind="function"><name>Register</name></member>
+    <member refid="class_user_controller_1aef362c29f717367e1431984a55ec4f4a" kind="function"><name>ViewProfile</name></member>
+    <member refid="class_user_controller_1ad14a0bb9938aa18999d1e9b655bb28b1" kind="function"><name>GetUserType</name></member>
+    <member refid="class_user_controller_1a74b9734391971e98992763b6554225ac" kind="function"><name>GetUserTypeID</name></member>
+    <member refid="class_user_controller_1a40926bab092ae93f54e313aed4e8808a" kind="function"><name>DisplayAllUsers</name></member>
+    <member refid="class_user_controller_1a9717e58fe9e9236723f9bc3e80469288" kind="function"><name>SaveUpdatedUser</name></member>
+    <member refid="class_user_controller_1a9b7339490577e5e6f88a27de62076b4f" kind="function"><name>DeleteUser</name></member>
+    <member refid="class_user_controller_1a805199e1912e0733984fba3f6f0f2bed" kind="function"><name>DisplayNewPasswordForm</name></member>
+    <member refid="class_user_controller_1ac8ab29f78e095ed4fda232d64056005e" kind="function"><name>getRandomWord</name></member>
+    <member refid="class_user_controller_1a41d138126c075a5eafa79894a2f5282b" kind="function"><name>SendNewPassword</name></member>
+    <member refid="class_user_controller_1a02d05cea0778c17290eeb6291dc43af8" kind="function"><name>DisplayUpdatePasswordForm</name></member>
+    <member refid="class_user_controller_1a2558cafa4d27cbe1395ba8f85c081cf1" kind="function"><name>UpdateUserPassword</name></member>
+    <member refid="class_user_controller_1af160f7fbbf281d018ae3162521b8267d" kind="function"><name>isConnected</name></member>
+    <member refid="class_user_controller_1aaffeeb810115d6a6bce503694b762838" kind="function"><name>CreateProjectForm</name></member>
+    <member refid="class_user_controller_1a366b14776b9f86442e693b89d265cc6a" kind="function"><name>UploadVersionForm</name></member>
+  </compound>
+  <compound refid="class_user_d_a_o" kind="class"><name>UserDAO</name>
+    <member refid="class_user_d_a_o_1a0eb82aa5f81cf845de4b36cd653c42cf" kind="variable"><name>$username</name></member>
+    <member refid="class_user_d_a_o_1a54047591cd815708870a3be63255ffb0" kind="variable"><name>$pseudonym</name></member>
+    <member refid="class_user_d_a_o_1a0cbb293823e3517631abf554a0f6bdab" kind="variable"><name>$userlastname</name></member>
+    <member refid="class_user_d_a_o_1abe2f181ad89ba732679712349261287a" kind="variable"><name>$useremail</name></member>
+    <member refid="class_user_d_a_o_1aeae9cb1fe09d942f99523a2bf10b0191" kind="variable"><name>$userpassword</name></member>
+    <member refid="class_user_d_a_o_1aeba2ab722cedda53dbb7ec1a59f45550" kind="variable"><name>$error</name></member>
+    <member refid="class_user_d_a_o_1ac3b69a336d57533a747597e093580d66" kind="function"><name>Register</name></member>
+    <member refid="class_user_d_a_o_1a140f38e8cbdf6aeb93146174a3a4f978" kind="function"><name>UpdatePassword</name></member>
+    <member refid="class_user_d_a_o_1ad14a0bb9938aa18999d1e9b655bb28b1" kind="function"><name>GetUserType</name></member>
+    <member refid="class_user_d_a_o_1a5c049c930f6e2a9933d752976bb721dc" kind="function"><name>GetUserTypeID</name></member>
+    <member refid="class_user_d_a_o_1aca319b6c2beca52c72fd309d12adc9b4" kind="function"><name>GetTypeID</name></member>
+    <member refid="class_user_d_a_o_1a5f2cf101cdf7bb9e47c12733ca95ae72" kind="function"><name>GetUserNameByID</name></member>
+    <member refid="class_user_d_a_o_1a59476ad3d73dd44c3e3503af418c759c" kind="function"><name>GetUserMailAndUserName</name></member>
+    <member refid="class_user_d_a_o_1aac741335b1b0d391cb4c2471f58a1e68" kind="function"><name>GetIDByUserName</name></member>
+    <member refid="class_user_d_a_o_1a482eedda3e26e4255ef3a1e01bb98c3e" kind="function"><name>GetCurrentUser</name></member>
+    <member refid="class_user_d_a_o_1a2e5ac6706ceaab2a59cdc0437904dc89" kind="function"><name>GetUserData</name></member>
+    <member refid="class_user_d_a_o_1ac1be310e4b7f4c0a3dd4f67a3e207e65" kind="function"><name>GetConnectionData</name></member>
+    <member refid="class_user_d_a_o_1ac0d96a9079082c5781d10904523c57b9" kind="function"><name>GetUserProjectList</name></member>
+    <member refid="class_user_d_a_o_1a1e59c6d490364d172e493358f0639112" kind="function"><name>GetAllUsers</name></member>
+    <member refid="class_user_d_a_o_1a14278a165514500ce608e1f6c96bc34c" kind="function"><name>GetAllUserTypes</name></member>
+    <member refid="class_user_d_a_o_1a9717e58fe9e9236723f9bc3e80469288" kind="function"><name>SaveUpdatedUser</name></member>
+    <member refid="class_user_d_a_o_1aa755c1ae7667b1f9e424171e68239123" kind="function"><name>DeleteUser</name></member>
+  </compound>
+  <compound refid="class_version_controller" kind="class"><name>VersionController</name>
+    <member refid="class_version_controller_1a095c5d389db211932136b53f25f39685" kind="function"><name>__construct</name></member>
+    <member refid="class_version_controller_1a0ae8a4c6c6d71907910bc38278ef1779" kind="function"><name>ViewUserVersion</name></member>
+    <member refid="class_version_controller_1a0c7a5c23984dfdfbda1320c4dbb834fc" kind="function"><name>UploadVersion</name></member>
+  </compound>
+  <compound refid="class_version_d_a_o" kind="class"><name>VersionDAO</name>
+    <member refid="class_version_d_a_o_1a71cc9114947647898cf8638b38b10de3" kind="function"><name>GetVersionList</name></member>
+    <member refid="class_version_d_a_o_1ab23f1c102111f11f857f20da388ece28" kind="function"><name>GetVersionDetails</name></member>
+    <member refid="class_version_d_a_o_1a4d1f9b80ef1a9600b33de9bebf6b01f4" kind="function"><name>CreateVersion</name></member>
+  </compound>
+  <compound refid="_controller_8php" kind="file"><name>Controller.php</name>
+  </compound>
+  <compound refid="_forum_controller_8php" kind="file"><name>ForumController.php</name>
+  </compound>
+  <compound refid="_project_controller_8php" kind="file"><name>ProjectController.php</name>
+  </compound>
+  <compound refid="_user_controller_8php" kind="file"><name>UserController.php</name>
+  </compound>
+  <compound refid="_version_controller_8php" kind="file"><name>VersionController.php</name>
+  </compound>
+  <compound refid="_base_d_a_o_8php" kind="file"><name>BaseDAO.php</name>
+  </compound>
+  <compound refid="_forum_d_a_o_8php" kind="file"><name>ForumDAO.php</name>
+  </compound>
+  <compound refid="_project_d_a_o_8php" kind="file"><name>ProjectDAO.php</name>
+  </compound>
+  <compound refid="_user_d_a_o_8php" kind="file"><name>UserDAO.php</name>
+  </compound>
+  <compound refid="_version_d_a_o_8php" kind="file"><name>VersionDAO.php</name>
+  </compound>
+  <compound refid="_f_t_p_handler_8php" kind="file"><name>FTPHandler.php</name>
+  </compound>
+  <compound refid="index_8php" kind="file"><name>index.php</name>
+    <member refid="index_8php_1aa2e3e5c29ec32d1966f711f65f89d00e" kind="variable"><name>$BaseDAO</name></member>
+    <member refid="index_8php_1a26fec675c00cd1f892dca678a0ebbd35" kind="variable"><name>$UserDAO</name></member>
+    <member refid="index_8php_1a94ce820c5b5fd29e3663c19ef21aaa78" kind="variable"><name>$ProjectDAO</name></member>
+    <member refid="index_8php_1a6eac754d4e4bdaf48ea5bcd0c98cebcc" kind="variable"><name>$VersionDAO</name></member>
+    <member refid="index_8php_1a21d57c2c2f509c2d574c0eb5ab72a291" kind="variable"><name>$ForumDAO</name></member>
+    <member refid="index_8php_1a388ef7b1db5e6f728e63cee704ce6e23" kind="variable"><name>$controller</name></member>
+    <member refid="index_8php_1ab98c1855a5ef469dd8a4c83ed3b45a88" kind="variable"><name>$userController</name></member>
+    <member refid="index_8php_1a34ef9374f9814d7d2aae9c94e3400cad" kind="variable"><name>$ProjectController</name></member>
+    <member refid="index_8php_1ab49685978d0345a6802fd4bb23d009a2" kind="variable"><name>$VersionController</name></member>
+    <member refid="index_8php_1a157588e4cdd26b15b3e686ca9ee08209" kind="variable"><name>$ForumController</name></member>
+    <member refid="index_8php_1a4994e178f528f2d5361d991f51055cde" kind="variable"><name>$FTPHandler</name></member>
+  </compound>
+  <compound refid="_about_view_8php" kind="file"><name>AboutView.php</name>
+    <member refid="_about_view_8php_1a57b284fe00866494b33afa80ba729bed" kind="variable"><name>$content</name></member>
+  </compound>
+  <compound refid="_all_forum_view_8php" kind="file"><name>AllForumView.php</name>
+    <member refid="_all_forum_view_8php_1a783d753dbe3e6b2976f3d6bdf094c302" kind="variable"><name>$content</name></member>
+  </compound>
+  <compound refid="_all_project_view_8php" kind="file"><name>AllProjectView.php</name>
+    <member refid="_all_project_view_8php_1a7674048e445481cec8bcad0c5a5d2347" kind="variable"><name>$content</name></member>
+  </compound>
+  <compound refid="_devlog_view_8php" kind="file"><name>DevlogView.php</name>
+  </compound>
+  <compound refid="_home_view_8php" kind="file"><name>HomeView.php</name>
+    <member refid="_home_view_8php_1a39401030dc27ac11ed6f5484a9d625d3" kind="variable"><name>$content</name></member>
+  </compound>
+  <compound refid="_message_view_8php" kind="file"><name>MessageView.php</name>
+  </compound>
+  <compound refid="_project_view_8php" kind="file"><name>ProjectView.php</name>
+  </compound>
+  <compound refid="_template_8php" kind="file"><name>Template.php</name>
+    <member refid="_template_8php_1a0e7502c0bb57eca9c5e6eb06ce623219" kind="variable"><name>$UserCtrl</name></member>
+    <member refid="_template_8php_1af8bdbb6e5d55add7994d1f84699da00f" kind="variable"><name>else</name></member>
+  </compound>
+  <compound refid="_topic_view_8php" kind="file"><name>TopicView.php</name>
+  </compound>
+  <compound refid="_admin_view_user_8php" kind="file"><name>AdminViewUser.php</name>
+    <member refid="_admin_view_user_8php_1ab1c45cd91a11330a4cb949bd7bc2460c" kind="variable"><name>$content</name></member>
+  </compound>
+  <compound refid="_new_password_view_8php" kind="file"><name>NewPasswordView.php</name>
+    <member refid="_new_password_view_8php_1a24dd6ea28c9925f93f9b74fcce33e0ff" kind="variable"><name>$content</name></member>
+  </compound>
+  <compound refid="tedst_8php" kind="file"><name>tedst.php</name>
+    <member refid="tedst_8php_1a57b284fe00866494b33afa80ba729bed" kind="variable"><name>$content</name></member>
+  </compound>
+  <compound refid="_user_create_project_view_8php" kind="file"><name>UserCreateProjectView.php</name>
+    <member refid="_user_create_project_view_8php_1a57b284fe00866494b33afa80ba729bed" kind="variable"><name>$content</name></member>
+  </compound>
+  <compound refid="_user_login_view_8php" kind="file"><name>UserLoginView.php</name>
+    <member refid="_user_login_view_8php_1a2f4c2f8c3d81569e44fa8d6e397acd83" kind="variable"><name>$content</name></member>
+  </compound>
+  <compound refid="_user_profile_view_8php" kind="file"><name>UserProfileView.php</name>
+    <member refid="_user_profile_view_8php_1a089bdfca69b5656696804128ef2ffde1" kind="variable"><name>else</name></member>
+    <member refid="_user_profile_view_8php_1a16cca788b8247d42646eb9c00952c9dc" kind="variable"><name>$UserCtrl</name></member>
+    <member refid="_user_profile_view_8php_1a96c1bfad67210b44ae96a4a0bcb697b2" kind="variable"><name>$UserType</name></member>
+    <member refid="_user_profile_view_8php_1a1835e65b8af5e3ff118383efe1a264af" kind="variable"><name>$content</name></member>
+  </compound>
+  <compound refid="_user_project_view_8php" kind="file"><name>UserProjectView.php</name>
+    <member refid="_user_project_view_8php_1adb9756d4524181e191069eaa76afb6cf" kind="variable"><name>$connected</name></member>
+    <member refid="_user_project_view_8php_1a3546d0e4853a04deda02221f689eb06c" kind="variable"><name>else</name></member>
+    <member refid="_user_project_view_8php_1a88fb95f28d3873fe13950f7345557236" kind="variable"><name>if</name></member>
+    <member refid="_user_project_view_8php_1ab361445ea7cfa053be5ad7bf81994336" kind="variable"><name>$content</name></member>
+  </compound>
+  <compound refid="_user_register_view_8php" kind="file"><name>UserRegisterView.php</name>
+    <member refid="_user_register_view_8php_1a57b284fe00866494b33afa80ba729bed" kind="variable"><name>$content</name></member>
+  </compound>
+  <compound refid="_user_update_password_view_8php" kind="file"><name>UserUpdatePasswordView.php</name>
+    <member refid="_user_update_password_view_8php_1a2f4c2f8c3d81569e44fa8d6e397acd83" kind="variable"><name>$content</name></member>
+  </compound>
+  <compound refid="_user_upload_version_view_8php" kind="file"><name>UserUploadVersionView.php</name>
+    <member refid="_user_upload_version_view_8php_1a57b284fe00866494b33afa80ba729bed" kind="variable"><name>$content</name></member>
+  </compound>
+  <compound refid="_user_version_view_8php" kind="file"><name>UserVersionView.php</name>
+    <member refid="_user_version_view_8php_1a48c596ced4b31ac88e355711473dd9ae" kind="variable"><name>else</name></member>
+    <member refid="_user_version_view_8php_1a57b284fe00866494b33afa80ba729bed" kind="variable"><name>$content</name></member>
+  </compound>
+  <compound refid="_version_8php" kind="file"><name>Version.php</name>
+    <member refid="_version_8php_1a57b284fe00866494b33afa80ba729bed" kind="variable"><name>$content</name></member>
+  </compound>
+  <compound refid="_user_view_8php" kind="file"><name>UserView.php</name>
+  </compound>
+  <compound refid="_version_view_8php" kind="file"><name>VersionView.php</name>
+  </compound>
+  <compound refid="dir_b500f500d6f9b315c95ab1cd4a3b5c0d" kind="dir"><name>Controller</name>
+  </compound>
+  <compound refid="dir_0e93b4367fce2b8c78b157a43452f11b" kind="dir"><name>DAO</name>
+  </compound>
+  <compound refid="dir_207704146e40a2dc4da6c9f392ec3f86" kind="dir"><name>View/User</name>
+  </compound>
+  <compound refid="dir_f2ee84e8e3a17eaa7015d788fa443c27" kind="dir"><name>View</name>
+  </compound>
+</doxygenindex>

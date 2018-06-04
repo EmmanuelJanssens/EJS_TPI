@@ -1,8 +1,19 @@
 <?php
     require_once "BaseDAO.php";
 
+    /**
+     * @brief controls the data access to the forum's data
+    **/
     class ForumDAO extends DAO 
     {
+
+        /**
+         * @brief get the data of all available list limited by $limit
+         *
+         * @param [int] limt of the topcis that will be displayed
+         *
+         * @return array an array of entries to be used in the view page
+        **/
         function GetAllTopics($limit)
         {
 
@@ -26,11 +37,18 @@
             }
             catch (Exception $e)
             {
-
+                $this->error = $e->getMessage();
             }
 
         }
 
+        /**
+         * @brief get a list of message linked to the project
+         *
+         * @param [string] project that from wich the message will be displayed
+         *
+         * @return array an array of messages
+        **/
         public function GetProjectMessage($project)
         {
             try
@@ -61,6 +79,13 @@
             }
         }
 
+        /**
+         * @brief get a list of messages by a specific user
+         *
+         * @param [string] $user author of the message
+         *
+         * @return array an array of messages by the user
+        **/
         public function GetUserMessage($user)
         {
             try
@@ -91,6 +116,14 @@
             }
         }
 
+        /**
+         * @brief writes new message entries in to the database
+         *
+         * @param [date] date on wich the message was posted
+         * @param [int] id of the user that posted the message
+         * @param [int] id project on wich the message was posted
+         * @param [string] content of the message that was writen by the user
+        **/
         function PostMessage($date,$userID,$projectID,$message)
         {
             try

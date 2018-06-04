@@ -1,7 +1,14 @@
 <?php
     require_once "Controller.php";
+
+    /**
+     * @brief controls all the project's functionalities such as creating, displaying deleting
+    **/
     class ProjectController extends Controller
     {
+        /**
+         * @brief basic constructor
+        **/
         function __construct()
         {
             
@@ -11,9 +18,7 @@
          * ViewProject
          *
          * @brief Displays a list of all the project
-         * @param [in|out] type parameter_name Parameter description.
-         * @param [in|out] type parameter_name Parameter description.
-         * @return Description of returned value.
+         * @param [int] $limit limits the number of project to be displayed
          */
         function ViewAllProjects($limit)
         {
@@ -22,25 +27,34 @@
             $error = $this->projectDAO->error;
             require_once "View/AllProjectView.php";
         }
-        function ViewProject($username,$projectid)
+
+        /**
+         * @brief displays a project's content, description, versions, and accessibility if the user is the creator of the project
+         *
+         * @param [string] $username creator of the project
+         * @param [int] $projectid ID of the project
+        **/
+        function ViewProject($userName,$projectID)
         {
             //Get the data from the specified project by ID
-            $projectData = $this->projectDAO->GetProjectDetails($username,$projectid);
+            $projectData = $this->projectDAO->GetProjectDetails($userName,$projectID);
 
             //Get a list of all the versions from the project
-            $versionList = $this->versionDAO->GetVersionList($username);
+            $versionList = $this->versionDAO->GetVersionList($userName);
 
-            $messageList = $this->forumDAO->GetProjectMessage($projectid);
+            $messageList = $this->forumDAO->GetProjectMessage($projectID);
 
             require_once "View/User/UserProjectView.php";
         }
 
-        function ViewVersion($projectid,$Version)
-        {
-            require_once "View/User/UserVersionView.php";
-        }
-
-        function CreateProject($name,$description,FTPHandler $ftp)
+        /**
+         * @brief Create a project
+         *
+         * @param [string] $name name of the project
+         * @param [string] $description description of the project
+         * @param [FTPHandler] $ftp file stream to be used to handle folder creation on the server
+        **/
+        function CreateProject($name,$description,$ftp)
         {
 
             $id = $this->projectDAO->CreateProject($name,$description);
@@ -59,6 +73,14 @@
 
         }
 
+        /**
+         * @brief Updates a project
+         *
+         * @param [string] $projectName name of the project to be updated
+         * @param [int] $projectID ID of the project to be updated
+         * @param [string] $description description of the object to be changed
+         * @param [string] $username $current to get the current user that is connected
+        **/
         function UpdateProject($projectName,$projectID,$description,$username)
         {
 
@@ -77,7 +99,14 @@
             require_once "View/User/UserProjectView.php";
         }
 
-        function DeleteProject($projectID,$user, FTPHandler $ftp)
+        /**
+         * @brief Delete a project from the website as well from the database
+         *
+         * @param [int] $projectID id of the project to be deleted
+         * @param [string] $user to know in wich directory the project is
+         * @param [FTPHandler] $ftp file stream to be used
+        **/
+        function DeleteProject($projectID,$user, $ftp)
         {
             $projectname = $this->projectDAO->GetProjectName($projectID);
             $ftp->DeleteDirectory("$user/$projectname");

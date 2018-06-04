@@ -1,0 +1,226 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_user_project_view_8php" kind="file" language="PHP">
+    <compoundname>UserProjectView.php</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_user_project_view_8php_1adb9756d4524181e191069eaa76afb6cf" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$connected</definition>
+        <argsstring></argsstring>
+        <name>$connected</name>
+        <initializer>= isset($_SESSION[&apos;user_session&apos;])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="View/User/UserProjectView.php" line="5" column="1" bodyfile="View/User/UserProjectView.php" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_user_project_view_8php_1a3546d0e4853a04deda02221f689eb06c" prot="public" static="no" mutable="no">
+        <type><ref refid="_user_project_view_8php_1a88fb95f28d3873fe13950f7345557236" kindref="member">if</ref>(isset($_GET[&apos;action&apos;])) <ref refid="_user_project_view_8php_1a88fb95f28d3873fe13950f7345557236" kindref="member">if</ref>($connected) <ref refid="_user_project_view_8php_1a88fb95f28d3873fe13950f7345557236" kindref="member">if</ref>($updating)</type>
+        <definition>if ( $updating) else</definition>
+        <argsstring></argsstring>
+        <name>else</name>
+        <initializer>{
+        echo &apos;&lt;h3 class=&quot;major&quot;&gt;project : &apos;.$projectData[0]-&gt;name.&apos;&lt;/h3&gt;&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="View/User/UserProjectView.php" line="28" column="1" bodyfile="View/User/UserProjectView.php" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_user_project_view_8php_1a88fb95f28d3873fe13950f7345557236" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>if</definition>
+        <argsstring>( $connected)</argsstring>
+        <name>if</name>
+        <initializer>{
+                
+                echo &apos;&lt;p&gt;&apos;.$projectData[0]-&gt;description.&apos;&lt;/p&gt;&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="View/User/UserProjectView.php" line="39" column="1" bodyfile="View/User/UserProjectView.php" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_user_project_view_8php_1ab361445ea7cfa053be5ad7bf81994336" prot="public" static="no" mutable="no">
+        <type>foreach($versionList as $row) <ref refid="_user_project_view_8php_1a88fb95f28d3873fe13950f7345557236" kindref="member">if</ref>($connected) <ref refid="_user_project_view_8php_1a88fb95f28d3873fe13950f7345557236" kindref="member">if</ref>($connected)</type>
+        <definition>foreach ( $versionList as $row) if ( $connected) if ( $connected) $content</definition>
+        <argsstring></argsstring>
+        <name>$content</name>
+        <initializer>= ob_get_clean()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="View/User/UserProjectView.php" line="149" column="1" bodyfile="View/User/UserProjectView.php" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"><sp/><sp/><sp/><sp/>ob_start();</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//to<sp/>be<sp/>able<sp/>to<sp/>check<sp/>if<sp/>a<sp/>user<sp/>is<sp/>connected</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_user_project_view_8php_1adb9756d4524181e191069eaa76afb6cf" kindref="member">$connected</ref><sp/>=<sp/>isset($_SESSION[</highlight><highlight class="stringliteral">&apos;user_session&apos;</highlight><highlight class="normal">]);</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Get<sp/>what<sp/>action<sp/>is<sp/>ongoing</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(isset($_GET[</highlight><highlight class="stringliteral">&apos;action&apos;</highlight><highlight class="normal">]))</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$action<sp/>=<sp/>$_GET[</highlight><highlight class="stringliteral">&apos;action&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$updating<sp/>=<sp/>$action<sp/>==<sp/></highlight><highlight class="stringliteral">&apos;update_project&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Get<sp/>the<sp/>username<sp/>if<sp/>one<sp/>is<sp/>connected</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="_user_project_view_8php_1adb9756d4524181e191069eaa76afb6cf" kindref="member">$connected</ref>)</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$userName<sp/>=<sp/>$_SESSION[</highlight><highlight class="stringliteral">&apos;user_session&apos;</highlight><highlight class="normal">][</highlight><highlight class="stringliteral">&apos;username&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$projectID<sp/>=<sp/>$projectData[0]-&gt;pkProject;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">($updating)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&apos;&lt;form<sp/>action=&quot;index.php?action=save_project&amp;username=&apos;</highlight><highlight class="normal">.$userName.</highlight><highlight class="stringliteral">&apos;&amp;projectID=&apos;</highlight><highlight class="normal">.$projectID.</highlight><highlight class="stringliteral">&apos;&quot;<sp/>method=post&gt;&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&apos;&lt;input<sp/>type=&quot;text&quot;<sp/>name=&quot;projectName&quot;<sp/>value=&quot;&apos;</highlight><highlight class="normal">.$projectData[0]-&gt;name.</highlight><highlight class="stringliteral">&apos;&quot;&gt;&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&apos;&lt;h3<sp/>class=&quot;major&quot;&gt;project<sp/>:<sp/>&apos;</highlight><highlight class="normal">.$projectData[0]-&gt;name.</highlight><highlight class="stringliteral">&apos;&lt;/h3&gt;&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">echo<sp/></highlight><highlight class="stringliteral">&apos;&lt;section&gt;&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">echo<sp/></highlight><highlight class="stringliteral">&apos;&lt;div<sp/>class=&quot;row&quot;&gt;&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">echo<sp/></highlight><highlight class="stringliteral">&apos;&lt;div<sp/>class=&quot;12u&quot;&gt;&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">echo<sp/></highlight><highlight class="stringliteral">&apos;&lt;ul<sp/>class=&quot;actions&quot;&gt;&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">echo<sp/></highlight><highlight class="stringliteral">&apos;&lt;li&gt;&lt;a<sp/>class=&quot;button&quot;&gt;Download<sp/>Latest&lt;/a&gt;&lt;/li&gt;&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="_user_project_view_8php_1adb9756d4524181e191069eaa76afb6cf" kindref="member">$connected</ref>)</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">($userName<sp/>==<sp/>$projectData[0]-&gt;username)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">($updating)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo</highlight><highlight class="stringliteral">&apos;&lt;li&gt;&lt;input<sp/>type=&quot;submit&quot;<sp/><sp/>class=&quot;button&quot;<sp/>value<sp/>=<sp/>&quot;save&quot;&gt;&lt;/a&gt;&lt;/li&gt;&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&apos;&lt;li&gt;&lt;a<sp/>href=&quot;index.php?action=update_project&amp;username=&apos;</highlight><highlight class="normal">.$userName.</highlight><highlight class="stringliteral">&apos;&amp;projectID=&apos;</highlight><highlight class="normal">.$projectID.</highlight><highlight class="stringliteral">&apos;&quot;<sp/>class=&quot;button&quot;&gt;Update&lt;/a&gt;&lt;/li&gt;&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&apos;&lt;li&gt;&lt;a<sp/>href=&quot;index.php?action=delete_project&amp;username=&apos;</highlight><highlight class="normal">.$userName.</highlight><highlight class="stringliteral">&apos;&amp;projectID=&apos;</highlight><highlight class="normal">.$projectID.</highlight><highlight class="stringliteral">&apos;&quot;<sp/>class=&quot;button&quot;&gt;Delete&lt;/a&gt;&lt;/li&gt;&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">echo<sp/></highlight><highlight class="stringliteral">&apos;&lt;/ul&gt;&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">echo<sp/></highlight><highlight class="stringliteral">&apos;&lt;/div&gt;&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">echo<sp/></highlight><highlight class="stringliteral">&apos;&lt;/div&gt;&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">echo<sp/></highlight><highlight class="stringliteral">&apos;&lt;/section&gt;&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal">?&gt;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal">&lt;nav<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;my_nav&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;ul&gt;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;&lt;a<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;tablinks<sp/>current&quot;</highlight><highlight class="normal"><sp/>onclick=</highlight><highlight class="stringliteral">&quot;openTab(event,<sp/>&apos;summary&apos;)&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;defaultOpen&quot;</highlight><highlight class="normal">&gt;Summary&lt;/a&gt;&lt;/li&gt;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;&lt;a<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;tablinks&quot;</highlight><highlight class="normal"><sp/>onclick=</highlight><highlight class="stringliteral">&quot;openTab(event,<sp/>&apos;version&apos;)&quot;</highlight><highlight class="normal">&gt;Version&lt;/a&gt;&lt;/li&gt;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;?php<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="_user_project_view_8php_1adb9756d4524181e191069eaa76afb6cf" kindref="member">$connected</ref>)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/>&lt;&lt;&lt;</highlight><highlight class="stringliteral">&quot;HTML&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal">&lt;li&gt;&lt;a<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;tablinks&quot;</highlight><highlight class="normal"><sp/>onclick=</highlight><highlight class="stringliteral">&quot;openTab(event,<sp/>&apos;forum&apos;)&quot;</highlight><highlight class="normal">&gt;Forum&lt;/a&gt;&lt;/li&gt;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">HTML;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>?&gt;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;&lt;a<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;tablinks&quot;</highlight><highlight class="normal"><sp/>onclick=</highlight><highlight class="stringliteral">&quot;openTab(event,<sp/>&apos;accessibility&apos;)&quot;</highlight><highlight class="normal">&gt;Accessibility&lt;/a&gt;&lt;/li&gt;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;/ul&gt;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">&lt;/nav&gt;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal">&lt;div<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">=<sp/>&quot;box<sp/>post<sp/>myTabs&quot;&gt;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;div<sp/>id=</highlight><highlight class="stringliteral">&quot;summary&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;tabcontent&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;?php</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">($updating)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&apos;&lt;textarea<sp/>name<sp/>=<sp/>&quot;projectDescription&quot;&gt;&apos;</highlight><highlight class="normal">.$projectData[0]-&gt;description.</highlight><highlight class="stringliteral">&apos;&lt;/textarea&gt;<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Write<sp/>project<sp/>description</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&apos;&lt;p&gt;&apos;</highlight><highlight class="normal">.$projectData[0]-&gt;description.</highlight><highlight class="stringliteral">&apos;&lt;/p&gt;&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>?&gt;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;/div&gt;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;div<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;version&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;tabcontent&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;ul&gt;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;?php</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Get<sp/>the<sp/>date<sp/>from<sp/>the<sp/>projects</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">foreach</highlight><highlight class="normal">($versionList<sp/>as<sp/>$row)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/>&lt;&lt;&lt;</highlight><highlight class="stringliteral">&quot;HTML&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;&lt;a<sp/>href<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;index.php?action=view_user_version&amp;versionID=$row-&gt;pkVersion&amp;username=$row-&gt;username&quot;</highlight><highlight class="normal">&gt;$row-&gt;title&lt;/a&gt;&lt;/li&gt;<sp/></highlight></codeline>
+<codeline lineno="101"><highlight class="normal">HTML;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>?&gt;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/ul&gt;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;?php</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="_user_project_view_8php_1adb9756d4524181e191069eaa76afb6cf" kindref="member">$connected</ref>)</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">($userName<sp/>==<sp/>$projectData[0]-&gt;username)</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/>&lt;&lt;&lt;</highlight><highlight class="stringliteral">&quot;HTML&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;a<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;button&quot;</highlight><highlight class="normal"><sp/>href=</highlight><highlight class="stringliteral">&quot;index.php?action=user_upload_version&amp;projectID=$projectID&quot;</highlight><highlight class="normal">&gt;Upload<sp/>Version&lt;/a&gt;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">HTML;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>?&gt;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;/div&gt;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;?php</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="_user_project_view_8php_1adb9756d4524181e191069eaa76afb6cf" kindref="member">$connected</ref>)</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>?&gt;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;div<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;forum&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;tabcontent&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;ul&gt;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;?php</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">foreach</highlight><highlight class="normal">($messageList<sp/>as<sp/>$row)</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/>&lt;&lt;&lt;</highlight><highlight class="stringliteral">&quot;HTML&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;&lt;a<sp/>href=</highlight><highlight class="stringliteral">&quot;#&quot;</highlight><highlight class="normal">&gt;message&lt;/a&gt;<sp/>by<sp/>&lt;a<sp/>href=</highlight><highlight class="stringliteral">&quot;#&quot;</highlight><highlight class="normal">&gt;$row-&gt;username&lt;/a&gt;&lt;/li&gt;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">HTML;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&apos;&lt;a<sp/>href=&quot;index.php?action=view_project_topic&amp;projectID=&apos;</highlight><highlight class="normal">.$projectID.</highlight><highlight class="stringliteral">&apos;&amp;projectName=&apos;</highlight><highlight class="normal">.$projectData[0]-&gt;name.</highlight><highlight class="stringliteral">&apos;&quot;<sp/>class<sp/>=<sp/>&quot;button&quot;&gt;GO&lt;/a&gt;&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>?&gt;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/ul&gt;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/div&gt;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;div<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;accessibility&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;tabcontent&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;p&gt;Tokyo<sp/>is<sp/>the<sp/>capital<sp/>of<sp/>Japan.&lt;/p&gt;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;/div&gt;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal">&lt;/div&gt;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">&lt;/form&gt;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_user_project_view_8php_1ab361445ea7cfa053be5ad7bf81994336" kindref="member">$content</ref><sp/>=<sp/>ob_get_clean();</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>require_once<sp/></highlight><highlight class="stringliteral">&quot;View/Template.php&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal">?&gt;</highlight></codeline>
+    </programlisting>
+    <location file="View/User/UserProjectView.php"/>
+  </compounddef>
+</doxygen>

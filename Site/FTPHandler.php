@@ -1,18 +1,33 @@
 <?php
 
 /**
- * @briefHandles all connecion of to upload and downoad files
+ * @brief Handles all connecion of to upload and downoad files
  */
     class FTPHandler
     {
+        /**
+         * @brief remote host to connect
+        **/
         private $host;
 
+        /**
+         * @brief ftp username
+        **/
         private $ftp_user;
+
+        /**
+         * @brief if used is the domain on wich the user is appended
+        **/
         private $ftp_domain;
+
+        /**
+         * @brief the ftp user password
+        **/
         private $ftp_userpwd;
 
-        private $ftp;
-
+        /**
+         * @brief connection state of the ftp handler
+        **/
         public $status;
         /**
          * @brief Initialises the FTP Handler
@@ -35,8 +50,8 @@
          * @brief connects to the FTP Server with SFTP via a created username
          *
          * @param [string] $username
-         * 
-         * is called when a user is connected on the project page
+         *
+         * @return int the connection ID
          */
         function Connect($username,$password)
         {

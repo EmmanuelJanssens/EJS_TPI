@@ -1,6 +1,10 @@
 <?php
     require_once "BaseDAO.php";
 
+    /**
+     *
+     * @brief access data for the ProjectController
+    **/
     class ProjectDAO extends DAO
     {
 
@@ -36,6 +40,15 @@
                 return null;
             }
         }
+
+        /**
+         * @brief get the details/content of the project
+         *
+         * @param [string] $username author of the project
+         * @param [int] $project id id of the project to be displayed
+         *
+         * @return array a single entry of the project's details
+        **/
         function GetProjectDetails($username,$projectid)
         {
             try
@@ -67,6 +80,10 @@
 
         /**
          * @brief get the author of the specified project
+         *
+         * @param [int] $project id of the project to get the author
+         *
+         * @return array an single entry with the author from the desired project
          **/
         function GetProjectAuthor($project)
         {
@@ -95,6 +112,14 @@
                 return null;
             }
         }
+
+        /**
+         * @brief gets the name of the project BY ID
+         *
+         * @param [int] $ID id of the project
+         *
+         * @return string the name of the project
+         **/
         function GetProjectName($ID)
         {
             try
@@ -122,13 +147,22 @@
                 return null;
             }
         }
+
+        /**
+         * @brief insert an antry in the project table
+         *
+         * @param [string] $name name of the project
+         * @param [string] $description description of the project
+         *
+         * @return int ID of the last inserted project
+         **/
         function CreateProject($name,$description)
         {
             try
             {
                 $user = $_SESSION['user_session'];
                 $creation_date = date("Y-m-d h:i:s");
-                $root = "/var/www/EJSTPI";
+                $root = "/var/www/home/Users/$user";
                 $topic = "Topic of $name";
 
                 $conn = $this->connect();
@@ -159,6 +193,11 @@
 
         /**
          * @brief updates the description, name, update date
+         *
+         * @param [string] $projectName name of the updated project
+         * @param [int] $projectID id of the project that was updated
+         * @param [description] $description description of the updated project
+         * @param [string]
          **/
         function UpdateProject($projectName,$projectID,$description,$username)
         {
@@ -183,12 +222,18 @@
             }
         }
 
+        /**
+         * @brief deletes an entry in the project table
+         *
+         * @param [int] project id
+        **/
         function DeleteProject($projectID)
         {
             try
             {
                 $conn = $this->connect();
 
+                //to avoid error in the data base due to constraints we need to delete every entry linked to the project
                 $qs = "DELETE FROM Message WHERE fkProject=:projectID";
                 $query = $conn->prepare($qs);
                 $query->bindParam(":projectID",$projectID);

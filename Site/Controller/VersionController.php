@@ -2,9 +2,15 @@
 
     require_once "Controller.php";
 
+    /**
+     * @brief controls the version such as displaying, updating, uploading, deleting
+    **/
     class VersionController extends Controller
     {
 
+        /**
+         * @brief basic constructor
+        **/
         function __construct()
         {
 
@@ -13,8 +19,9 @@
         /**
          * @brief Get information about the selected version
          *
-         * TODO Display all files and directories as links and if it is a directory create a link to the directory's content, It may be best using Some AJAX to avoid reloading the project page too much
-         *
+         * @param [string] $username author of the version
+         * @param [int] $versionID id of the version that is updated
+         * @param [FTPHandler] $FTPHandler file stream to display the version's directory's content
          **/
         function ViewUserVersion($username,$versionID,$FTPHandler)
         {
@@ -28,8 +35,17 @@
             require_once "View/User/UserVersionView.php";
         }
 
-
-        function UploadVersion($name,$description,$log,$file,$project,FTPHandler $ftp)
+        /**
+         * @brief Creates a version and uploads files to the database
+         *
+         * @param [string] $name name of the version
+         * @param [string] $description description of the version
+         * @param [string] $log devlog of the version
+         * @param [file] $file file that was chosen to be uploaded
+         * @param [string] $project name of the project in wich the version will be created
+         * @param [FTPHandler] $ftp file stream that will be used to create the directory on the server
+        **/
+        function UploadVersion($name,$description,$log,$file,$project,$ftp)
         {
             $versionID  = $this->versionDAO->CreateVersion($name,$description,$log,$file,$project) ;
             if($versionID> 0)

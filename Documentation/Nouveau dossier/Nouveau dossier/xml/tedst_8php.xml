@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="tedst_8php" kind="file" language="PHP">
+    <compoundname>tedst.php</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="tedst_8php_1a57b284fe00866494b33afa80ba729bed" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$content</definition>
+        <argsstring></argsstring>
+        <name>$content</name>
+        <initializer>= ob_get_clean()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="View/User/tedst.php" line="102" column="1" bodyfile="View/User/tedst.php" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"><sp/><sp/><sp/><sp/>ob_start();</highlight></codeline>
+<codeline lineno="3"><highlight class="normal">?&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">&lt;style&gt;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal">body<sp/>{font-family:<sp/>Arial;}</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Style<sp/>the<sp/>tab<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal">.tab<sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>overflow:<sp/>hidden;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>border:<sp/>1px<sp/>solid<sp/>#ccc;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>background-color:<sp/>#f1f1f1;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Style<sp/>the<sp/>buttons<sp/>inside<sp/>the<sp/>tab<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">.tab<sp/>button<sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>background-color:<sp/>inherit;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>float:<sp/>left;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>border:<sp/>none;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>outline:<sp/>none;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>cursor:<sp/>pointer;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>padding:<sp/>14px<sp/>16px;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>transition:<sp/>0.3s;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>font-size:<sp/>17px;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Change<sp/>background<sp/>color<sp/>of<sp/>buttons<sp/>on<sp/>hover<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">.tab<sp/>button:hover<sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>background-color:<sp/>#ddd;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Create<sp/>an<sp/>active/current<sp/>tablink<sp/>class<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">.tab<sp/>button.active<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>background-color:<sp/>#ccc;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Style<sp/>the<sp/>tab<sp/>content<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">.tabcontent<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>display:<sp/>none;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>padding:<sp/>6px<sp/>12px;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>border:<sp/>1px<sp/>solid<sp/>#ccc;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>border-top:<sp/>none;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Style<sp/>the<sp/>close<sp/>button<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">.topright<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>float:<sp/>right;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>cursor:<sp/>pointer;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>font-size:<sp/>28px;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal">.topright:hover<sp/>{color:<sp/>red;}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">&lt;/style&gt;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal">&lt;p&gt;Click<sp/>on<sp/>the<sp/>x<sp/>button<sp/>in<sp/>the<sp/>top<sp/>right<sp/>corner<sp/>to<sp/>close<sp/>the<sp/>current<sp/>tab:&lt;/p&gt;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal">&lt;div<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;tab<sp/>my_nav&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>&lt;button<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;tablinks&quot;</highlight><highlight class="normal"><sp/>onclick=</highlight><highlight class="stringliteral">&quot;openCity(event,<sp/>&apos;London&apos;)&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;defaultOpen&quot;</highlight><highlight class="normal">&gt;London&lt;/button&gt;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/>&lt;button<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;tablinks&quot;</highlight><highlight class="normal"><sp/>onclick=</highlight><highlight class="stringliteral">&quot;openCity(event,<sp/>&apos;Paris&apos;)&quot;</highlight><highlight class="normal">&gt;Paris&lt;/button&gt;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>&lt;button<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;tablinks&quot;</highlight><highlight class="normal"><sp/>onclick=</highlight><highlight class="stringliteral">&quot;openCity(event,<sp/>&apos;Tokyo&apos;)&quot;</highlight><highlight class="normal">&gt;Tokyo&lt;/button&gt;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">&lt;/div&gt;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal">&lt;div<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">=<sp/>&quot;box<sp/>post<sp/>content&quot;&gt;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">&lt;div<sp/>id=</highlight><highlight class="stringliteral">&quot;London&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;tabcontent&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/>&lt;span<sp/>onclick=</highlight><highlight class="stringliteral">&quot;this.parentElement.style.display=&apos;none&apos;&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;topright&quot;</highlight><highlight class="normal">&gt;&amp;times&lt;/span&gt;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/>&lt;h3&gt;London&lt;/h3&gt;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/>&lt;p&gt;London<sp/>is<sp/>the<sp/>capital<sp/>city<sp/>of<sp/>England.&lt;/p&gt;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">&lt;/div&gt;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal">&lt;div<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;Paris&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;tabcontent&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/>&lt;span<sp/>onclick=</highlight><highlight class="stringliteral">&quot;this.parentElement.style.display=&apos;none&apos;&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;topright&quot;</highlight><highlight class="normal">&gt;&amp;times&lt;/span&gt;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/>&lt;h3&gt;Paris&lt;/h3&gt;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/>&lt;p&gt;Paris<sp/>is<sp/>the<sp/>capital<sp/>of<sp/>France.&lt;/p&gt;<sp/></highlight></codeline>
+<codeline lineno="74"><highlight class="normal">&lt;/div&gt;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal">&lt;div<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;Tokyo&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;tabcontent&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/>&lt;span<sp/>onclick=</highlight><highlight class="stringliteral">&quot;this.parentElement.style.display=&apos;none&apos;&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;topright&quot;</highlight><highlight class="normal">&gt;&amp;times&lt;/span&gt;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>&lt;h3&gt;Tokyo&lt;/h3&gt;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>&lt;p&gt;Tokyo<sp/>is<sp/>the<sp/>capital<sp/>of<sp/>Japan.&lt;/p&gt;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">&lt;/div&gt;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">&lt;/div&gt;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">&lt;script&gt;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>openCity(evt,<sp/>cityName)<sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>var<sp/>i,<sp/>tabcontent,<sp/>tablinks;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>tabcontent<sp/>=<sp/>document.getElementsByClassName(</highlight><highlight class="stringliteral">&quot;tabcontent&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>tabcontent.length;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tabcontent[i].style.display<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;none&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>tablinks<sp/>=<sp/>document.getElementsByClassName(</highlight><highlight class="stringliteral">&quot;tablinks&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>tablinks.length;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tablinks[i].className<sp/>=<sp/>tablinks[i].className.replace(</highlight><highlight class="stringliteral">&quot;<sp/>active&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>document.getElementById(cityName).style.display<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;block&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>evt.currentTarget.className<sp/>+=<sp/></highlight><highlight class="stringliteral">&quot;<sp/>active&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Get<sp/>the<sp/>element<sp/>with<sp/>id=&quot;defaultOpen&quot;<sp/>and<sp/>click<sp/>on<sp/>it</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal">document.getElementById(</highlight><highlight class="stringliteral">&quot;defaultOpen&quot;</highlight><highlight class="normal">).click();</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">&lt;/script&gt;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="101"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tedst_8php_1a57b284fe00866494b33afa80ba729bed" kindref="member">$content</ref><sp/>=<sp/>ob_get_clean();</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>require_once<sp/></highlight><highlight class="stringliteral">&quot;View/Template.php&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal">?&gt;</highlight></codeline>
+    </programlisting>
+    <location file="View/User/tedst.php"/>
+  </compounddef>
+</doxygen>
