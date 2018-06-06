@@ -18,11 +18,11 @@ ob_start();
         <p><input type="text" placeholder="Project Name" name="projectname" required></p>
 
         <?php if(isset($projectdesc_error)) echo $projectdesc_error;?>
+        <label>Description</label>
         <p>
             <textarea rows="4" cols="50" placeholder="username" name="projectdescription" required>
 
             </textarea>
-
         </p>
 
         <p><input type="submit" value="send" text="submit"></p>

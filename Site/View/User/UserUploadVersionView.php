@@ -15,20 +15,23 @@ ob_start();
     <form action="index.php?action=upload_version" method="post" enctype="multipart/form-data">
 
         <?php if(isset($versionname_error)) echo $versionname_error;?>
-        <p><input type="text" placeholder="Project Name" name="versionname" required></p>
+        <p><input type="text" placeholder="Version Name" name="versionname" required></p>
 
         <?php if(isset($versiondesc_error)) echo $versiondesc_error;?>
+        <label>Description</label>
         <p>
-            <textarea rows="4" cols="50" placeholder="username" name="versiondescription" required>
+            <textarea rows="4" cols="50"name="versiondescription" required>
             </textarea>
         </p>
 
         <?php if(isset($versionlog_error)) echo $versionlog_error;?>
+        <label>Log</label>
         <p>
             <textarea rows="4" cols="50" placeholder="username" name="versionlog" required>
             </textarea>
         </p>
 
+        <label>Choose a file to upload</label>
         <p>
             <input type="file" class="button" text="Choose" name="fileToUpload" accept=".zip" id ="fileToUpload" required>
         </p>

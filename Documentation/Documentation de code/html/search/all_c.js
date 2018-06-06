@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['messageview_2ephp',['MessageView.php',['../_message_view_8php.html',1,'']]]
+  ['newpasswordview_2ephp',['NewPasswordView.php',['../_new_password_view_8php.html',1,'']]]
 ];

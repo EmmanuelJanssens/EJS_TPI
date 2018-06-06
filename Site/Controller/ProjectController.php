@@ -40,7 +40,7 @@
             $projectData = $this->projectDAO->GetProjectDetails($userName,$projectID);
 
             //Get a list of all the versions from the project
-            $versionList = $this->versionDAO->GetVersionList($userName);
+            $versionList = $this->versionDAO->GetVersionList($userName,$projectID);
 
             $messageList = $this->forumDAO->GetProjectMessage($projectID);
 

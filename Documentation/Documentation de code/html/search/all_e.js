@@ -1,9 +1,4 @@
 var searchData=
 [
-  ['postmessage',['PostMessage',['../class_forum_controller.html#a6aa6340089c9cbf1d660ede98e40a89f',1,'ForumController\PostMessage()'],['../class_forum_d_a_o.html#ac06809a2f0001b1ad909bebba40aefef',1,'ForumDAO\PostMessage()']]],
-  ['projectcontroller',['ProjectController',['../class_project_controller.html',1,'']]],
-  ['projectcontroller_2ephp',['ProjectController.php',['../_project_controller_8php.html',1,'']]],
-  ['projectdao',['ProjectDAO',['../class_project_d_a_o.html',1,'']]],
-  ['projectdao_2ephp',['ProjectDAO.php',['../_project_d_a_o_8php.html',1,'']]],
-  ['projectview_2ephp',['ProjectView.php',['../_project_view_8php.html',1,'']]]
+  ['register',['Register',['../class_user_controller.html#a73865eeee67d29dd7f3e888bbc8a90cb',1,'UserController\Register()'],['../class_user_d_a_o.html#ac3b69a336d57533a747597e093580d66',1,'UserDAO\Register()']]]
 ];

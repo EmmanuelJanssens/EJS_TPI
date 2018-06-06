@@ -62,8 +62,7 @@
 
 
                 $this->connected = true;
-
-                require_once "View/HomeView.php";
+                header("Location: index.php?action=view_home");
             }
             else
             {
@@ -85,7 +84,7 @@
             {
                 unset($_SESSION['user_session']);
                 $this->connected = false;
-                require_once "View/HomeView.php";
+                header("Location: index.php?action=view_home");
             }
         }
 
